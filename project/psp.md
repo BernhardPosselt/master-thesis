@@ -1,7 +1,6 @@
 # Projektmanagement:
 
-## Projektplanung: 76h
-### Grobkonzept 20h
+## Projektplanung: 56h
 ### PSP 5h
 ### PAP 5h
 ### Treffen mit fachlichem Betreuer 20h
@@ -19,16 +18,16 @@
 ### Literatur TU: 6h (halb abgehakt)
 ### Literatur FH: 5h
 
-## Anforderungs-Modellierung
+## Vorprojektphase 50h
+### Anforderungs-Modellierung Recherche 15h
+### Architektur-Modellierungen Recherche 20h
+### Architektur Bewertungs Methoden Recherche 20h
+### Erstellung des Grobkonzepts 5h
 
-### Recherche
+## Projekt
+### Übertragen der funktionalen Anforderungen in eine Darstellung
+### Übertragen der nicht funktionalen Anforderungen in eine Darstellung
 
-
-## Architektur-Modellierungen
-
-### Recherche
-
-
-## Architektur Bewertungs Methoden
-
-### Recherche
+## Prozesserstellung
+###
+### Projektbewertung
