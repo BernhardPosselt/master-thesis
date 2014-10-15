@@ -102,6 +102,8 @@ S. 210: Entwurfsmuster: Patterns, Architekturmuster: systemweite patterns
 * Service oriented architecture
 * Sicherheitsarchitekturen
 
+Bewertung: (Der Architekturreview, S. 179)
+
 # Modellierung
 
 # Wie (Software Architektur, Grundlagen S. 344)

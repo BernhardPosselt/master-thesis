@@ -4,3 +4,5 @@
 * Fokus Architekturbewertungen: welche auswählen?
 * Gibt sehr viel Informationen, eigenes Verfahren bzw kombinieren?
 * Vllt Kriterien erstellen/Checklisten wann welche technische architektur zu verwenden? Mehr auf Prozess orientieren?
+* Prozesserstellung + Verfeinerung dokumentieren? aka diff
+* Framework entwickeln??
