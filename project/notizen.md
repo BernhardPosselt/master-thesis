@@ -71,3 +71,56 @@ Nicht erwartete Änderungen einplanen
 Seperation of concerns: Zerlegen von Anforderungen, Zerlegen in Sichten, fachliche und technische Teile trennen damit sie unabhängig voneinander weiterentwickelt werden können
 SOLID
 Traceability
+
+# modellgetriebene software entwicklung (Software Architektur, Grundlagen S. 170-175)
+Modelle mit Software verweben
+Problem: um alles in Modellen auszudrücken müsste Modellsprache einer Programmiersprache gleichen -> nur bestimmte Bereiche verweben, zB entitäten aus ER diagramm generieren, trotzdem umstritten
+
+# modellgetriebene architektur (Software Architektur, Grundlagen S. 175)
+
+# wartung (Software Architektur, Grundlagen S. 189)
+20% erstellen 40% verstehen was da ist 40% auf ändern/updaten
+
+# qualitätsattributsszenarien (Software Architektur, Grundlagen S. 196-197)
+Je mehr  qualitätsmerkmale ein use case hat desto schwieriger dessen architektur
+S. 210: Entwurfsmuster: Patterns, Architekturmuster: systemweite patterns
+
+# Basisarchitekturen (Software Architektur, Grundlagen S. 216-256)
+* Monotlith (schlecht, wenn alles zusammen ohne modelle, für prototypen nutzbar)
+* Layered
+* Datenfluss (pipes + filters)
+* Repositories
+* Zentralisierung vs Dezentralisierung
+ * mainframe architektur
+ * Client Server
+* n Tier
+* Rich client vs Thin client
+* Peer to peer
+* Publish Subscribe
+* Middleware (zb TCP IP für netzwerk)
+* Komponenten Platformen
+* Service oriented architecture
+* Sicherheitsarchitekturen
+
+# Modellierung
+
+# Wie (Software Architektur, Grundlagen S. 344)
+Projektmanagement
+Vorgehen: Systemvision -> Anforderung -> Architektur -> Umsetzung
+Checkliste Architekturentwurf: 402
+
+
+# Gute Architekturen (Der Architekturreview, S. 18)
+Keine allgemein gültigen/akzeptierte Metriken
+Anforderungen grob, nicht widerspruchsfrei
+Zielsetzungen nicht quantifizierbar was sie nicht explizit messbar macht
+
+
+# Methoden (Der Architekturreview, S. 60)
+* SAAM: Auswahl von Systemqualitäten durch festlegen repräsentativer szenarien auf basis einer vorhandenen architektur, keine wirkliche Formel zur Bewertung
+* ATAM: Weiterentwicklung von SAAM, schaut sich Trade Offs an. Es zeigt früh risikobehaftete stellen an: Sensitivitätspunkte (wo kann man viel gewinnen, von was hängt der gewinn ab), Kompromisspunkte (wo sind mehrere Merkmale gleichzeitig betroffen, die sich vielleicht ausschließen), Risiken + Nichtrisiken (Ist entscheidung kritisch oder nicht). Szenarien werden verwendet um das zu testen
+* CBAM: versucht ROI zu berechnen auf Basis von Ergebnissen
+* ALMA: Kombination aus ATAM und SAAM, beschäftigts sich vor allem mit Veränderbarkeit
+* ARID: adaption von ATAM für teile der Architektur, kompakt und deswegen gut geeignet um Module oder Komponenten zu reviewen
+* SACAM: vergleicht architekturen
+* QUASAR: Analyse von Sub Systemen mittels Qualitäten (zB Performanz) mit Argumenten und Beweisen, dass die Entscheidungen das erhöhen
