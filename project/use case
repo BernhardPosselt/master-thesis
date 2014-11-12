@@ -1,0 +1,18 @@
+akteure:
+* applicate: bewirbt sich
+* candidate: voraussetzungen erfüllt, tritt zur prüfung an
+* examiner: keiner, wird nicht gebraucht weil die multiple choice tests elektronisch sind und automatisch korrigiert werden
+* invigilator: aufsichtsperson, der prüfung überwacht aber nicht korrigiert
+* (scheme owner): definiert certs
+
+use case:
+* Anmeldung zur Prüfung von Trainer Organization: Datum, Anzahl der Personen, Wo die Prüfung stattfindet, Ansprechpartner der Trainer Organisation, Ansprechpartner der Kunden-Organisation (haupt business prozess), checklisten werden abgearbeitet um daten zu erhalten
+* Anmelden zur prüfung (website anmelden -> bestätigung erhalten + rechnung -> (rechnung zahlen -> anmeldung bestätigt) || (bezahlt nicht -> nach ablauf des prüfungsdatums anmeldung als hinfällig markieren) || ...) (ca 3% von allen prüfungen)
+* Zertifikatsprüfung machen (auch wenn nicht bezahlt, zertifikat erhalt erst nach bezahlung, kann auch vorraussetzungen)
+
+secondary use case:
+* voraussetzungen prüfen; dann wird [applicant] zu [candidate] durch [certification body]
+
+
+
+system erstellt den Prüfungs QR code mit dem die Fragen auf den Tablets entschlüsselt werden
