@@ -12,8 +12,7 @@
     * The applicant is enlisted as candidate for the exam
 * **Normal Course of Events**: The applicant uses the website to apply for a certification exam. When applying he enters his personal information and his email address and his so he can be contacted in case the exam is rescheduled and the invoice and confirmation can be sent to his email account. After finishing the registration he receives a confirmation and invoice via email. If he chooses to pay the invoice in advance, he receives a notification for it.
 * **Alternative Courses**: 
-    * The applicant does not choose to pay the invoice. If he does not show up at the exam date and the exam is over, the applicant is
- removed from the applicants list
+    * The applicant does not choose to pay the invoice. If he does not show up at the exam date and the exam is over, the applicant is removed from the applicants list
     * The applicant registers for an advanced level course and needs to supply additional documents to prove that he is qualified to take it
 * **Exceptions**:
     * The email fails to be delivered
@@ -42,7 +41,7 @@
     * uc-take-exam
 * **Priority**: Medium
 * **Notes**: 
-     * We need to reconsider this
+     * Is he notified exactly afterwards?
 
 ## Use Case: Take exam
 * **Id**: uc-take-exam
@@ -106,7 +105,7 @@
 * **Preconditions**:
     * The same exam with the same title, date and location does not exist already
 * **Postconditions**: 
-* **Normal Course of Events**: Certible or decides to create a program by itself or after a Trainer Organization contated them by entering the title, location and date
+* **Normal Course of Events**: Certible decides to create an exam or after a Trainer Organization contated them by entering the title, location and date
 * **Alternative Courses**:
 * **Exceptions**:
 * **Assumptions**:
@@ -129,6 +128,7 @@
 * **Related to**:
 * **Priority**: High
 * **Notes**: 
+ * Payment?
 
 ## Use Case: Evaluate exam
 * **Id**: uc-evaluate-exam
@@ -136,7 +136,7 @@
 * **Description**: Certible evaluates an exam
 * **Preconditions**:
 * **Postconditions**: 
-* **Normal Course of Events**: Since all 
+* **Normal Course of Events**: 
 * **Alternative Courses**:
 * **Exceptions**:
 * **Assumptions**:
@@ -145,7 +145,7 @@
     * uc-transfer-exam-files
 * **Priority**: High
 * **Notes**: 
-    * Is evaluation 
+    * Where does the exam evaluation happen? Server calculates score, Certible approves?
 
 ## Use Case: Create certificates
 * **Id**: uc-create-certificates
