@@ -20,3 +20,24 @@ system erstellt den Prüfungs QR code mit dem die Fragen auf den Tablets entschl
 
 fragen:
 * registrieren + einloggen um die prüfungen anzuzeigen an denen der applicant teilnimmt?
+
+TODO:
+
+use case description, verbal nach schema nach anforderungs vorlage:
+* name
+* akteur
+* id
+* pre condition
+* post condition
+* main case
+* 2 exception cases
+* 2 alternate courses
+
+Einfüllen was bekannt ist
+
+nicht funktionale anforderungen: frei text, aus verschiedenen standards oder verträgen
+* ISO 17024 (General requirements for bodies operating certification of persons, vertraglich verpflichtet)
+Wegen dieser Anforderungen zu IT system verpflichtet weil anforderunge manuell zu teuer
+* ISO 9000 (qualität)
+* ISO 27000 (sicherheit)
+* Scheme Owner Verträge
