@@ -1,163 +1,207 @@
-# Requirements Certible
+# Requirements Certification Body
+
+## Use Case: Pay invoice
+* **Id**: uc-pay-invoice
+* **Actor**: Applicant, Certification Body
+* **Description**: The Applicant pays the invoice which he received after applying for an exam
+* **Preconditions**:
+    * The Applicant has received an invoice
+    * The invoice has not been paid yet
+* **Postconditions**:
+    * The Applicant received a confirmation
+* **Normal Course of Events**: The Applicant pays the invoice by bank transfer using a payment id. The system checks for new payments every hour and notifies the Certification Body when a new payment arrived. The Certification Body then accepts the payment and the system sends a confirmation mail.
+* **Alternative Courses**:
+* **Exceptions**:
+     * The Applicant uses a wrong payment id
+     * The Applicant pays too little/too much
+* **Assumptions**:
+     * There is a way/API to check the account balance
+* **Related to**:
+    * uc-apply
+* **Priority**: Medium
+* **Notes**:
 
 ## Use Case: Apply
-* **Id**: uc-apply-for-exam
+* **Id**: uc-apply
 * **Actor**: Applicant
-* **Description**: The applicant uses the the system to apply for a certain certification exam
-* **Preconditions**: 
-    * The applicant is not already enlisted for the exam
-* **Postconditions**: 
-    * The applicant received a confirmation
-    * The applicant received an invoice
-    * The applicant is enlisted as candidate for the exam
-* **Normal Course of Events**: The applicant uses the website to apply for a certification exam. When applying he enters his personal information and his email address and his so he can be contacted in case the exam is rescheduled and the invoice and confirmation can be sent to his email account. After finishing the registration he receives a confirmation and invoice via email. If he chooses to pay the invoice in advance, he receives a notification for it.
-* **Alternative Courses**: 
-    * The applicant does not choose to pay the invoice. If he does not show up at the exam date and the exam is over, the applicant is removed from the applicants list
-    * The applicant registers for an advanced level course and needs to supply additional documents to prove that he is qualified to take it
+* **Description**: The Applicant uses the the system to apply for a certain certification exam
+* **Preconditions**:
+* **Postconditions**:
+    * The Applicant received a confirmation
+    * The Applicant received an invoice
+    * The Applicant is enlisted as Candidate for the exam
+* **Normal Course of Events**: The Applicant uses the website to apply for a foundation level certification exam. When applying he enters his personal information and his email address and his so he can be contacted in case the exam is rescheduled and the invoice and confirmation can be sent to his email account. After finishing the registration he receives a confirmation and invoice via email.
+* **Alternative Courses**:
+    * The Applicant chooses a discount
+    * The Applicant registers for an advanced level course and needs to supply additional documents to prove that he is qualified to take it
 * **Exceptions**:
     * The email fails to be delivered
 * **Assumptions**:
 * **Related to**:
 * **Priority**: High
-* **Notes**: 
-    * What about advanced level tests? Is he notified to supply/arrange those documents automatically or does Certible need to send an extra email
-    * Should we require the candidate to register so he can view the exam dates he has registered himself for and it's easier to assign himself to another exam?
-    * What about mail delivery failures?  What about wrongly entered emails? What if the applicant loses the invoice and confirmation files? I think the system should also allow the user to look up the status in case of delivery failure and let him download the sent documents
+* **Notes**:
+    * Should we require the Candidate to register so he can view the exam dates he has registered himself for and it's easier to assign himself to another exam?
+    * What about mail delivery failures?  What about wrongly entered emails? What if the Applicant loses the invoice and confirmation files? I think the system should also allow the user to look up the status in case of delivery failure and let him download the sent documents
 
 
-## Use Case: View test results
-* **Id**: uc-view-test-results
+## Use Case: Verify certificate
+* **Id**: uc-verify-cert
 * **Actor**: Candidate
-* **Description**: The candidate views the test results of an exam on the website
+* **Description**: The Candidate can verify his certificate by opening the link from the QR code in his browser
 * **Preconditions**:
-    * The candidate has taken an exam
-* **Postconditions**: 
-* **Normal Course of Events**: 
+    * The Candidate has received a certificate with a QR code
+* **Postconditions**:
+* **Normal Course of Events**:
 * **Alternative Courses**:
 * **Exceptions**:
-* **Assumptions**: 
-    * The candidate has registered on the website
+     * The certificate has been revoked
+     * The server can not be reached
+* **Assumptions**:
 * **Related to**:
-    * uc-take-exam
+    * uc-evaluate-exam
 * **Priority**: Medium
-* **Notes**: 
-     * Is he notified exactly afterwards?
+* **Notes**:
+    * There should also be a manual way to verify it, for instance by calling Certification Body in case of internet or server outages
 
 ## Use Case: Take exam
 * **Id**: uc-take-exam
 * **Actor**: Candidate, Invigilator
-* **Description**: The candidate takes the exam
+* **Description**: The Candidate takes the exam
 * **Preconditions**:
-* **Postconditions**: 
-* **Normal Course of Events**: The candidate enters his name on the tablet and takes the exam. To start the exam the invigilator scans a QR code that he received from the system using the tablet to decrypt the exam files. After the exam is finished he transmits the exam files and tells the candidate the test results
+    * The tablets have been prepared for the exam
+    * If the Candidate used the website to register for the exam, he has paid the fee
+* **Postconditions**:
+* **Normal Course of Events**: The invigilator decrypts the exam files using a QR code, then gives the Candidate the tablet. The Candidate enters his name on the tablet and starts the exam at a given time. After the exam is finished the invigilator transmits the exam files to the system
 * **Alternative Courses**:
 * **Exceptions**:
-    * The candidate is unable to finish the exam
-    * The candidate does not have an email address
+    * The Candidate is unable to finish the exam
+    * The Candidate does not provide enough information (e.g. no email)
 * **Assumptions**:
 * **Related to**:
-    * uc-view-test-results
-    * uc-transfer-exam-files
+    * uc-prepare-exam
 * **Priority**: High
-* **Notes**: 
-    * What about emergencies and medical conditions?
-    * Where and when are the exams evaluated? After or before the transfer?
-    * If the candidate is already registered, do we require less information (like click confirm button instead of entering his data)
-    * If the candidate is not registered how do we connect his information (e.g. view test results) to the exam he took
+* **Notes**:
+    * If the Candidate is already registered, do we require less information (like click confirm button instead of entering his data)?
 
-## Use Case: Transfer exam files
-* **Id**: uc-transfer-exam-files
-* **Actor**: Invigilator
-* **Description**: The invigilator transfers the files to the system after the exam is finished
-* **Preconditions**:
-    * Exam is finished
-* **Postconditions**: 
-* **Normal Course of Events**:  After the exam is finished, the invigilator uses the tablets to transfer the results using a raspberry pie which connects to the system using an encrypted OpenVPN tunnel
-* **Alternative Courses**:
-* **Exceptions**:
-    * The connection fails
-* **Assumptions**:
-* **Related to**: uc-take-exam
-* **Priority**: High
-* **Notes**: 
-    * Is each tablet used individually to to transfer the files?
-    * What happens if the connection fails to be established?
 
 ## Use Case: Publish scheduled examinations
-* **Id**: uc-publish-examinations
-* **Actor**: Certible
-* **Description**: Certible publishes scheduled exams on the homepage so applicants can sign up for them
+* **Id**: uc-publish-exams
+* **Actor**: Certification Body
+* **Description**: Certification Body publishes scheduled exams on the homepage so Applicants can sign up for them. Date, Place and Time are included in the publication
 * **Preconditions**:
     * An exam has been created
-* **Postconditions**: 
+* **Postconditions**:
 * **Normal Course of Events**:
 * **Alternative Courses**:
 * **Exceptions**:
 * **Assumptions**:
-* **Related to**: uc-create-exam
+* **Related to**:
+    * uc-schedule-exam
 * **Priority**: High
-* **Notes**: 
+* **Notes**:
 
-## Use Case: Create exam
-* **Id**: uc-create-exam
-* **Actor**: Certible
-* **Description**: Certible creates a new exam with a title, location and date
+## Use Case: Schedule exam
+* **Id**: uc-schedule-exam
+* **Actor**: Certification Body
+* **Description**: Certification Body creates a new exam with a  title, location, date and if given a trainer
 * **Preconditions**:
-    * The same exam with the same title, date and location does not exist already
-* **Postconditions**: 
-* **Normal Course of Events**: Certible decides to create an exam or after a Trainer Organization contated them by entering the title, location and date
+    * The same exam with the same title, date and location and trainer does not exist already
+* **Postconditions**:
+    * QR code is generated
+* **Normal Course of Events**: Certification Body decides to create an exam or after a Trainer Organization contated them by entering the title, location and date
 * **Alternative Courses**:
 * **Exceptions**:
 * **Assumptions**:
 * **Related to**:
 * **Priority**: High
-* **Notes**: 
+* **Notes**:
     * How and when are exam questions created?
 
 ## Use Case: Reporting
 * **Id**: uc-reporting
-* **Actor**: Certible, Scheme Owner
-* **Description**:  Certible reports the results to the Scheme Owner (e.g.: OMG/IREB)
+* **Actor**: Certification Body, Scheme Owner
+* **Description**:  Certification Body reports the results to the Scheme Owner (e.g.: OMG/IREB)
 * **Preconditions**:
-    * An exam has taken place and it has been evaluated
-* **Postconditions**: 
-* **Normal Course of Events**:
+* **Postconditions**:
+* **Normal Course of Events**: Every month/quarter an anonymous report will be sent to the scheme owner: how many tests, how many Candidates, statistics about answered questions and if the Candidates received a discount. The license fee to the scheme is calculated from the exams and transferred to the scheme owner
 * **Alternative Courses**:
 * **Exceptions**:
+    * The payment fails
 * **Assumptions**:
 * **Related to**:
 * **Priority**: High
-* **Notes**: 
- * Payment?
+* **Notes**:
 
 ## Use Case: Evaluate exam
 * **Id**: uc-evaluate-exam
-* **Actor**: Certible
-* **Description**: Certible evaluates an exam
+* **Actor**: Certification Body
+* **Description**: Certification Body evaluates an exam
 * **Preconditions**:
-* **Postconditions**: 
-* **Normal Course of Events**: 
+    * Files have been committed to the server
+* **Postconditions**:
+    * The Candidate has received a result
+    * The certificates are printed
+    * The envelopes are labeled
+* **Normal Course of Events**: Certification Body starts the evaluation on the server. The server calculates the exam result, sends the result mail to each Candidate. Afterwards the certificates are printed, envelopes are labeled
 * **Alternative Courses**:
+     * If a trainer requested the exam, he receives a trainer feedback after all evaluations have finished
 * **Exceptions**:
+    * The exam files are corrupt
 * **Assumptions**:
 * **Related to**:
     * uc-take-exam
-    * uc-transfer-exam-files
 * **Priority**: High
-* **Notes**: 
-    * Where does the exam evaluation happen? Server calculates score, Certible approves?
+* **Notes**:
 
-## Use Case: Create certificates
-* **Id**: uc-create-certificates
-* **Actor**: Certible
-* **Description**: Certible creates the certificates for each successful candidate's exam by printing them
+## Use case: Update exam questions
+* **Id**: uc-update-questions
+* **Actor**: Certification Body
+* **Description**: Certification Body updates the questions for an exam type
 * **Preconditions**:
-    * The user has paid the invoice
-* **Postconditions**: 
-* **Normal Course of Events**:
+    * There is no duplicate question in case a new question is added
+* **Postconditions**:
+    * The files are updated on the server
+* **Normal Course of Events**: The Certification Body removes/adds questions and solutions to a certain type of exam
 * **Alternative Courses**:
+     * If an exam type does not already exist, the Certification Body has to create a new type
 * **Exceptions**:
 * **Assumptions**:
 * **Related to**:
+    * uc-prepare-exam
+* **Priority**: Medium
+* **Notes**:
+
+## Use case: Prepare tablets
+* **Id**: uc-prepare-exam
+* **Actor**: Certification Body
+* **Description**: Certification Body prepares the tablets for the exam
+* **Preconditions**:
+* **Postconditions**:
+    * The tablets are prepared for the exam
+* **Normal Course of Events**: The Certification Body loads the encrypted questions onto the tablet devices and checks if they function properly
+* **Exceptions**:
+    * A tablet has a malfunction
+* **Assumptions**:
+* **Related to**:
 * **Priority**: High
-* **Notes**: 
+* **Notes**:
+    * There should be an easy way to verify that the device is working and prepared properly, maybe an automated test that runs the exam on the tablet
+
+## Use case: Handle complaints
+* **Id**: uc-complaints
+* **Actor**: Certification Body, Candidate
+* **Description**: The Candidate can file a complaint for an exam
+* **Preconditions**:
+    * The Candidate has taken the exam in question
+    * The exam has been evaluated
+* **Postconditions**:
+    * The Candidate received a confirmation
+    * The Certification Body is notified of the complaint
+* **Normal Course of Events**: The Candidate can file a complaint for an exam on the website and receives a confirmation. The Certification Body is notified of the complaint and contacts the Candidate
+* **Exceptions**:
+    * The Candidate provides wrong credentials
+* **Assumptions**:
+* **Related to**:
+    * uc-evaluate-exam
+* **Priority**: Medium
+* **Notes**:
