@@ -38,6 +38,7 @@
     * The Applicant registers for an advanced level course and needs to supply additional documents to prove that he is qualified to take it
 * **Exceptions**:
     * The email fails to be delivered
+    * The Applicants email account expires/is not accessible any more
 * **Assumptions**:
 * **Related to**:
 * **Priority**: High
@@ -46,7 +47,6 @@
     * What about mail delivery failures?  What about wrongly entered emails? What if the Applicant loses the invoice and confirmation files? I think the system should also allow the user to look up the status in case of delivery failure and let him download the sent documents
     * A good idea would be to send a code by email to the Applicant that he has to enter to complete the application. That way you can verify that his email has been entered properly
     * There could be a feature that offers to resend all documents to an email
-
 
 ## Use Case: Verify certificate
 * **Id**: uc-verify-cert
@@ -211,4 +211,31 @@
 * **Related to**:
     * uc-evaluate-exam
 * **Priority**: Medium
+* **Notes**:
+
+
+## Use case: Manage applicants
+* **Id**: uc-manage-applicants
+* **Actor**: Certification Body
+* **Description**: The Certification body can CRUD the applicants
+* **Preconditions**:
+* **Postconditions**:
+* **Normal Course of Events**: The Certification Body can update the applicants information to react to email and possible family name changes.
+* **Exceptions**:
+* **Assumptions**:
+* **Related to**:
+* **Priority**: Low
+* **Notes**:
+
+## Use case: Manage certificates
+* **Id**: uc-manage-applicants
+* **Actor**: Certification Body
+* **Description**: The Certification body can CRUD the certificates
+* **Preconditions**:
+* **Postconditions**:
+* **Normal Course of Events**: The Certification Body can update the certificates, for instance to correct errors or to revoke the certificate
+* **Exceptions**:
+* **Assumptions**:
+* **Related to**:
+* **Priority**: Low
 * **Notes**:
