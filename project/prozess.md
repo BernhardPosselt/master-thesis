@@ -1,7 +1,7 @@
 # Prozessbeschreibung
 * Erstellen von Use Cases (Use-Casediagramm)
 * Zuordnung von Qualitätsattributen und Businesskritikalität
- * Auswahl der in Frage kommenden Qualitätsattribute
+ * Auswahl der in Frage kommenden Qualitätsattribute (nach ISO/IEC 9126)
  * Aufspalten der Attribute in Essenziell und nicht Essentiell
  * Gibt es konkurrierende, essentielle Attribute? Welches ist wichtiger?
 * Aufspalten in verschiedene Aktionen (Aktivitätsdiagramm)
