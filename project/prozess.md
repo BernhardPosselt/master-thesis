@@ -7,7 +7,7 @@
  * Auswahl der in Frage kommenden Qualitätsattribute (nach ISO/IEC 9126)
  * Bewerten/Gewichten der Attribute
  * Gibt es mehrere Attribute mit dem selben Gewicht? Fixe Reihung bestimmen
- * Kommunkationsrichtungen (z.B. Public für eine Webseite, Private für interne Systeme)
+ * System Zugriffsrichtungen: Incoming/Internal und/oder Outgoing (zb öffentlich Webseite wäre Incoming, Zugriff auf externen Service Outgoing und Zugriff von Internen Systemen Internal)
  * Wachstumsszenarien
  * Änderungsszenarien
  * Ausfallkosten pro Tag
