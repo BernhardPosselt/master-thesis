@@ -1,1 +1,3 @@
-Betreuer kontaktieren
+# Requirements
+* Ausfallkosten
+* Qualitätsattribute auswählen und reihen

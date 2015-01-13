@@ -5,9 +5,10 @@
 * Erstellen eines
 * Für jeden Use Case Zuordnung von Qualitätsattributen und Businesskritikalität
  * Auswahl der in Frage kommenden Qualitätsattribute (nach ISO/IEC 9126)
- * Bewerten/Gewichten der Attribute
+ * Bewerten/Gewichten der Attribute (1-3, (Nutzen + Wichtigkeit + Risiko) / 3
  * Gibt es mehrere Attribute mit dem selben Gewicht? Fixe Reihung bestimmen
  * System Zugriffsrichtungen: Incoming/Internal und/oder Outgoing (zb öffentlich Webseite wäre Incoming, Zugriff auf externen Service Outgoing und Zugriff von Internen Systemen Internal)
+ * Erwartete Nutzung
  * Wachstumsszenarien
  * Änderungsszenarien
  * Ausfallkosten pro Tag
