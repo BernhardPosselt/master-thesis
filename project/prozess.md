@@ -23,8 +23,10 @@
  * Vertrautheit kritisch
  * Schaden bei Verlust > den Sytemkosten (minimale Kosten = Kosten für 1 Server + Proxy falls nicht vorhanden für Stufe)
 1.3 Zwischen jedem System einen Proxy aufstellen
- * Regel: Daten müssen alle Vertrautslevel durchlaufen und dürfen nicht überspringen
- * Achtung: Das heißt nicht, dass keine Authentifizierung verwendet werden muss. Authentifizierung ist in jedem System für sich selbst, sprich User für Level 3 müssen in Level 3 verwaltet werden
+ * Regel:
+  1. Daten müssen alle Vertrautslevel durchlaufen und dürfen nicht überspringen
+  2. Proxies dürfen keine Services/Schnittstellen anbieten sondern nur weiterleiten. Proxies sind nur dazu da, die Requests zu authentifizieren und weiterzuleiten
+1.4 Wer hat Zugriff auf eingehende Ports? Wäre es schlecht wenn ein User das System und die Daten kontrollieren könnte? Wenn ja aufspalten in 2 Systeme (Idee: Systeme zwischen denen Daten fließen müssen bekannt sein oder ein Proxy mit well defined interfaces muss vorhanden sein)
 2.
 2.1 Dann Aktivitätsdiagramme anpassen auf einzelne Komponenten
 2.2 Matrix erstellen Use Case x Komponente
@@ -33,6 +35,8 @@
 2.5 Mit der Komponente mit den meisten Ausfallkosten anfangen und Ausfallwahrscheinlichkeit reduzieren durch hinzufügen einer zweiten Komponente.
 2.6 Differenz der beiden Kosten berechnen: Falls Differenz < Kosten für Komponente Komponente nicht hinzufügen.
 2.7 Ad 2.4 solange es noch Systeme gibt, deren Ausfallkosten höher als die Kosten einer weiteren Komponente ist
+
+
 
 ## Implementationsprozess
 3.1 implementieren der Komponenten und testen auf Geschwindigkeit
@@ -68,5 +72,8 @@
 
 
 TODO:
+Beispielhafte Volumina
+Beispielhafte Rechnungen die verfeinert werden können
+
 Metaebene noch stärker herausarbeiten (warum, + änderungen) von Martin Hasitschka
 Fokus auf bestimmte teile (forschungsleitende fragen, was will ich erreichen in der arbeit): In dieser Arbeit wird ein allgemein anwendbarer Architekturprozess entwickelt, wie man von einem Set von Requirements auf eine Architektur kommen. Das soll auf folgende Art/Der Fokus liegt auf. zb.: Ausgehen von UML Ansatz

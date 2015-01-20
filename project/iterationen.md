@@ -14,3 +14,5 @@
  * Höhere Vertrautheit darf ohne Proxy auf kleinere Vertrautheit zugreifen
  * Gleiche Vertrautheit dürfen aufeinander zugreifen
  * Niedrigere Vertrautheit darf nur über Proxy auf höhere Vertrautheit zugreifen
+
+6. Integrieren von Benutzern
