@@ -47,14 +47,31 @@
 %
 
 * Einführung
+ * Motivation
+  * Wie kommt man von Anforderungen auf eine gute Architektur
+    * Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
+  * Wie kann ich im Planungsprozess schon Fehlerkosten vermeiden
+  * Gibt es eine Art Kochrezept um von fachlichen auf technische Anforderungen zu kommen
  * Was wird gemacht
-  * Modellierung einer Zertifizierungsstellen Architektur
-  * Fokus auf UML
-  * Prozesserstellung
+  * Planung einer Zertifizierungsstellen Architektur
+  * Modellierung mit UML
+  * Anpassen der Anforderungestemplates
+  * Architekturplanung Prozesserstellung, eine Art Framework
+  * Dokumentation der Prozesserstellungsanläufe
  * Was wird nicht gemacht
+  * Abdeckung des kompletten Prozesses
+  * Kein Organisations- und Kommunikationsmanagement
   * Implementation
- * Vermutung: Gute Architektur häng von guten Anforderungen ab
- * Frage: Wie kann ich im Planungsprozess schon Fehlerkosten vermeiden
+  * Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)
+  * Komplette Vorgaben der Schätz-Methoden
+ * Übersicht
+  * Modellierung
+  * Anforderungen
+  * Architektur
+  * Prozesserstellung
+  * Prozessumsetzung Anforderungen
+  * Prozessumsetzung Architektur
+  * Zusammenfassung
 * Modellierung
  * Was ist UML
  * Diagramme
@@ -92,39 +109,46 @@
  * Artefakte
   * Wer (Akteure)
   * Was (Daten)
-  * Warum (Anforderungen)
-  * Wie (Usecases)
-  * Wodurch (Komponenten)
+  * Warum (Anforderungen/Usecases)
+  * Womit (Komponenten)
  * Vom Usecase zur Komponente
- * Von den nicht funktionalen Anforderungen zur Architektur
+ * Von einer geschätzten Architektur auf eine verfeinerte Architektur durch nicht funktionale Anforderungen
  * Von den Daten zur Architektur
  * Von den Daten und den Akteuren zur Architektur
 * Prozess Anforderungen
  * Modellierung der Usecases
  * Überführen der Usecases in Anforderungstemplate
  * Anpassen des Anforderungstemplates
-  * Wachstumsszenarien
+  * Wachstumsszenarien und Wahrscheinlichkeit
   * Änderungsszenarien
   * Businesskritikalität
    * Ausfallkosten
-   * Datenzugriffsszenarien
+   * Datenverlustszenarien
   * Rahmenbedingungen
  * Modellierung der Daten
  * Modellierung der Akteure und Partnersysteme
 
-* Prozess Architektur
+* Prozess Architekturplanung
  * Erstellen der Minimalen Architektur
  * Datenaufteilung nach Vertrautheitslevel
  * Akteuraufteilung nach Vertrautheitslevel
  * Erstellen der Datenminimalarchitektur
   * Datenflüsse
-  * Erstellen von Gateways/Firewalls
- * Erstellen der Zugriffsminimalarchitetkur
- * Changemanagement
+  * Erstellen von Daten-Gateways/Firewalls
+  *
+ * Einbeziehen der Akteure
+  * Matrix Akteur x Daten (CRUD)
+  * Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
+ * Modellieren der Komponenten Interfaces (Klassen Diagramm)
  * Bewertung der Architektur
-  * Single Point of Failure Analyse
-  * Ausfallskosten
+  * Single Point of Failure Analyse (Matrix Komponente x Usecase)
+  * Ausfallskosten (inkl. Wachstumsszenarien)
   * Angriffsszenarien
+ * Changemanagement
+  * Änderungen der Daten
+  * Änderungen der Akteure
+  * Änderungen der Usecases
+  * Änderungen der nicht funktionalen Anforderungen
 
 * Zusammenfassung
  * Warum ist der Prozess gut
@@ -132,11 +156,12 @@
   * Lässt Entscheidungen aufschieben
  * Anwendungsfälle
  * Limitierungen
+  * Überprüfbarkeit der Anforderungen
   * Akteure/Daten ändern sich oft
   * Erfahrungswerte
   * Plangungsphase
   * Implementierungsphase
-  * Extremarchitekturne
+  * Extremarchitekturen
 
 
 \chapter{Einleitung}
