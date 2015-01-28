@@ -5,11 +5,10 @@
 * Erstellen eines
 * Für jeden Use Case Zuordnung von Qualitätsattributen und Businesskritikalität
  * Auswahl der in Frage kommenden Qualitätsattribute (nach ISO/IEC 9126)
- * Bewerten/Gewichten der Attribute (1-3, (Nutzen + Wichtigkeit + Risiko) / 3
  * Gibt es mehrere Attribute mit dem selben Gewicht? Fixe Reihung bestimmen
  * System Zugriffsrichtungen: Incoming/Internal und/oder Outgoing (zb öffentlich Webseite wäre Incoming, Zugriff auf externen Service Outgoing und Zugriff von Internen Systemen Internal)
  * Erwartete Nutzung
- * Wachstumsszenarien
+ * Wachstumsszenarien + Businessvalue
  * Änderungsszenarien
  * Ausfallkosten pro Tag
  * Verfeinern in verschiedene Aktionen falls nötig (Aktivitätsdiagramm)
@@ -74,6 +73,6 @@
 TODO:
 Beispielhafte Volumina
 Beispielhafte Rechnungen die verfeinert werden können
-
+Kern der Arbeit für Endpräsentation beschreiben: Weniger das Erstellen der Diagramme als mehr das Herausheben, abstrakte Prozess beschreiben
 Metaebene noch stärker herausarbeiten (warum, + änderungen) von Martin Hasitschka
 Fokus auf bestimmte teile (forschungsleitende fragen, was will ich erreichen in der arbeit): In dieser Arbeit wird ein allgemein anwendbarer Architekturprozess entwickelt, wie man von einem Set von Requirements auf eine Architektur kommen. Das soll auf folgende Art/Der Fokus liegt auf. zb.: Ausgehen von UML Ansatz

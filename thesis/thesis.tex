@@ -1,0 +1,80 @@
+\documentclass[Master,MSE,german]{twbook}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\newcommand{\FHTWCitationType}{IEEE}
+\usepackage{bibgerm}
+
+% Definition Code-Listings Formatierung:
+\usepackage[final]{listings}
+\lstset{captionpos=b, numberbychapter=false,caption=\lstname,frame=single, numbers=left, stepnumber=1, numbersep=2pt, xleftmargin=15pt, framexleftmargin=15pt, numberstyle=\tiny, tabsize=3, columns=fixed, basicstyle={\fontfamily{pcr}\selectfont\footnotesize}, keywordstyle=\bfseries, commentstyle={\color[gray]{0.33}\itshape}, stringstyle=\color[gray]{0.25}, breaklines, breakatwhitespace, breakautoindent}
+\lstloadlanguages{[ANSI]C, C++, [gnu]make, gnuplot, Matlab}
+
+\makeatletter
+\renewcommand\lstlistingname{Quellcode}
+\renewcommand\lstlistlistingname{Quellcodeverzeichnis}
+
+% Definition des Macros listoflolentryname analog zu listoflofentryname und listoflotentryname der KOMA-Klasse
+\newcommand\listoflolentryname\lstlistingname
+% Neudefinition der Zeilen des Quellcodeverzeichnisses wenn die Option listof=entryprefix gewählt wurde
+\@ifclasswith{scrbook}{listof=entryprefix}
+{%
+    \renewcommand\l@lstlisting[2]{\@dottedtocline{1}{1.5em}{1em}{\listoflolentryname~#1}{#2}}
+}{%
+}
+\makeatother
+\newcommand{\listofcode}{\phantomsection\lstlistoflistings}
+
+%
+% Einträge für Deckblatt, Kurzfassung, etc.
+%
+\title{Architekturerstellung auf Basis von Anforderungen}
+\author{Bernhard Posselt, BSc}
+\studentnumber{1310299032}
+\supervisor{Mag. Maria-Therese Teichmann}
+\place{Wien}
+\kurzfassung{sehr kurz}
+\schlagworte{Schlagwort1, Schlagwort2, Schlagwort3, Schlagwort4}
+\outline{abstract da}
+\keywords{Keyword1, Keyword2, Keyword3, Keyword4}
+
+\begin{document}
+
+
+\maketitle
+
+%
+% .. und hier beginnt die eigentliche Arbeit. Viel Erfolg beim Verfassen!
+%
+
+
+\chapter{Einleitung}
+a \cite{Ko05a}[S. 1]
+\section{blug}
+b
+\chapter{Grundlagen}
+c
+\chapter{Zusammenfassung}
+d
+\clearpage
+\bibliography{Literatur}
+\clearpage
+
+% Das Abbildungsverzeichnis
+\listoffigures
+\clearpage
+
+% Das Tabellenverzeichnis
+\listoftables
+\clearpage
+
+% Das Quellcodeverzeichnis
+\listofcode
+\clearpage
+
+\chapter{Abkürzungsverzeichnis}
+\begin{acronym}[XXXXX]
+    \acro{ABC}[ABC]{Alphabet}
+    \acro{WWW}[WWW]{world wide web}
+    \acro{ROFL}[ROFL]{Rolling on floor laughing}
+\end{acronym}
+\end{document}

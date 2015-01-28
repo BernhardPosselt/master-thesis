@@ -1,3 +1,17 @@
 *~
 .~*
 NonfunctionalIT-Requirements.rtf
+*.backup
+*.log
+*.aux
+*.bbl
+*.lot
+*.lof
+*.lol
+*.out
+*.toc
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+thesis.pdf
