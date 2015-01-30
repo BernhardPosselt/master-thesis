@@ -51,8 +51,8 @@
 \section{Motivation}
 \subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
 Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
-\subsection{Wie kann ich im Planungsprozess schon Fehlerkosten vermeiden}
-\subsection{Gibt es eine Art Kochrezept um von fachlichen auf technische }Anforderungen zu kommen
+\subsection{Wie kann ich Fehlerkosten minimieren}
+\subsection{Gibt es eine Art Kochrezept um von fachlichen auf technische Anforderungen zu kommen}
 
 \section{Was wird gemacht}
 \subsection{Planung einer Zertifizierungsstellen Architektur}
@@ -63,12 +63,16 @@ Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
 
 \section{Was wird nicht gemacht}
 \subsection{Abdeckung des kompletten Prozesses}
+Weil zu umfangreich, genauere Beschreibung im Architektur kapitel, auch erklären dass es sich heraus gestellt hat dass man nicht alles sofort planen und bewerten kann wegen fehlenden Messmöglichkeiten
 \subsection{Kein Organisations- und Kommunikationsmanagement}
 \subsection{Implementation}
-\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High }Performance)
-\subsection{Komplette Vorgaben der Schätz-Methoden}
+Zu umfangreich
+\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)}
+\subsection{Komplette Vorgaben der Bewertungs-Methoden}
+Eher Hinweise auf wie man zb Ausfallkosten bewerten könnte, Methode auf eigene Anwendungsfälle abänder- und ersetzbar. Aber aufzeigen warum es gut sein kann sie dennoch schon zu behandeln
 
 \section{Übersicht}
+Erklären was in welchen Kapiteln behandelt wird
 \subsection{Modellierung}
 \subsection{Anforderungen}
 \subsection{Architektur}
@@ -81,6 +85,7 @@ Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
 \chapter{Modellierung}
 Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklären und erklären für was welcher Diagrammtyp verwendet wird
 
+\section{Warum ist modellierung wichtig}
 \section{Was ist UML}
 
 \section{Diagrammtypen}
@@ -92,14 +97,10 @@ Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet.
 
 
 \chapter{Anforderungen}
-Behandeln der ISO 9126 Anforderungen
+Behandeln der ISO 9126 Anforderungen, versuchen zu erklären was man alles beachten muss und was überhaupt ab anfang messbar ist (z.B. performance nicht messbar)
 
 \section{Funktionale Anforderungen}
-\subsection{Suitability}
-\subsection{Security}
-\subsection{Accuracy}
-\subsection{Interoperability}
-\subsection{Functional Compliance}
+Wichtig: Security ist eine funktionale Anforderung, aber
 
 \section{Nicht funktionale Anforderungen}
 \subsection{Reliability}
@@ -168,20 +169,23 @@ Ausfallkosten, Datenverlustszenarien
 \subsection{Rahmenbedingungen}
 
 \section{Modellierung der Daten}
-Klassendiagramm und modellieren der Akteure mit Vertrautheitsleveln
+Klassendiagramm der Daten
 
 \section{Modellierung der Akteure und Partnersysteme}
-Kontextdiagramm und modellieren der Akteure mit Vertrautheitsleveln
-
-\section{Modellierung der Daten x Akteure (CRUD Matrix)}
+Kontextdiagramm der Akteure und Systeme
 
 
 \chapter{Prozess Architekturplanung}
 \section{Erstellen der Minimalen Architektur}
+Ausgehen vom Kontextdiagramm
 
 \section{Datenaufteilung nach Vertrautheitslevel}
+Erweitern der Daten mit eigenen Stereotypen,
 
 \section{Akteuraufteilung nach Vertrautheitslevel}
+Erweitern der Akteure mit eigenen Stereotypen
+
+Modellierung der Daten x Akteure (CRUD Matrix), Erklären dass man mit Aktivitätsdiagramm auf Matrix kommt
 
 \section{Erstellen der Datenminimalarchitektur}
 Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
@@ -190,8 +194,13 @@ Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüss
 Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
+Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
+
 \section{Bewertung der Architektur}
+Auf Basis von dokumentierten Szenarien können nun nicht funktionale Attribute gemessen werden und Hinweise kritische/wichtige Komponenten gegeben werden. Kostengegenüberstellung können auch eigene Systeme rechtfertigen/entfernen
+
 \subsection{Single Point of Failure Analyse (Matrix Komponente x Usecase)}
+Erklären wie man auf Matrix kommt (Aktivitätsdiagramm)
 \subsection{Ausfallskosten (inkl. Wachstumsszenarien)}
 Einfache Methode zur schätzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
 \subsection{Angriffsszenarien}
@@ -220,6 +229,15 @@ Je nachdem ob noch gewünscht aufzeigen wie würde ein Change request ausschauen
 \subsection{Zum Teil auch abhängig von Erfahrungswerten}
 \subsection{Nur Plangungsphase, ohne Implementierungsphase}
 \subsection{Extremarchitekturen}
+
+\section{Erkenntnisse}
+\subsection{Ohne messbare Parameter kein Kochrezept möglich}
+\subsection{Parameter nicht zu jeder Phase messbar}
+\subsection{Priorisierung von nicht funktionalen Parametern schwer möglich}
+\subsection{Generische Komponentenarchitektur durch viele und schnell ändernde Kombinationen schwer möglich}
+\subsection{Man darf Ehrfahrungswerte nicht vernachlässigen}
+\subsection{Funktionale Anforderungen beeinflussen Archtitektur mehr als gedacht}
+Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
 
 \section{Ausblick}
 Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
