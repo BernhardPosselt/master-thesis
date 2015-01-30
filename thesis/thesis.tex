@@ -46,132 +46,184 @@
 % .. und hier beginnt die eigentliche Arbeit. Viel Erfolg beim Verfassen!
 %
 
-* Einführung
- * Motivation
-  * Wie kommt man von Anforderungen auf eine gute Architektur
-    * Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
-  * Wie kann ich im Planungsprozess schon Fehlerkosten vermeiden
-  * Gibt es eine Art Kochrezept um von fachlichen auf technische Anforderungen zu kommen
- * Was wird gemacht
-  * Planung einer Zertifizierungsstellen Architektur
-  * Modellierung mit UML
-  * Anpassen der Anforderungestemplates
-  * Architekturplanung Prozesserstellung, eine Art Framework
-  * Dokumentation der Prozesserstellungsanläufe
- * Was wird nicht gemacht
-  * Abdeckung des kompletten Prozesses
-  * Kein Organisations- und Kommunikationsmanagement
-  * Implementation
-  * Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)
-  * Komplette Vorgaben der Schätz-Methoden
- * Übersicht
-  * Modellierung
-  * Anforderungen
-  * Architektur
-  * Prozesserstellung
-  * Prozessumsetzung Anforderungen
-  * Prozessumsetzung Architektur
-  * Zusammenfassung
-* Modellierung
- * Was ist UML
- * Diagramme
-  * Kontextdiagramm
-  * Komponentendiagram
-  * Klassendiagramm
-  * Aktivitätsdiagramm
-  * Usecasediagramm
-* Anforderungen (ISO 9126)
- * Funktionale Anforderungen
-  * Suitability
-  * Security
-  * Accuracy
-  * Interoperability
-  * Functional Compliance
- * Nicht funktionale Anforderungen
-  * Reliability
-  * Usability
-  * Efficiency
-  * Maintainability
-  * Portability
- * Arhitekturrelevante Anforderungen
-  * Messbarkeit
-  * Planung
-  * Umsetzung
- * Nicht architekturrelevante Anforderungen
- * Anforderungstemplate
-* Architektur
- * Was ist eine gute Architektur
- * Architekturprozess Lifecycle
- * Architekturbewertungsmethoden
-  * ATAM
-  * CBAM
-* Prozesserstellung
- * Artefakte
-  * Wer (Akteure)
-  * Was (Daten)
-  * Warum (Anforderungen/Usecases)
-  * Womit (Komponenten)
- * Vom Usecase zur Komponente
- * Von einer geschätzten Architektur auf eine verfeinerte Architektur durch nicht funktionale Anforderungen
- * Von den Daten zur Architektur
- * Von den Daten und den Akteuren zur Architektur
-* Prozess Anforderungen
- * Modellierung der Usecases
- * Überführen der Usecases in Anforderungstemplate
- * Anpassen des Anforderungstemplates
-  * Wachstumsszenarien und Wahrscheinlichkeit
-  * Änderungsszenarien
-  * Businesskritikalität
-   * Ausfallkosten
-   * Datenverlustszenarien
-  * Rahmenbedingungen
- * Modellierung der Daten
- * Modellierung der Akteure und Partnersysteme
- * Modellierung der Daten x Akteure (CRUD Matrix)
+\chapter{Einführung}
 
-* Prozess Architekturplanung
- * Erstellen der Minimalen Architektur
- * Datenaufteilung nach Vertrautheitslevel
- * Akteuraufteilung nach Vertrautheitslevel
- * Erstellen der Datenminimalarchitektur
-  * Datenflüsse
-  * Erstellen von Daten-Gateways/Firewalls
-  *
- * Einbeziehen der Akteure
-  * Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
- * Modellieren der Komponenten Interfaces (Klassen Diagramm)
- * Bewertung der Architektur
-  * Single Point of Failure Analyse (Matrix Komponente x Usecase)
-  * Ausfallskosten (inkl. Wachstumsszenarien)
-  * Angriffsszenarien
- * Changemanagement
-  * Änderungen der Daten
-  * Änderungen der Akteure
-  * Änderungen der Usecases
-  * Änderungen der nicht funktionalen Anforderungen
+\section{Motivation}
+\subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
+Vermutung: Gute Architektur häng von guten nicht funktionalen Anforderungen ab
+\subsection{Wie kann ich im Planungsprozess schon Fehlerkosten vermeiden}
+\subsection{Gibt es eine Art Kochrezept um von fachlichen auf technische }Anforderungen zu kommen
 
-* Zusammenfassung
- * Warum ist der Prozess gut
-  * 10er Regel der Fehlerkosten
-  * Lässt Entscheidungen aufschieben
- * Anwendungsfälle
- * Limitierungen
-  * Überprüfbarkeit der Anforderungen
-  * Akteure/Daten ändern sich oft
-  * Erfahrungswerte
-  * Plangungsphase
-  * Implementierungsphase
-  * Extremarchitekturen
+\section{Was wird gemacht}
+\subsection{Planung einer Zertifizierungsstellen Architektur}
+\subsection{Modellierung mit UML}
+\subsection{Anpassen der Anforderungestemplates}
+\subsection{Architekturplanung Prozesserstellung, eine Art Framework}
+\subsection{Dokumentation der Prozesserstellungsanläufe}
+
+\section{Was wird nicht gemacht}
+\subsection{Abdeckung des kompletten Prozesses}
+\subsection{Kein Organisations- und Kommunikationsmanagement}
+\subsection{Implementation}
+\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High }Performance)
+\subsection{Komplette Vorgaben der Schätz-Methoden}
+
+\section{Übersicht}
+\subsection{Modellierung}
+\subsection{Anforderungen}
+\subsection{Architektur}
+\subsection{Prozesserstellung}
+\subsection{Prozessumsetzung Anforderungen}
+\subsection{Prozessumsetzung Architektur}
+\subsection{Zusammenfassung}
 
 
-\chapter{Einleitung}
-a \cite{Ko05a}[S. 1]
-\section{blug}
-b
-\chapter{Grundlagen}
-c
+\chapter{Modellierung}
+Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklären und erklären für was welcher Diagrammtyp verwendet wird
+
+\section{Was ist UML}
+
+\section{Diagrammtypen}
+\subsection{Kontextdiagramm}
+\subsection{Komponentendiagram}
+\subsection{Klassendiagramm}
+\subsection{Aktivitätsdiagramm}
+\subsection{Usecasediagramm}
+
+
+\chapter{Anforderungen}
+Behandeln der ISO 9126 Anforderungen
+
+\section{Funktionale Anforderungen}
+\subsection{Suitability}
+\subsection{Security}
+\subsection{Accuracy}
+\subsection{Interoperability}
+\subsection{Functional Compliance}
+
+\section{Nicht funktionale Anforderungen}
+\subsection{Reliability}
+\subsection{Usability}
+\subsection{Efficiency}
+\subsection{Maintainability}
+\subsection{Portability}
+
+\section{Arhitekturrelevante Anforderungen}
+Aufzählen der Anforderungen welche für den Architekturprozess wichtig sind und runterbrechen auf messbare/erfahrungswerte basierste Parameter für den Planungsprozess
+
+\section{Nicht architekturrelevante Anforderungen}
+Auflisten von Anforderungen warum diese nicht berücksichtigt werden und warum nicht
+
+\chapter{Architektur}
+Erklären generell was Software Architektur ist und mit was sie sich beschäftigt
+
+\section{Architekturprozess Lifecycle}
+Diagramm wie der Architekturprozess im groben abläuft. Dann den Teil markieren auf dem der Fokus der Arbeit liegt
+
+\section{Was ist eine gute Architektur}
+Zitate und Parameter aus Büchern zusammensammeln die das gewünschte Ergebnis genauer definieren
+
+\section{Architekturbewertungsmethoden}
+Kurze Einführung in Architekturbewertungsmethoden
+
+\subsection{ATAM}
+\subsection{CBAM}
+
+
+\chapter{Prozesserstellung}
+Beschreibung was für Ausgangsparameter vorhanden waren und welche Anläufe versucht wurden und warum sie fehl schlugen
+
+\section{Vorhandene Daten}
+Ausgangsparameter
+\subsection{Wer (Akteure}
+\subsection{Was (Daten)}
+\subsection{Warum (Anforderungen/Usecases)}
+\subsection{Womit (Komponenten)}
+
+\section{Prozesserstellungsversuche}
+\subsection{Vom Usecase zur Komponente}
+Erster Versuch: für jeden Usecase ein Teilsystem, vereinen anhand nicht funktionaler Anforderungen -> zu aufwendig, unendlich Komponenten
+\subsection{Von einer geschätzten Architektur auf eine verfeinerte Architektur durch nicht funktionale Anforderungen}
+Zweiter Versuch: Nach Erfahrungswerten so viel wie möglich erstellen, danach überprüfen auf nicht funktionale Anforderungen und notwenige Änderungen einbringen -> kein Kochrezept, verlässt sich zu viel auf Erfahrungswerte
+\subsection{Von den Daten zur Architektur}
+Dritter Versuch: Aufspalten der Architektur in Datenbereiche. Ging schon gut aber Ergebnis zu grob
+\subsection{Von den Daten und den Akteuren zur Architektur}
+Vierter: Einbeziehen der Akteure
+
+\chapter{Prozess Anforderungen}
+Wie wurde der Anforderungsprozess angepasst und durchgeführt? Vermutung gute Architektur hängt von nicht funktionalen Anforderungen ab treibender Faktor
+
+\section{Modellierung der Usecases}
+Usecase diagramm
+
+\section{Überführen der Usecases in Anforderungstemplate}
+Warum wurde ein Template und welches wurde verwendet
+
+\section{Anpassen des Anforderungstemplates}
+Welche Sachen konnten schon vorher ermittelt werden
+\subsection{Wachstumsszenarien und Wahrscheinlichkeit}
+\subsection{Änderungsszenarien}
+\subsection{Businesskritikalität}
+Ausfallkosten, Datenverlustszenarien
+\subsection{Rahmenbedingungen}
+
+\section{Modellierung der Daten}
+Klassendiagramm und modellieren der Akteure mit Vertrautheitsleveln
+
+\section{Modellierung der Akteure und Partnersysteme}
+Kontextdiagramm und modellieren der Akteure mit Vertrautheitsleveln
+
+\section{Modellierung der Daten x Akteure (CRUD Matrix)}
+
+
+\chapter{Prozess Architekturplanung}
+\section{Erstellen der Minimalen Architektur}
+
+\section{Datenaufteilung nach Vertrautheitslevel}
+
+\section{Akteuraufteilung nach Vertrautheitslevel}
+
+\section{Erstellen der Datenminimalarchitektur}
+Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
+
+\section{Einbeziehen der Akteure}
+Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
+
+\section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
+\section{Bewertung der Architektur}
+\subsection{Single Point of Failure Analyse (Matrix Komponente x Usecase)}
+\subsection{Ausfallskosten (inkl. Wachstumsszenarien)}
+Einfache Methode zur schätzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
+\subsection{Angriffsszenarien}
+Ausgehend von den Zugriffen auf die Systeme abschätzen ob es schlecht wäre, wenn ein Akteur die Nachrichten eines anderen Lesen könnte, sprich das System kompromitiert hat
+
+\section{Changemanagement}
+Je nachdem ob noch gewünscht aufzeigen wie würde ein Change request ausschauen
+\subsection{Änderungen der Daten}
+\subsection{Änderungen der Akteure}
+\subsection{Änderungen der Usecases}
+\subsection{Änderungen der nicht funktionalen Anforderungen}
+
+
 \chapter{Zusammenfassung}
-d
+
+\section{Warum ist der Prozess gut}
+\subsection{10er Regel der Fehlerkosten}
+\subsection{Lässt Entscheidungen aufschieben}
+\subsection{Kochrezept lässt sich ableiten}
+\subsection{Wichtige Anforderungsparameter schon früh einbezogen}
+\subsection{Visuelle Repräsentationen mit denen schnell bewertet werden kann}
+
+\section{Limitierungen}
+\subsection{Überprüfbarkeit der Anforderungen}
+\subsection{Problem wenn sicht Akteure/Daten oft ändern}
+\subsection{Zum Teil auch abhängig von Erfahrungswerten}
+\subsection{Nur Plangungsphase, ohne Implementierungsphase}
+\subsection{Extremarchitekturen}
+
+\section{Ausblick}
+Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
+
 \clearpage
 \bibliographystyle{gerabbrv}
 \bibliography{Literatur}
