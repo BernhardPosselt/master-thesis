@@ -63,7 +63,7 @@
 
 \ProcessOptions\relax
 
-\LoadClass[a4paper,11pt,twoside=false,headings=normal,toc=listofnumbered,listof=entryprefix,listof=nochaptergap,bibliography=totoc]{scrbook}
+\LoadClass[a4paper,11pt,twoside=false,headings=normal,toc=listof,listof=entryprefix,listof=nochaptergap,bibliography=totoc]{scrbook}
 \RequirePackage{color,xcolor}
 \RequirePackage{xifthen}
 \RequirePackage{ifpdf}
