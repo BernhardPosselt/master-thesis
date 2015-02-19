@@ -1,5 +1,5 @@
 \documentclass[Master,MSE,german]{twbook}
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \newcommand{\FHTWCitationType}{IEEE}
 \usepackage{bibgerm}
@@ -15,7 +15,7 @@
 
 % Definition des Macros listoflolentryname analog zu listoflofentryname und listoflotentryname der KOMA-Klasse
 \newcommand\listoflolentryname\lstlistingname
-% Neudefinition der Zeilen des Quellcodeverzeichnisses wenn die Option listof=entryprefix gewählt wurde
+% Neudefinition der Zeilen des Quellcodeverzeichnisses wenn die Option listof=entryprefix gewÃ¤hlt wurde
 \@ifclasswith{scrbook}{listof=entryprefix}
 {%
     \renewcommand\l@lstlisting[2]{\@dottedtocline{1}{1.5em}{1em}{\listoflolentryname~#1}{#2}}
@@ -25,7 +25,7 @@
 \newcommand{\listofcode}{\phantomsection\lstlistoflistings}
 
 %
-% Einträge für Deckblatt, Kurzfassung, etc.
+% EintrÃ¤ge fÃ¼r Deckblatt, Kurzfassung, etc.
 %
 \title{Architekturerstellung auf Basis von Anforderungen}
 \author{Bernhard Posselt, BSc}
@@ -46,14 +46,14 @@
 % .. und hier beginnt die eigentliche Arbeit. Viel Erfolg beim Verfassen!
 %
 
-\chapter{Einführung}
+\chapter{EinfÃ¼hrung}
 \cite{Ko05a}
 \section{Motivation}
 \subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
-Vermutung: Gute Architektur häng von guten Anforderungen ab, deswegen muss Anforderungsprozess erweitert werden
-Probleme aufzählen die bei einer schlechten Architektur entstehen.
+Vermutung: Gute Architektur hÃ¤ng von guten Anforderungen ab, deswegen muss Anforderungsprozess erweitert werden
+Probleme aufzÃ¤hlen die bei einer schlechten Architektur entstehen.
 
-\subsection{Gibt es eine Art Kochrezept für die Architekturerstellung}
+\subsection{Gibt es eine Art Kochrezept fÃ¼r die Architekturerstellung}
 Gesucht: Ein Prozess mit dem auf die wichtigen Faktoren eingegangen werden kann.
 
 \section{Was wird gemacht}
@@ -61,20 +61,20 @@ Gesucht: Ein Prozess mit dem auf die wichtigen Faktoren eingegangen werden kann.
 \subsection{Modellierung mit UML}
 \subsection{Anpassen der Anforderungestemplates}
 \subsection{Architekturplanung Prozesserstellung, eine Art Framework}
-\subsection{Dokumentation der Prozesserstellungsanläufe}
+\subsection{Dokumentation der ProzesserstellungsanlÃ¤ufe}
 
 \section{Was wird nicht gemacht}
 \subsection{Abdeckung des kompletten Prozesses}
-Weil zu umfangreich, genauere Beschreibung im Architektur kapitel, auch erklären dass es sich heraus gestellt hat dass man nicht alles sofort planen und bewerten kann wegen fehlenden Messmöglichkeiten
+Weil zu umfangreich, genauere Beschreibung im Architektur kapitel, auch erklÃ¤ren dass es sich heraus gestellt hat dass man nicht alles sofort planen und bewerten kann wegen fehlenden MessmÃ¶glichkeiten
 \subsection{Kein Organisations- und Kommunikationsmanagement}
 \subsection{Implementation}
 Zu umfangreich
-\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)}
+\subsection{Abdeckung aller mÃ¶glichen ArchitekturfÃ¤lle (Embedded, High Performance)}
 \subsection{Komplette Vorgaben der Bewertungs-Methoden}
-Eher Hinweise auf wie man zb Ausfallkosten bewerten könnte, Methode auf eigene Anwendungsfälle abänder- und ersetzbar. Aber aufzeigen warum es gut sein kann sie dennoch schon zu behandeln
+Eher Hinweise auf wie man zb Ausfallkosten bewerten kÃ¶nnte, Methode auf eigene AnwendungsfÃ¤lle abÃ¤nder- und ersetzbar. Aber aufzeigen warum es gut sein kann sie dennoch schon zu behandeln
 
-\section{Übersicht}
-Erklären was in welchen Kapiteln behandelt wird
+\section{Ãœbersicht}
+ErklÃ¤ren was in welchen Kapiteln behandelt wird
 \subsection{Modellierung}
 \subsection{Anforderungen}
 \subsection{Architektur}
@@ -85,7 +85,7 @@ Erklären was in welchen Kapiteln behandelt wird
 
 
 \chapter{Modellierung}
-Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklären und erklären für was welcher Diagrammtyp verwendet wird
+Kurze EinfÃ¼hrung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklÃ¤ren und erklÃ¤ren fÃ¼r was welcher Diagrammtyp verwendet wird
 
 \section{Warum ist Modellierung wichtig}
 \section{Was ist UML}
@@ -94,12 +94,12 @@ Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet.
 \subsection{Kontextdiagramm}
 \subsection{Komponentendiagram}
 \subsection{Klassendiagramm}
-\subsection{Aktivitätsdiagramm}
+\subsection{AktivitÃ¤tsdiagramm}
 \subsection{Usecasediagramm}
 
 
 \chapter{Anforderungen}
-Behandeln der ISO 9126 Anforderungen, versuchen zu erklären was man alles beachten muss und was überhaupt ab anfang messbar ist (z.B. performance nicht messbar)
+Behandeln der ISO 9126 Anforderungen, versuchen zu erklÃ¤ren was man alles beachten muss und was Ã¼berhaupt ab anfang messbar ist (z.B. performance nicht messbar)
 
 \section{Funktionale Anforderungen}
 Wichtig: Security ist eine funktionale Anforderung
@@ -112,16 +112,16 @@ Wichtig: Security ist eine funktionale Anforderung
 \subsection{Portability}
 
 \chapter{Architektur}
-Erklären generell was Software Architektur ist und mit was sie sich beschäftigt
+ErklÃ¤ren generell was Software Architektur ist und mit was sie sich beschÃ¤ftigt
 
 \section{Architekturprozess Lifecycle}
-Diagramm wie der Architekturprozess im groben abläuft. Dann den Teil markieren auf dem der Fokus der Arbeit liegt
+Diagramm wie der Architekturprozess im groben ablÃ¤uft. Dann den Teil markieren auf dem der Fokus der Arbeit liegt
 
 \section{Was ist eine gute Architektur}
-Zitate; Architektur ist ein abwägen von Vor- und Nachteilen. Es gibt keine perfekte Architektur, jede Entscheidung ist mit Vor und Nachteilen versehen.
+Zitate; Architektur ist ein abwÃ¤gen von Vor- und Nachteilen. Es gibt keine perfekte Architektur, jede Entscheidung ist mit Vor und Nachteilen versehen.
 
 \section{Architekturbewertungsmethoden}
-Kurze Einführung in Architekturbewertungsmethoden
+Kurze EinfÃ¼hrung in Architekturbewertungsmethoden
 
 \subsection{ATAM}
 \subsection{CBAM}
@@ -130,19 +130,19 @@ Kurze Einführung in Architekturbewertungsmethoden
 \input{./chapters/processcreation}
 
 \chapter{Prozess Anforderungen}
-Wie wurde der Anforderungsprozess angepasst und durchgeführt? Vermutung gute Architektur hängt von nicht funktionalen Anforderungen ab treibender Faktor
+Wie wurde der Anforderungsprozess angepasst und durchgefÃ¼hrt? Vermutung gute Architektur hÃ¤ngt von nicht funktionalen Anforderungen ab treibender Faktor
 
 \section{Modellierung der Usecases}
 Usecase diagramm
 
-\section{Überführen der Usecases in Anforderungstemplate}
+\section{ÃœberfÃ¼hren der Usecases in Anforderungstemplate}
 Warum wurde ein Template und welches wurde verwendet
 
 \section{Anpassen des Anforderungstemplates}
 Welche Sachen konnten schon vorher ermittelt werden
 \subsection{Wachstumsszenarien und Wahrscheinlichkeit}
-\subsection{Änderungsszenarien}
-\subsection{Businesskritikalität}
+\subsection{Ã„nderungsszenarien}
+\subsection{BusinesskritikalitÃ¤t}
 Ausfallkosten, Datenverlustszenarien
 \subsection{Rahmenbedingungen}
 
@@ -163,29 +163,29 @@ Erweitern der Daten mit eigenen Stereotypen,
 \section{Akteuraufteilung nach Vertrautheitslevel}
 Erweitern der Akteure mit eigenen Stereotypen
 
-Modellierung der Daten x Akteure (CRUD Matrix), Erklären dass man mit Aktivitätsdiagramm auf Matrix kommt
+Modellierung der Daten x Akteure (CRUD Matrix), ErklÃ¤ren dass man mit AktivitÃ¤tsdiagramm auf Matrix kommt
 
 \section{Erstellen der Datenminimalarchitektur}
-Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
+Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. DatenflÃ¼sse fix vorgeben (darf keinen Gateway Ã¼berspringen). ErklÃ¤ren was die Gateways machen und warum sie gut skalierien
 
 \section{Einbeziehen der Akteure}
 Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
-Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
+Aufzeigen dass zb das interne System user anlegen kÃ¶nnen muss mit methoden im klassendiagramm
 
 \section{Analyse der nicht funktionalen Attribute}
-Auf Basis von dokumentierten Szenarien können nun nicht funktionale Attribute gemessen werden und Hinweise kritische/wichtige Komponenten gegeben werden. Kostengegenüberstellung können auch eigene Systeme rechtfertigen/entfernen
+Auf Basis von dokumentierten Szenarien kÃ¶nnen nun nicht funktionale Attribute gemessen werden und Hinweise kritische/wichtige Komponenten gegeben werden. KostengegenÃ¼berstellung kÃ¶nnen auch eigene Systeme rechtfertigen/entfernen
 
 \subsection{Reliability}
-Single Point of Failure Analyse (Matrix Komponente x Usecase), Erklären wie man auf Matrix kommt (Aktivitätsdiagramm), Ausfallskosten (inkl. Wachstumsszenarien)
+Single Point of Failure Analyse (Matrix Komponente x Usecase), ErklÃ¤ren wie man auf Matrix kommt (AktivitÃ¤tsdiagramm), Ausfallskosten (inkl. Wachstumsszenarien)
 
-Einfache Methode zur schätzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
+Einfache Methode zur schÃ¤tzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
 \subsection{Usability}
 In diesem Teil des Prozesses nicht wichtig, da noch keine Implementierung vorhanden.
 
 \subsection{Efficiency}
-Efficiency kann pro usecase gemessen werden, zb für antwortzeiten indem man zb die swimlanewechsel der Aktivitätsdiagramme zählt und mit einer konstanten multipliziert (geschätzte Netzwerkgeschwindigkeit). Ansonsten ist es durch die fehlende Implementation nicht möglich die Geschwindigkeit oder den Arbeitsspeicherverbrauch zu messen.
+Efficiency kann pro usecase gemessen werden, zb fÃ¼r antwortzeiten indem man zb die swimlanewechsel der AktivitÃ¤tsdiagramme zÃ¤hlt und mit einer konstanten multipliziert (geschÃ¤tzte Netzwerkgeschwindigkeit). Ansonsten ist es durch die fehlende Implementation nicht mÃ¶glich die Geschwindigkeit oder den Arbeitsspeicherverbrauch zu messen.
 
 \subsection{Maintainability}
 Auslesbar aus der Usecase Matrix, als Summe aller subsysteme,
@@ -194,37 +194,37 @@ Auslesbar aus der Usecase Matrix, als Summe aller subsysteme,
 In diesem Teil des Prozesses nicht wichtig, da noch keine Implementierung vorhanden.
 
 \section{Changemanagement}
-Je nachdem ob noch möglich/gewünscht aufzeigen wie würde ein Change request ausschauen, z.B. was wäre nötig um einen zusätlichen Typ User des Systems einzubinden
+Je nachdem ob noch mÃ¶glich/gewÃ¼nscht aufzeigen wie wÃ¼rde ein Change request ausschauen, z.B. was wÃ¤re nÃ¶tig um einen zusÃ¤tlichen Typ User des Systems einzubinden
 
 
 \chapter{Zusammenfassung}
 
 \section{Warum ist der Prozess gut}
 \subsection{10er Regel der Fehlerkosten}
-\subsection{Lässt Entscheidungen aufschieben}
-\subsection{Kochrezept lässt sich ableiten}
-\subsection{Wichtige Anforderungsparameter schon früh einbezogen}
-\subsection{Visuelle Repräsentationen mit denen schnell bewertet werden kann}
+\subsection{LÃ¤sst Entscheidungen aufschieben}
+\subsection{Kochrezept lÃ¤sst sich ableiten}
+\subsection{Wichtige Anforderungsparameter schon frÃ¼h einbezogen}
+\subsection{Visuelle ReprÃ¤sentationen mit denen schnell bewertet werden kann}
 
 \section{Limitierungen}
-\subsection{Nicht alle nicht funktionalen Anforderungen überprüfbar}
-Sprich es ist bis zu einem gewissen Teil möglich
-\subsection{Problem wenn sicht Akteure/Daten oft ändern}
-\subsection{Zum Teil auch abhängig von Erfahrungswerten}
+\subsection{Nicht alle nicht funktionalen Anforderungen Ã¼berprÃ¼fbar}
+Sprich es ist bis zu einem gewissen Teil mÃ¶glich
+\subsection{Problem wenn sicht Akteure/Daten oft Ã¤ndern}
+\subsection{Zum Teil auch abhÃ¤ngig von Erfahrungswerten}
 \subsection{Nur Plangungsphase, ohne Implementierungsphase}
 \subsection{Extremarchitekturen}
 
 \section{Erkenntnisse}
-\subsection{Ohne messbare Parameter kein Kochrezept möglich}
+\subsection{Ohne messbare Parameter kein Kochrezept mÃ¶glich}
 \subsection{Parameter nicht zu jeder Phase messbar}
-\subsection{Priorisierung von nicht funktionalen Parametern schwer möglich}
-\subsection{Generische Komponentenarchitektur durch viele und schnell ändernde Kombinationen schwer möglich}
+\subsection{Priorisierung von nicht funktionalen Parametern schwer mÃ¶glich}
+\subsection{Generische Komponentenarchitektur durch viele und schnell Ã¤ndernde Kombinationen schwer mÃ¶glich}
 \subsection{Auf Ehrfahrungswerte kann nicht vollkommen verzichtet werden}
 \subsection{Funktionale Anforderungen beeinflussen Archtitektur mehr als gedacht}
-Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
+Prozess erstellt die frÃ¼he Architektur hauptsÃ¤chlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
 
 \section{Ausblick}
-Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
+Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. NÃ¤chste Schritte kÃ¶nnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wÃ¤ren gut um den Prozess noch zu verbessern.
 
 \clearpage
 \bibliographystyle{gerabbrv}
@@ -244,8 +244,8 @@ Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber n
 \clearpage
 
 \phantomsection
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-\chapter*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{AbkÃ¼rzungsverzeichnis}
+\chapter*{AbkÃ¼rzungsverzeichnis}
 \begin{acronym}[XXXXX]
     \acro{VPN}[VPN]{Virtual Private Network}
     \acro{WWW}[WWW]{world wide web}
