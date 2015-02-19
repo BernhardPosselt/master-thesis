@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     watch: {
-      files: ['*.tex'],
+      files: ['**/*.tex'],
       tasks: ['shell']
     },
     shell: {

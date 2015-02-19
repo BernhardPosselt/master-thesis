@@ -11,6 +11,7 @@ bib:
 
 clean:
 	rm -rf thesis.pdf
+	rm -rf chapters/*.aux
 	rm -rf *.log
 	rm -rf *.aux
 	rm -rf *.bbl
