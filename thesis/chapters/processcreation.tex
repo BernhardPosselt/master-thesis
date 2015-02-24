@@ -59,5 +59,17 @@ Die Auswahl und Bewertung der Komponentenarchitekturen in den vorherigen beiden 
 
 Da sich dieser Prozess jedoch ausschließlich auf die Planungs- und nicht die Implementationsphase bezieht, wurden die nicht funktionalen Anforderungen und Komponentenarchitekturen als Hauptkriterium für die Architekturerstellung verworfen.
 
+Stattdessen wurde der Fokus auf die Aufspaltung der Daten gelegt, welche bereits schon in den Systemvisionen der vorherigen Prozesse erkennbar war.
+
+Die Daten wurden anhand Ihrer Vertraulichkeit in unterschiedliche Komponenten aufgeteilt. Diese Komponent wurden dann durch Systeme mit einander verbunden, die den Zugriff auf die Daten regelten.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.7]{uml/vision3.png}
+    \caption{Aufteilung der Komponenten in Datenbereiche}
+\end{figure}
+
+Dieser Prozess erlaubte es, eine nachvollziehbare Architektur zu erstellen, jedoch war das Ergebnis zu grob. Außerdem schien eine separate Komponente zur  Übertragung der Prüfungsdaten zu fehlen, welche in der ursprünglichen Systemvision definiert und als wichtig empfunden worden war.
+
 \subsection{Von den Daten und den Akteuren zur Architektur}
 Vierter: Einbeziehen der Akteure
