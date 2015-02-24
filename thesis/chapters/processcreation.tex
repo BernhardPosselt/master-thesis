@@ -41,9 +41,23 @@ Dieser Prozess scheiterte nicht nur am enormen Modellierungsaufwand, sondern auc
 
 Die Qualität der Architektur hätte folglich von der Vollständigkeit dieser scheinbar unendlich großen Menge an Komponentenarchitekturen abgehangen. Aus diesem Grund schien er ungeeignet und wurde verworfen.
 
-\subsection{Von einer geschätzten Architektur auf eine verfeinerte Architektur durch nicht funktionale Anforderungen}
-Zweiter Versuch: Nach Erfahrungswerten so viel wie möglich erstellen, danach überprüfen auf nicht funktionale Anforderungen und notwenige Änderungen einbringen -> kein Kochrezept, verlässt sich zu viel auf Erfahrungswerte
+\subsection{Von einer erweiterten Systemvision auf eine verfeinerte Architektur durch nicht funktionale Anforderungen}
+Um das Problem des sehr hohen Modellierungsaufwandes des ersten Prozesses zu umgehen, wurde von einer erweiterten Systemvision in Form eines Komponentendiagrammes ausgegangen. Diese Komponentenarchitektur entstand zusammen mit dem/der AuftraggeberIn.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/vision2.png}
+    \caption{Erweiterte, geschätzte Systemvision der Komponenten}
+\end{figure}
+
+Diese Architektur sollte nun anhand der nicht funktionalen Anforderungen jedes Usecases angepasst werden.
+
+Auch dieser Prozess litt jedoch unter dem Problem, dass die nicht funktionalen Anforderungen schwer bewertet werden konnten. Über dies hinaus war es schwer ein Regelwerk/Rezept aus der Architekturerstellung abzuleiten, da durch die Einbeziehung unterschiedlicher AuftraggeberInnen jeweils verschiedene Architekturen entstehen können.
+
 \subsection{Von den Daten zur Architektur}
-Dritter Versuch: Aufspalten der Architektur in Datenbereiche. Ging schon gut aber Ergebnis zu grob
+Die Auswahl und Bewertung der Komponentenarchitekturen in den vorherigen beiden Prozessen stellte ein wesentliches Hinderniss zur Erstellung eines eindeutigen Regelwerkes dar. Eine vollständige Auflistung aller möglichen Komponentenarchitekturen erschien entweder als unmöglich oder unvollständig. Auch eine Bewertung schien ohne entsprechende Implementation unüberprüfbar zu sein.
+
+Da sich dieser Prozess jedoch ausschließlich auf die Planungs- und nicht die Implementationsphase bezieht, wurden die nicht funktionalen Anforderungen und Komponentenarchitekturen als Hauptkriterium für die Architekturerstellung verworfen.
+
 \subsection{Von den Daten und den Akteuren zur Architektur}
 Vierter: Einbeziehen der Akteure
