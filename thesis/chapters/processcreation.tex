@@ -1,13 +1,24 @@
 \chapter{Prozesserstellung}
-
-sagen dass man eine art kochrezept will
+Der Architekturprozess ist komplex und ein falsches Vorgehen kann der Ursprung vieler Probleme sein \cite[S. 7-8]{softarch}. Deswegen ist es notwendig einen eigenen Prozess zu definieren, welcher die Erstellung vereinfacht und die Fehlerkosten minimiert. Dieser Prozess soll schon in der Planungsphase zum Einsatz kommen, da hier wegen der 10er Regel der Fehlerkosten der Größte Effekt zur Reduzierung der Fehlerkosten erziehlt werden kann \cite[S. 154]{fehler}.
+Diser Prozess wurde anhand eines Beispielprojektes erstellt und dreht sich um die Architektur eines Systems einer Zertifizierungsstelle.
 
 \section{Vorhandene Daten}
 Ausgangsparameter test
-\subsection{Wer (Akteure}
 \subsection{Was (Daten)}
-\subsection{Warum (Anforderungen/Usecases)}
-\subsection{Womit (Komponenten)}
+a
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/class.png}
+    \caption{Class Diagramm der Daten und deren Beziehungen}
+\end{figure}
+
+\subsection{Wer und Warum (Akteure und Anforderungen)}
+b
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/usecase.png}
+    \caption{Usecase Diagramm der Anforderungen und Akteure}
+\end{figure}
 
 \section{Prozesserstellungsversuche}
 Ausgehend von den vorhandenen Daten wurden mehrere Prozesse definiert, welche bis auf den Letzten entweder zu grobe Ergebnisse lieferten, oder nicht nachvollziehbar waren.
@@ -82,4 +93,4 @@ Aufbauend auf dem vorherigen Prozess, welcher die Architektur anhand der Daten e
 
 Dieser Prozess schien nicht nur die Rahmenbedinungen abzudecken, er war auch durch die erstellten Regeln nachvollziehbar und genau genug, um bereits einen guten Überblick auf die Architektur zu erlangen.
 
-Die Regeln und der Prozess im Detail befinden sich in Kapitel 8. Das nächste Kapitel beschäftigt sich mit den dafür erforderlichen Anforderungen.
+Die Regeln und der Prozess im Detail befinden sich im übernächsten Kapitel. Das nächste Kapitel beschäftigt sich mit den dafür erforderlichen Anforderungen.
