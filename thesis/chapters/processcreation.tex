@@ -69,7 +69,17 @@ Die Daten wurden anhand Ihrer Vertraulichkeit in unterschiedliche Komponenten au
     \caption{Aufteilung der Komponenten in Datenbereiche}
 \end{figure}
 
-Dieser Prozess erlaubte es, eine nachvollziehbare Architektur zu erstellen, jedoch war das Ergebnis zu grob. Außerdem schien eine separate Komponente zur  Übertragung der Prüfungsdaten zu fehlen, welche in der ursprünglichen Systemvision definiert und als wichtig empfunden worden war.
+Dieser Prozess erlaubte es, eine nachvollziehbare Architektur zu erstellen, jedoch war das Ergebnis zu grob. Außerdem schien eine separate Komponente zur  Übertragung der Prüfungsdaten zu fehlen, welche in der ursprünglichen Systemvision definiert und als notwendig empfunden worden war, um die Rahmenbedingungen der Vertrautheit zu erfüllen \cite[7.3]{ISO_CERT}.
 
 \subsection{Von den Daten und den Akteuren zur Architektur}
-Vierter: Einbeziehen der Akteure
+Aufbauend auf dem vorherigen Prozess, welcher die Architektur anhand der Daten erstellte, wurden nun auch Akteure eingebunden und deren Beziehungen zu den Daten ermittelt. Anhand dieser Beziehungen wurden Regeln erstellt, aus denen wiederum die Architektur erstellt wurde.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.55]{uml/vision4.png}
+    \caption{Aufteilung der Komponenten in Datenbereiche und Akteure}
+\end{figure}
+
+Dieser Prozess schien nicht nur die Rahmenbedinungen abzudecken, er war auch durch die erstellten Regeln nachvollziehbar und genau genug, um bereits einen guten Überblick auf die Architektur zu erlangen.
+
+Die Regeln und der Prozess im Detail befinden sich in Kapitel 8. Das nächste Kapitel beschäftigt sich mit den dafür erforderlichen Anforderungen.
