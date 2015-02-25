@@ -128,47 +128,7 @@ Kurze Einführung in Architekturbewertungsmethoden
 
 \input{./chapters/processrequirements}
 \input{./chapters/processcreation}
-
-
-\chapter{Prozess Architekturplanung}
-\section{Erstellen der Minimalen Architektur}
-Ausgehen vom Kontextdiagramm
-
-\section{Datenaufteilung nach Vertrautheitslevel}
-Erweitern der Daten mit eigenen Stereotypen,
-
-\section{Akteuraufteilung nach Vertrautheitslevel}
-Erweitern der Akteure mit eigenen Stereotypen
-
-Modellierung der Daten x Akteure (CRUD Matrix), Erklären dass man mit Aktivitätsdiagramm auf Matrix kommt
-
-\section{Erstellen der Datenminimalarchitektur}
-Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
-
-\section{Einbeziehen der Akteure}
-Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
-
-\section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
-Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
-
-\section{Analyse der nicht funktionalen Attribute}
-Auf Basis von dokumentierten Szenarien können nun nicht funktionale Attribute gemessen werden und Hinweise kritische/wichtige Komponenten gegeben werden. Kostengegenüberstellung können auch eigene Systeme rechtfertigen/entfernen
-
-\subsection{Reliability}
-Single Point of Failure Analyse (Matrix Komponente x Usecase), Erklären wie man auf Matrix kommt (Aktivitätsdiagramm), Ausfallskosten (inkl. Wachstumsszenarien)
-
-Einfache Methode zur schätzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
-\subsection{Usability}
-In diesem Teil des Prozesses nicht wichtig, da noch keine Implementierung vorhanden.
-
-\subsection{Efficiency}
-Efficiency kann pro usecase gemessen werden, zb für antwortzeiten indem man zb die swimlanewechsel der Aktivitätsdiagramme zählt und mit einer konstanten multipliziert (geschätzte Netzwerkgeschwindigkeit). Ansonsten ist es durch die fehlende Implementation nicht möglich die Geschwindigkeit oder den Arbeitsspeicherverbrauch zu messen.
-
-\subsection{Maintainability}
-Auslesbar aus der Usecase Matrix, als Summe aller subsysteme,
-
-\subsection{Portability}
-In diesem Teil des Prozesses nicht wichtig, da noch keine Implementierung vorhanden.
+\input{./chapters/processarchitecture}
 
 \section{Changemanagement}
 Je nachdem ob noch möglich/gewünscht aufzeigen wie würde ein Change request ausschauen, z.B. was wäre nötig um einen zusätlichen Typ User des Systems einzubinden
