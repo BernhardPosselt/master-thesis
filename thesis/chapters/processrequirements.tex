@@ -40,10 +40,27 @@ Um diese Vertrautheitskategorien besser zu visualisieren zu können wird das UML
 \begin{figure}[!htbp]
     \centering
     \includegraphics[scale=0.5]{uml/datastereotypes.png}
-    \caption{Das Klassendiagramm wird mit Stereotypen der Vertraulichkeit erweitert}
+    \caption{UML wird mit einem Profil um drei Stereotypen erweitert}
 \end{figure}
 
 Nach der Erstellung der Stereotypen werden die Daten mit den Vertrautheitskategorien versehen. Sollte es nicht eindeutig sein, welche Klasse in welche Kategorie fällt, müssen die Daten aufgespalten werden und mit einer Assoziation modelliert werden.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/classstereotyped.png}
+    \caption{Das Klassendiagramm wird mit Stereotypen der Vertraulichkeit erweitert}
+\end{figure}
+
+Überlegung:
+* Daten werden in beiden Systemen benötigt:
+ * Daten werden im System gespeichert, auf dem Schreibzugriff sein soll
+ * System ohne Schreibzugriff synchronisiert diese Daten falls nötig, ansonsten einfach die services aufrufen
+ * Auf beiden Systemen schreibzugriff -> bleibt im System
+
+ TODO: vermerken dass das bsp projekt datenzentriert ist, nachschauen ob datenflussarch der richtige begriff ist
+
+wer zugriff auf system mit daten hat kann daten abfangen
+Schreibender zugriff?
 
 
 \section{Modellierung der Akteure und Partnersysteme}
