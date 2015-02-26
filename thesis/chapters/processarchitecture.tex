@@ -24,27 +24,14 @@ Dies führt zu folgender Minimalarchitektur:
     \caption{Minimale Architektur}
 \end{figure}
 
-Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes.
-
-\section{Datenaufteilung nach Vertrautheitslevel}
-Warum aufspalten? Problem bei Zugriff auf gleiches system, überlegung: jeder akteur kann sicherheitslücken ausnutzen um system zu knacken und andere daten zu lesen/manipulieren. außerdem möchte man das system so weit wie möglich absichern und nur die benötigten sachen erlauben. je mehr sachen auf dem system gemacht wird, desto mehr muss erlaubt werden und desto anfälliger ist das system
-
-Wieviele level gibt es? Vertrautheitshirarchie muss aufgebaut werden, manchmal gibt es paralelle systeme (zb internal könnte in mehrere Abteilungen aufgeteilt werden, diese könnten wiederum unterschiedliche vertraute level haben) Grundidee ist die Zugriffsregelung, so wenig unterschiedliche kontrollinstanzen/firewalls wie möglich zu verwenden, damit weniger wartungsaufwand ist und weniger fehler passieren können.
-
-Erweitern der Daten mit eigenen Stereotypen,
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[scale=0.5]{uml/datastereotypes.png}
-    \caption{Das Klassendiagramm wird mit Stereotypen der Vertraulichkeit erweitert}
-\end{figure}
-
-
-Geht primär um read access. Wenn eine Klasse öffentliche und confidential sachen besitzt aufspalten in weitere entitäten (in diesem beispiel beschränkt auf klassen, kann aber im requirements prozess auch für attribute ermittelt werden)
+Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen.
 
 \section{Erstellen der Datenminimalarchitektur}
 Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
 
+Warum aufspalten? Problem bei Zugriff auf gleiches system, überlegung: jeder akteur kann sicherheitslücken ausnutzen um system zu knacken und andere daten zu lesen/manipulieren. außerdem möchte man das system so weit wie möglich absichern und nur die benötigten sachen erlauben. je mehr sachen auf dem system gemacht wird, desto mehr muss erlaubt werden und desto anfälliger ist das system
+
+Wieviele level gibt es? Vertrautheitshirarchie muss aufgebaut werden, manchmal gibt es paralelle systeme (zb internal könnte in mehrere Abteilungen aufgeteilt werden, diese könnten wiederum unterschiedliche vertraute level haben) Grundidee ist die Zugriffsregelung, so wenig unterschiedliche kontrollinstanzen/firewalls wie möglich zu verwenden, damit weniger wartungsaufwand ist und weniger fehler passieren können.
 
 \section{Akteuraufteilung nach Vertrautheitslevel}
 Definieren wer hat Zugriff auf welche Daten (RW). Kann in einer Matrix dargestellt werden. Daten davon können aus den Objektflüssen des Aktivitätsdiagrammes abgelesen werden
