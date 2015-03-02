@@ -27,7 +27,27 @@ Dies führt zu folgender Minimalarchitektur:
 Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen.
 
 \section{Erstellen der Datenminimalarchitektur}
-Einteilen der Systeme in Vertrautheitslevel und mit Gateways trennen. Datenflüsse fix vorgeben (darf keinen Gateway überspringen). Erklären was die Gateways machen und warum sie gut skalierien
+Auf Basis der Vertrautheitskategorien der Daten wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt.
+
+TODO: swimlane aufspalten zeigen mit uml diagramm
+
+Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigenes System modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
+
+\begin{itemize}
+  \item Von welchem System kommt die Anfrage?
+  \item Welches System ist das Ziel der Anfrage?
+  \item Welche Schnittstelle dieses Systems ist das Ziel der Anfrage?
+  \item Gibt es eine Regel die diese Anfrage explizit erlaubt?
+\end{itemize}
+
+TODO: modelio aufspaltung der systeme
+
+Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
+
+\section{Einbinden der Akteure}
+Nachdem die Datenminimalarchitektur steht, können nun die Akteure des Systems mit einbezogen werden.
+
+
 
 Warum aufspalten? Problem bei Zugriff auf gleiches system, überlegung: jeder akteur kann sicherheitslücken ausnutzen um system zu knacken und andere daten zu lesen/manipulieren. außerdem möchte man das system so weit wie möglich absichern und nur die benötigten sachen erlauben. je mehr sachen auf dem system gemacht wird, desto mehr muss erlaubt werden und desto anfälliger ist das system
 
