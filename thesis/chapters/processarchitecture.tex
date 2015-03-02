@@ -45,20 +45,15 @@ TODO: modelio aufspaltung der systeme
 Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
 
 \section{Einbinden der Akteure}
-Nachdem die Datenminimalarchitektur steht, können nun die Akteure des Systems mit einbezogen werden.
+Nachdem die Datenminimalarchitektur steht, können nun die Akteure des Systems mit einbezogen werden. Hierfür müssen nun die Objektflüsse des Systems betrachtet werden, welche aus dem Aktivitätsdiagramm ersichtlich sind.
 
+TODO: modelio objektflüsse zeigen
 
+Zuerst wird das erste Untersystem, in diesem Falle das Public System, betrachtet. Alle dort eingehenden Anfragen und deren Objekte werden im Moment durch dieses einzelne System verwaltet und gegebenenfalls weiter geleitet, was durch die unterschiedlichen Akteure und deren Vertrautheit in den meisten Fällen ein Sicherheitsproblem darstellt. Deswegen wird das Untersystem in den allermeisten Fällen in weitere Teilsysteme aufgespaltet werden müssen.
 
-Warum aufspalten? Problem bei Zugriff auf gleiches system, überlegung: jeder akteur kann sicherheitslücken ausnutzen um system zu knacken und andere daten zu lesen/manipulieren. außerdem möchte man das system so weit wie möglich absichern und nur die benötigten sachen erlauben. je mehr sachen auf dem system gemacht wird, desto mehr muss erlaubt werden und desto anfälliger ist das system
+Die Grundidee hinter dieser Aufspaltung ist folgende: Je mehr Aufgaben das System übernehmen muss, desto mehr potentielle Angriffsfläche bietet es Angreifern (TODO: zitat). Jeder Akteur der auf das System zugreifen kann, kann das System auch angreifen. Deswegen muss das System so gestaltet sein, dass bei einer kompletten Kontrolle des Systems durch einen Akteur der Schaden so gering wie möglich ausfällt.
 
-Wieviele level gibt es? Vertrautheitshirarchie muss aufgebaut werden, manchmal gibt es paralelle systeme (zb internal könnte in mehrere Abteilungen aufgeteilt werden, diese könnten wiederum unterschiedliche vertraute level haben) Grundidee ist die Zugriffsregelung, so wenig unterschiedliche kontrollinstanzen/firewalls wie möglich zu verwenden, damit weniger wartungsaufwand ist und weniger fehler passieren können.
-
-\section{Akteuraufteilung nach Vertrautheitslevel}
-Definieren wer hat Zugriff auf welche Daten (RW). Kann in einer Matrix dargestellt werden. Daten davon können aus den Objektflüssen des Aktivitätsdiagrammes abgelesen werden
-
-
-\section{Einbeziehen der Akteure}
-Trennen von Akteursystemen basierend auf Daten und Vertrautheitslevel
+Idealerweise würde deswegen die Anzahl der einzelnen Systeme gleich die Anzahl der Akteure in diesem System sein. Die dies jedoch
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
 Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
