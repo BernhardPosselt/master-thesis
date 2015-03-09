@@ -4,44 +4,63 @@ Da die Software Architektur auf den Anforderungen basiert und viel wichtiger \gl
 Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet dar stellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden.
 
 \section{Modellierung der Usecases}
-Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecase Diagramm erstellt, welches alle Akteure und Nebensysteme beinhaltet:
+Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecase Diagramm erstellt, welches alle Akteure und Nebensysteme beinhaltet. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird und die Ausgangsbasis für die Architektur dar stellt.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[scale=0.5]{uml/usecase.png}
+    \includegraphics[scale=0.4]{uml/usecase.png}
     \caption{Das mit dem Kunden ermittelte Usecase Diagramm}
 \end{figure}
 
-Das Usecase Diagramm beinhaltet schon alle Akteure und deren Rollen. Außerdem sind die Partnersysteme modelliert. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird.
-
-\section{Überführen der Usecases in Anforderungstemplate}
+\section{Erweiterte Dokumenation der Usecases}
 Parallel zur Erstellung des Usecase Diagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
+Dafür wird ein Anforderungstemplate, auch Usecase Beschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
 
-\section{Anpassen des Anforderungstemplates}
-Um das Einhalten dieser Parameter zu garantieren, können Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
+\begin{itemize}
+  \item Id: eine eindeutige Bezeichnung, welche dafür verwendet wird, um den Usecase zu referenzieren
+  \item Actor: eine Auflistung aller Teilnehmer des Usecases
+  \item Description: eine kurze Beschreibung des Usecases
+  \item Preconditions: eine Auflistung von Vorbedinungen für den Usecase
+  \item Postconditions: eine Auflistung von Nachbedingungen für den Usecase
+  \item Normal Course of Events: eine Beschreibung des Standardablaufes
+  \item Alternative Courses: Auflistung von Erweiterungen oder zusätzlichen Möglichkeiten
+  \item Exceptions: Beschreibung von diversen Ausnahmefälle
+  \item Assumptions: Annahmen, unter welcher der Usecase beschrieben wird
+  \item Priority: eine Gewichtung, wie wichtig der Usecase ist
+  \item Notes: sonstige Anmerkungen
+\end{itemize}
+
+Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um komplexere Abläufe verständlicher dar zu stellen \cite[S. 215]{reqman}:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{uml/takeexamreq.png}
+    \caption{Der Ablauf des Take Exam Usecases im Detail}
+\end{figure}
+
+\section{Einbeziehen von Architekturreviewparametern}
+Um die Einhaltung der Qualitätsparameter zu garantieren, können Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
 
 \begin{itemize}
   \item ATAM: betrachtet Wachstums- und explorative Szenarien um die Architektur zu beurteilen \cite[S. 61]{review}
   \item CBAM: basiert auf ATAM, beachtet jedoch vor allem den Nutzen und die Risiken und Kosten der Architketur, um die Architekturentscheidungen besser abwähgen zu können. Hauptfaktor ist der ROI. \cite[S. 67]{review}
 \end{itemize}
 
-Für diese Reviews können bereits früh der Großteil der benötigten Parameter ermittelt werden bzw. zumindest grob abgeschätzt werden. Dies ist wichtig, weil nach der 10er Regel der Fehlerkosten früh erkannte Fehler und Probleme weniger Kosten nach sich ziehen als später Erkannte \cite[S. 154]{fehler}.
+Für diese Reviews können bereits früh ein Großteil der benötigten Parameter ermittelt bzw. zumindest grob abgeschätzt werden. Dies ist wichtig, weil nach der 10er Regel der Fehlerkosten früh erkannte Fehler und Probleme weniger Kosten nach sich ziehen als später Erkannte \cite[S. 154]{fehler}.
 
-Deswegen wird das Anforderungstemplate um folgende Parameter angepasst:
+Deswegen wird das Anforderungstemplate um folgende Parameter erweitert:
 
 \begin{itemize}
-  \item Businesskritikalität
-  \item Wachstumsszenarien
-  \item Änderungsszenarien
+  \item Earned Value per month: Wieviel Umsatz der Usecase in einer bestimmten Zeit generiert
+  \item Expected Usage: Anzahl der erwarteten Nutzer des Systems pro Zeiteinheit
+  \item Growth Scenarios: Anzahl der erwarteten Nutzer des Systems pro Zeiteinheit bei einer höheren Nutzeranzahl
+  \item Change Scenarios: mögliche Änderungsszenarien und Erweiterungen
 \end{itemize}
 
-\subsection{Wachstumsszenarien und Wahrscheinlichkeit}
-\subsection{Änderungsszenarien}
-\subsection{Businesskritikalität}
-Ausfallkosten, Datenverlustszenarien
 \subsection{Rahmenbedingungen}
 
-\section{Modellierung der Daten}
+
+\section{Ermittlung der Daten}
 Die zu speichernden Daten werden ermittelt und mit Hilfe eines Klassen Diagrammes modelliert. Dies ist nicht nur wichtig und nützlich, weil die Beispielanwendung in diesem Falle eine stark datenzentrierte Anwendung ist \cite[S. 105]{effektiv}, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
 
 \begin{figure}[!htbp]
