@@ -1,14 +1,40 @@
 \chapter{Prozess Anforderungen}
-Wie wurde der Anforderungsprozess angepasst und durchgeführt? Vermutung gute Architektur hängt von nicht funktionalen Anforderungen ab treibender Faktor
+Da die Software Architektur auf den Anforderungen basiert und viel wichtiger \glqq den gestalterischen Spielraum des Architekten\grqq \cite[S. 103]{softarch} begrenzt, kann davon abgeleitet werden, dass sowohl die Qualität der Architektur als auch die Akzeptanz des Systems wesentlich von den bereits im Vorfeld ermittelten Parametern abhängt. Das bedeutet wiederum, dass für die Klärung der Ausgangsfrage - Wie kommt man von Anforderungen auf eine gute Architektur - auch der Anforderungsprozess eine wichtige Rolle spielt.
+
+Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet dar stellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden.
 
 \section{Modellierung der Usecases}
-Usecase diagramm
+Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecase Diagramm erstellt, welches alle Akteure und Nebensysteme beinhaltet:
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/usecase.png}
+    \caption{Das mit dem Kunden ermittelte Usecase Diagramm}
+\end{figure}
+
+Das Usecase Diagramm beinhaltet schon alle Akteure und deren Rollen. Außerdem sind die Partnersysteme modelliert. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird.
 
 \section{Überführen der Usecases in Anforderungstemplate}
-Warum wurde ein Template und welches wurde verwendet
+Parallel zur Erstellung des Usecase Diagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
 
 \section{Anpassen des Anforderungstemplates}
-Welche Sachen konnten schon vorher ermittelt werden
+Um das Einhalten dieser Parameter zu garantieren, können Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
+
+\begin{itemize}
+  \item ATAM: betrachtet Wachstums- und explorative Szenarien um die Architektur zu beurteilen \cite[S. 61]{review}
+  \item CBAM: basiert auf ATAM, beachtet jedoch vor allem den Nutzen und die Risiken und Kosten der Architketur, um die Architekturentscheidungen besser abwähgen zu können. Hauptfaktor ist der ROI. \cite[S. 67]{review}
+\end{itemize}
+
+Für diese Reviews können bereits früh der Großteil der benötigten Parameter ermittelt werden bzw. zumindest grob abgeschätzt werden. Dies ist wichtig, weil nach der 10er Regel der Fehlerkosten früh erkannte Fehler und Probleme weniger Kosten nach sich ziehen als später Erkannte \cite[S. 154]{fehler}.
+
+Deswegen wird das Anforderungstemplate um folgende Parameter angepasst:
+
+\begin{itemize}
+  \item Businesskritikalität
+  \item Wachstumsszenarien
+  \item Änderungsszenarien
+\end{itemize}
+
 \subsection{Wachstumsszenarien und Wahrscheinlichkeit}
 \subsection{Änderungsszenarien}
 \subsection{Businesskritikalität}
