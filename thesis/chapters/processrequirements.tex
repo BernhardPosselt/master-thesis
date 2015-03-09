@@ -3,7 +3,7 @@ Da die Software Architektur auf den Anforderungen basiert und viel wichtiger \gl
 
 Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet dar stellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden.
 
-\section{Modellierung der Usecases}
+\section{Ermittlung der Usecases}
 Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecase Diagramm erstellt, welches alle Akteure und Nebensysteme beinhaltet. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird und die Ausgangsbasis für die Architektur dar stellt.
 
 \begin{figure}[!htbp]
@@ -57,6 +57,17 @@ Deswegen wird das Anforderungstemplate um folgende Parameter erweitert:
   \item Change Scenarios: mögliche Änderungsszenarien und Erweiterungen
 \end{itemize}
 
+\subsection{Einbeziehen von nicht funktionalen Qualitätsattributen}
+Nicht funktionale Qualitätsattribute beschreiben die nicht funktionalen Anforderungen an das System. Da Qualität oft schwammig formuliert ist, ist es wichtig, diese Attribute messbar zu machen \cite[S. 9]{effektiv}.
+
+Deswegen werden für jeden Usecase und dessen architekturrelevanten, nicht funktionalen Anforderungen messbare Parameter definiert. Diese Parameter helfen schon im Vorfeld dabei die Architektur zu überprüfen.
+
+Für das Beispielprojekt wurden folgende Parameter definiert, mit welchen das Anforderungstemplate erweitert wurde:
+
+\begin{itemize}
+  \item Response Time in Seconds: Wie schnell die Antwort des Systems auf eine Anfrage reagieren muss
+\end{itemize}
+
 \section{Rahmenbedingungen}
 Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die Rahmenbedingungen ermittelt, unter welchem das System erstellt werden soll. Diese Anforderungen beinhalten meist den organisatorischen und zeitlichen Ablauf des Projektes und können auch gewisse Technologien vorschreiben, zB. wenn das System in ein bereits bestehendes System integriert werden soll. \cite[S. 9]{review}\cite[S. 110]{softarch}
 
@@ -71,7 +82,7 @@ Die zu speichernden Daten werden ermittelt und mit Hilfe eines Klassen Diagramme
     \caption{Das ermittelte Klassendiagramm des Beispielprojektes}
 \end{figure}
 
-\section{Datenaufteilung nach Lesendem Zugriff}
+\section{Ermittlung der Datenvertrautheit}
 Nach der Ermittlung der Daten wird auf Basis der Rahmenbedingungen und Sicherheitsstruktur zusammen mit dem/der Kunden/Kundin ermittelt, welche Daten in welche Vertrautheitskategorien fallen. Dazu werden die Daten anhand ihrer gewollten Lesbarkeit in mehrere Untergruppen unterteilt.
 
 Ermittelt wurden in diesem Falle folgende drei Kategorien:
@@ -98,17 +109,13 @@ Nach der Erstellung der Stereotypen werden die Daten mit den Vertrautheitskatego
     \caption{Das Klassendiagramm wird mit Stereotypen der Vertraulichkeit erweitert}
 \end{figure}
 
-Überlegung:
-* Daten werden in beiden Systemen benötigt:
- * Daten werden im System gespeichert, auf dem Schreibzugriff sein soll
- * System ohne Schreibzugriff synchronisiert diese Daten falls nötig, ansonsten einfach die services aufrufen
- * Auf beiden Systemen schreibzugriff -> bleibt im System
+TODO: datenverlust + angriffsszenarien?
 
- TODO: vermerken dass das bsp projekt datenzentriert ist, nachschauen ob datenflussarch der richtige begriff ist
+\section{Ermittlung der Akteure und Partnersysteme}
+Auf Basis des Usecase Diagrammes können die Akteure und deren Partnersysteme mit Hilfe eines Kontext Diagrammes visualisiert werden
 
-wer zugriff auf system mit daten hat kann daten abfangen
-Schreibender zugriff?
-
-
-\section{Modellierung der Akteure und Partnersysteme}
-Kontextdiagramm der Akteure und Systeme
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/context.png}
+    \caption{Das Kontext Diagramm zeigt das System, die Akteure und die Nachbarsysteme}
+\end{figure}
