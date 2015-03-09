@@ -12,7 +12,7 @@ Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussen
     \caption{Das mit dem Kunden ermittelte Usecase Diagramm}
 \end{figure}
 
-\section{Erweiterte Dokumenation der Usecases}
+\subsection{Erweiterte Dokumenation der Usecases}
 Parallel zur Erstellung des Usecase Diagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
 Dafür wird ein Anforderungstemplate, auch Usecase Beschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
 
@@ -38,7 +38,7 @@ Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um 
     \caption{Der Ablauf des Take Exam Usecases im Detail}
 \end{figure}
 
-\section{Einbeziehen von Architekturreviewparametern}
+\subsection{Einbeziehen von Architekturreviewparametern}
 Um die Einhaltung der Qualitätsparameter zu garantieren, können Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
 
 \begin{itemize}
@@ -57,13 +57,15 @@ Deswegen wird das Anforderungstemplate um folgende Parameter erweitert:
   \item Change Scenarios: mögliche Änderungsszenarien und Erweiterungen
 \end{itemize}
 
-\subsection{Rahmenbedingungen}
+\section{Rahmenbedingungen}
+Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die Rahmenbedingungen ermittelt, unter welchem das System erstellt werden soll. Diese Anforderungen beinhalten meist den organisatorischen und zeitlichen Ablauf des Projektes und können auch gewisse Technologien vorschreiben, zB. wenn das System in ein bereits bestehendes System integriert werden soll. \cite[S. 9]{review}\cite[S. 110]{softarch}
 
+Die Rahmenbedingungen des Beispielprojektes lassen sich zum Großteil aus dem ISO Standard für Zertifizierungsstellen ermitteln \cite{ISO_CERT} und geben Einsicht in die Vertraulichkeit der Daten und eröffnen weitere Usecases. Sofern möglich werden diese Parameter in das Usecase Diagramm und das Klassen Diagramm der zu verwendeten Daten mit einbezogen. Auf zeitliche und technologische Rahmenbedingungen wurde im Beispielprojekt nicht eingegangen.
 
 \section{Ermittlung der Daten}
 Die zu speichernden Daten werden ermittelt und mit Hilfe eines Klassen Diagrammes modelliert. Dies ist nicht nur wichtig und nützlich, weil die Beispielanwendung in diesem Falle eine stark datenzentrierte Anwendung ist \cite[S. 105]{effektiv}, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/class.png}
     \caption{Das ermittelte Klassendiagramm des Beispielprojektes}
