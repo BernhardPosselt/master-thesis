@@ -93,13 +93,22 @@ Ermittelt wurden in diesem Falle folgende drei Kategorien:
   \item Confidential: Daten, welche innerhalb des Betriebes verwendet werden, aber eine besondere Geheimhaltungspflicht und Zugriffschbeschränkung benötigen. Dieses Vertrautheitslevel wurde aufgrund der Rahmenbedingung des Vertraulichen Umgangs mit Prüfungsdaten ermittelt \cite[7.3]{ISO_CERT}
 \end{itemize}
 
-Um diese Vertrautheitskategorien besser zu visualisieren zu können wird das UML Metamodel mit Hilfe eines Profiles angepasst. Jede Kategorie erhält einen gleich lautetenden Stereotypen \cite[S. 518]{glasklar}:
+Um diese Vertrautheitskategorien besser zu visualisieren zu können, wird das UML Metamodel mit Hilfe eines Profiles angepasst. Jede Kategorie erhält einen gleich lautetenden Stereotypen \cite[S. 518]{glasklar}:
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[scale=0.5]{uml/datastereotypes.png}
     \caption{UML wird mit einem Profil um drei Stereotypen erweitert}
 \end{figure}
+
+Zusätzlich wird jeder Kategorie auch eine Vertrautheitsebene zugeordnet. Die Kategorien werden nach Vertrautheit geordnet und erhalten eine Zahl von 1 bis n, wobei n die maximale Vertrautheitsstufe dar stellt. Zwichen Vertrautheitsebenen und Vertrautheitskategorien besteht eine 1:n Beziehung, was bedeutet, dass jeder Kategorie mindestens eine Ebene zugeiteilt wird, und mehrere Kategorien in der gleichen Kategorie sein können.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{uml/datastereotypesleve.png}
+    \caption{UML wird mit einem Profil um drei Stereotypen erweitert}
+\end{figure}
+
 
 Nach der Erstellung der Stereotypen werden die Daten mit den Vertrautheitskategorien versehen. Sollte es nicht eindeutig sein, welche Klasse in welche Kategorie fällt, müssen die Daten aufgespalten werden und mit einer Assoziation modelliert werden.
 
@@ -114,7 +123,7 @@ TODO: datenverlust + angriffsszenarien?
 \section{Ermittlung der Akteure und Partnersysteme}
 Auf Basis des Usecase Diagrammes können die Akteure und deren Partnersysteme mit Hilfe eines Kontext Diagrammes visualisiert werden
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/context.png}
     \caption{Das Kontext Diagramm zeigt das System, die Akteure und die Nachbarsysteme}

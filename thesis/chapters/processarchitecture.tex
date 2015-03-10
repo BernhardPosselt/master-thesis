@@ -1,14 +1,16 @@
 \chapter{Prozess Architekturplanung}
+Aufbauend auf den im Anforderungsprozess ermittelten Attribute, kann nun mit der Architekturplanung begonnen werden.
+
 \section{Erstellen der Minimalen Architektur}
 Das Kontext Diagramm, welches im Anforderungsprozess erstellt worden ist, zeigt das System mit allen Akteuren und Nachbarsystemen. Aufbauend darauf kann nun die minimale Architektur erstellt werden, welche sich aus dem System und den Nachbarsystemen ableitet.
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/context.png}
     \caption{Das Kontext Diagramm liefert die Ausgangsbasis für die Architektur}
 \end{figure}
 
-Zuerst werden alle Datenflussnotizen entfernt, danach alle Komponenten, welche kein System darstellen. In diesem Falle werden folgende Komponenten entfernt:
+Zuerst werden alle Datenflussnotizen entfernt. Danach werden alle Komponenten entfernt, welche kein eigenes System darstellen. In diesem Falle werden folgende Komponenten entfernt:
 
 \begin{itemize}
   \item Applicant
@@ -20,16 +22,20 @@ Dies führt zu folgender Minimalarchitektur:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{uml/minimalarch.png}
+    \includegraphics[scale=0.7]{uml/minimalarch.png}
     \caption{Minimale Architektur}
 \end{figure}
 
-Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen.
+Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen und in die niedrigste Vertrautheitsebene eingeteilt.
 
 \section{Erstellen der Datenminimalarchitektur}
 Auf Basis der Vertrautheitskategorien der Daten wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt.
 
-TODO: swimlane aufspalten zeigen mit uml diagramm
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{uml/takeexamactivity1.png}
+    \caption{Die Antworten werden nach der Prüfung an den Certification Body übermittelt. Der Request wird durch zwei Gateways zum finalen System geleitet.}
+\end{figure}
 
 Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigenes System modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
 
@@ -40,11 +46,16 @@ Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwis
   \item Gibt es eine Regel die diese Anfrage explizit erlaubt?
 \end{itemize}
 
-TODO: modelio aufspaltung der systeme
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{uml/dataarch.png}
+    \caption{Aufteilung der Komponenten in Datenbereiche}
+\end{figure}
+
+Wichtig ist hier, dass keine Gateways unterschiedlicher Vertrautheitsebenen übersprungen werden. Zeigt ein Aktivitäts Diagramm zB. einen Zugriff von Ebene 1 auf Ebene 3 muss dieser Zugriff sowohl durch den Gateway der Ebene 2 geleitet werden, als auch durch den Gateway der Ebene 3. Dies verhindert, dass besonders schützenswerte Systeme direkt an Systeme mit einem weitaus niedrigeren Vertrautheitsgrad angeschlossen werden und so dessen Gateway zum Single Point of Failure wird. Dies gilt in beide Richtungen.
 
 Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
 
-TODO: für beide richtungen? zb payment system
 
 \section{Einbinden der Akteure}
 Nachdem die Datenminimalarchitektur steht, können nun die Akteure des Systems mit einbezogen werden. Hierfür müssen nun die Objektflüsse des Systems betrachtet werden, welche aus dem Aktivitätsdiagramm ersichtlich sind.
