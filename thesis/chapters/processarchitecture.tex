@@ -2,7 +2,7 @@
 Aufbauend auf den im Anforderungsprozess ermittelten Attribute, kann nun mit der Architekturplanung begonnen werden.
 
 \section{Erstellen der Minimalen Architektur}
-Das Kontext Diagramm, welches im Anforderungsprozess erstellt worden ist, zeigt das System mit allen Akteuren und Nachbarsystemen. Aufbauend darauf kann nun die minimale Architektur erstellt werden, welche sich aus dem System und den Nachbarsystemen ableitet.
+Das Kontext Diagramm, welches im Anforderungsprozess erstellt worden ist, zeigt das System mit allen AkteurInnen und Nachbarsystemen. Aufbauend darauf kann nun die minimale Architektur erstellt werden, welche sich aus dem System und den Nachbarsystemen ableitet.
 
 \begin{figure}[H]
     \centering
@@ -29,12 +29,12 @@ Dies führt zu folgender Minimalarchitektur:
 Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen und in die niedrigste Vertrautheitsebene eingeteilt.
 
 \section{Erstellen der Datenminimalarchitektur}
-Auf Basis der Vertrautheitskategorien der Daten wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt.
+Auf Basis der Vertrautheitskategorien der Daten wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind wenn möglich als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systemes.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/takeexamactivity1.png}
-    \caption{Die Antworten werden nach der Prüfung an den Certification Body übermittelt. Der Request wird durch zwei Gateways zum finalen System geleitet.}
+    \caption{Die Antworten werden nach der Prüfung an den Certification Body übermittelt. Der Request wird dann durch zwei Gateways zum finalen System geleitet.}
 \end{figure}
 
 Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigenes System modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
@@ -57,20 +57,33 @@ Wichtig ist hier, dass keine Gateways unterschiedlicher Vertrautheitsebenen übe
 Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
 
 
-\section{Einbinden der Akteure}
-Nachdem die Datenminimalarchitektur steht, können nun die Akteure des Systems mit einbezogen werden. Hierfür müssen nun die Objektflüsse des Systems betrachtet werden, welche aus dem Aktivitätsdiagramm ersichtlich sind.
+\section{Einbinden der AkteurInnen}
+Nachdem die Datenminimalarchitektur steht, können nun die AkteurInnen des Systems in die Aufgliederung des Systemes mit einbezogen werden. Hierfür müssen nun die Objektflüsse und die AkteurInnen des Systems für jeden Usecase betrachtet werden, welche aus den vorher bereits erstellten Aktivitätsdiagramm ersichtlich sind.
 
-TODO: modelio objektflüsse zeigen
+Zuerst wird das erste Untersystem, in diesem Falle das Public System, betrachtet. Alle Objektflüsse durch das System und die AkteurInnen, welche mit ihren Swimlanes angrenzen, sind in die Aktivitäten des Systems involviert. Jede Involvierung eines Akteures in ein System erfordert einen Zugang zu diesem System.
 
-Zuerst wird das erste Untersystem, in diesem Falle das Public System, betrachtet. Alle dort eingehenden Anfragen und deren Objekte werden im Moment durch dieses einzelne System verwaltet und gegebenenfalls weiter geleitet, was durch die unterschiedlichen Akteure und deren Vertrautheit in den meisten Fällen ein Sicherheitsproblem darstellt. Deswegen wird das Untersystem in den allermeisten Fällen in weitere Teilsysteme aufgespaltet werden müssen.
+Jeder dieser Akteure muss mit den minimal möglichen Rechten für dieses System ausgestattet werden, um seine Aufgaben zu erfüllen. Dies vermeidet nicht nur Fehler sondern reduziert auch den Schaden, welcher ein potentieller Angriff dieses Akteurs/dieser Akteurin anrichten kann \cite[1. A]{leastpriv}.
 
-Die Grundidee hinter dieser Aufspaltung ist folgende: Je mehr Aufgaben das System übernehmen muss, desto mehr potentielle Angriffsfläche bietet es Angreifern (TODO: zitat). Jeder Akteur der auf das System zugreifen kann, kann das System auch angreifen. Deswegen muss das System so gestaltet sein, dass bei einer kompletten Kontrolle des Systems durch einen Akteur der Schaden so gering wie möglich ausfällt.
+Da ein System komplex ist \cite[S. 7]{softarch}, und diese Sicherheitsattribute nach Änderungen am System immer wieder überprüft werden müssen, stellt jeder zusätzliche Zugriff eines Akteures nicht nur ein Sicherheitsrisiko dar, sondern erhöht auch den Test- und damit den Wartungsaufwand. Idealerweise wird daher jedem/jeder AkteurIn ein eigenes, für sich abgekapseltes System zur Verfügung gestellt, was jedoch meist aufgrund Kosten der zusätzlichen Systeme keine Option dar stellt.
 
-Idealerweise würde deswegen die Anzahl der einzelnen Systeme gleich der Anzahl der Akteure in diesem System sein. Dies hätte jedoch zur Folge, dass auch für triviale Angriffe komplette Systeme entstehen würden, deren Erstellung und Wartung mehr kosten könnten als der tatsächlich daraus resultierende Schaden.
+Deswegen wird nun aufgrund der in der Anforderungsanalyse ermittelten Schadenstabelle eine Aufspaltung in mehrere Systeme nach folgendem Algorithmus vorgenommen, welcher in Abbildung \ref{fig:actordecision} dar gestellt wird.
 
-TODO: algorithmus zur aufspaltung erstellen
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{uml/actordecision.png}
+    \caption{Aufspaltung in mehrere Systeme auf Basis der Schadenskosten}
+    \label{fig:actordecision}
+\end{figure}
 
-TODO: modelio teile des systems, beispielaufteilung zeigen
+Folgende stark Abbildung \ref{}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{uml/actorarch.png}
+    \caption{Vereinfachte Gegenüberstellung von Aktivitätsdiagramme für das Public System}
+    \label{fig:actorarch}
+\end{figure}
+
 
 Ist ein Untersystem fertig aufgespalten, wird nun mit dem nächsten Untersystem fortgefahren, bis alle behandelt wurden.
 
