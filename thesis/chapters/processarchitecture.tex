@@ -66,9 +66,9 @@ Jeder dieser Akteure muss mit den minimal möglichen Rechten für dieses System 
 
 Da ein System komplex ist \cite[S. 7]{softarch}, und diese Sicherheitsattribute nach Änderungen am System immer wieder überprüft werden müssen, stellt jeder zusätzliche Zugriff eines Akteures nicht nur ein Sicherheitsrisiko dar, sondern erhöht auch den Test- und damit den Wartungsaufwand. Idealerweise wird daher jedem/jeder AkteurIn ein eigenes, für sich abgekapseltes System zur Verfügung gestellt, was jedoch meist aufgrund Kosten der zusätzlichen Systeme keine Option dar stellt.
 
-Deswegen wird nun anhand der in der Anforderungsanalyse ermittelten Schadenstabelle des unerlaubten Datenzugriffs eine Aufspaltung in mehrere Systeme vorgenommen, falls die Schadenskosten die eines neuen Systemes überschreiten.
+Deswegen wird nun anhand der Aktivitäts Diagramme der Usecases und in der Anforderungsanalyse ermittelten Schadenstabelle des unerlaubten Datenzugriffs eine Aufspaltung in mehrere Systeme vorgenommen, falls die Schadenskosten die eines neuen Systemes überschreiten.
 
-Im Falle des Beispielprojektes wird zB. für die stark vereinfachten Aktivitäts Diagramme in Abbildung \ref{fig:actorarch} ermittelt, dass die möglichen Schadenskosten im Falle, dass der Anwärter (Applicant) Zugriff auf die Prüfungsantworten (Answer) bekommt, die eines eigenen Systems überschreiten. Deswegen wird der Usecase aus dem System in eigenes System entkoppelt.
+Im Falle des Beispielprojektes wird zB. für die stark vereinfachten Aktivitäts Diagramme in Abbildung \ref{fig:actorarch} ermittelt, dass die möglichen Schadenskosten im Falle, dass der Anwärter (Applicant) Zugriff auf die Prüfungsantworten (Answer) bekommt, die eines eigenen Systems überschreiten. Deswegen wird der Usecase aus dem Public System in eigenes System entkoppelt.
 
 \begin{figure}[H]
     \centering
@@ -77,11 +77,17 @@ Im Falle des Beispielprojektes wird zB. für die stark vereinfachten Aktivitäts
     \label{fig:actorarch}
 \end{figure}
 
-Diese Analyse wird für alle verbleibenden Systeme durchgeführt, bis alle Systeme aufgespalten sind.
+Diese Analyse wird für alle verbleibenden Systeme durchgeführt, bis alle Systeme aufgespalten sind. Für den Fall, dass bei der Aufspaltung zu viele Systeme entstanden sind, werden nun in einem weiteren Schritt diverse Teilsysteme wieder zusammen gelegt, solange deren Schadenskosten nicht die Systemkosten überschreiten. Dies wird solange durchgeführt, bis eine minimale Anzahl an Systemen verfügbar ist.
 
-Für den Fall, dass bei der Aufspaltung zu viele Systeme entstanden sind, werden nun in einem weiteren Schritt diverse Teilsysteme wieder zusammen gelegt, solange deren Schadenskosten nicht die Systemkosten überschreiten.
+Im Falle des Beispielprojektes führt dies schlussendlich zu folgender Systemaufspaltung:
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{uml/vision4.png}
+    \caption{Architektur nach der Aufspaltung }
+\end{figure}
 
+TODO: Architektur überprüfen
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
 Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
