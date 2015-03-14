@@ -37,7 +37,7 @@ Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorhe
     \caption{Die Antworten werden nach der Prüfung an den Certification Body übermittelt. Der Request wird dann durch zwei Gateways zum finalen System geleitet.}
 \end{figure}
 
-Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigene Komponente modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
+Wechselt der Kontrollfluss eine Swimlane eines Systems, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigene Komponente modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
 
 \begin{itemize}
   \item Von welchem System kommt die Anfrage?
@@ -48,7 +48,9 @@ Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwis
 
 Diese Komponenten fungieren damit als eine Art Application Firewall.
 
-Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitäts Diagrammen ablesbar sind, entweder an das System in ihrer Zone angeschlossen, oder direkt mit dem Gateway verbunden. Basis dieser Entscheidung TODO
+Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitäts Diagrammen ablesbar sind, entweder an das System in ihrer Zone angeschlossen, oder direkt mit dem Gateway verbunden.
+
+Das Beispielprojekt bezieht Zahlungsdaten direkt von einem Payment System und die Prüfungsfragen werden direkt an das Scheme Owner System gesandt. Für diese beiden Usecases ist somit kein Zwischensystem notwendig und die Anfragen können vom Internal System direkt an das Ziel System geschickt werden. Dem entgegen gesetzt ist die Übermittlung der Prüfungsfragen des Scheme Owner Systems: Das System braucht eine durch Internet erreichbare Schnittstelle um die Daten zu übermitteln, da das Ausgangssystem nicht bekannt oder variabel ist und muss deswegen zuerst über das Public System zum Ziel.
 
 \begin{figure}[H]
     \centering
