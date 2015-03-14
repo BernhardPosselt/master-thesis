@@ -26,10 +26,10 @@ Dies führt zu folgender Minimalarchitektur:
     \caption{Minimale Architektur}
 \end{figure}
 
-Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen und in die niedrigste Vertrautheitsebene eingeteilt.
+Für die Nachbarsysteme selbst wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen.
 
 \section{Erstellen der Datenminimalarchitektur}
-Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind wenn möglich als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systemes.
+Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitäts Diagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind wenn möglich als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systemes.
 
 \begin{figure}[H]
     \centering
@@ -37,7 +37,7 @@ Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorhe
     \caption{Die Antworten werden nach der Prüfung an den Certification Body übermittelt. Der Request wird dann durch zwei Gateways zum finalen System geleitet.}
 \end{figure}
 
-Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigenes System modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
+Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwischen den beiden sonst abgeschotteten Systemen benötitgt wird. Dieses Verbindung wird als eigene Komponente modelliert und wird als Gateway bezeichnet. Die Aufgabe dieses Gateways ist es, folgende Attribute der Anfrage zu überprüfen und die Anfrage gegebenenfalls zu verwerfen oder weiterzuleiten:
 
 \begin{itemize}
   \item Von welchem System kommt die Anfrage?
@@ -46,7 +46,9 @@ Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwis
   \item Gibt es eine Regel die diese Anfrage explizit erlaubt?
 \end{itemize}
 
-Sie fungieren damit als eine Art Application Firewall.
+Diese Komponenten fungieren damit als eine Art Application Firewall.
+
+Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitäts Diagrammen ablesbar sind, entweder an das System in ihrer Zone angeschlossen, oder direkt mit dem Gateway verbunden. Basis dieser Entscheidung TODO
 
 \begin{figure}[H]
     \centering
@@ -58,7 +60,6 @@ Wichtig ist hier, dass keine Gateways unterschiedlicher Vertrautheitsebenen übe
 
 Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
 
-
 \section{Einbinden der AkteurInnen}
 Nachdem die Datenminimalarchitektur steht, können nun die AkteurInnen des Systems in die Aufgliederung des Systemes mit einbezogen werden. Hierfür müssen nun die Objektflüsse und die AkteurInnen des Systems für jeden Usecase betrachtet werden, welche aus den vorher bereits erstellten Aktivitäts und Kontext Diagramm ersichtlich sind.
 
@@ -68,9 +69,13 @@ Jeder dieser Akteure muss mit den minimal möglichen Rechten für dieses System 
 
 Da ein System komplex ist \cite[S. 7]{softarch}, und diese Sicherheitsattribute nach Änderungen am System immer wieder überprüft werden müssen, stellt jeder zusätzliche Zugriff eines Akteures nicht nur ein Sicherheitsrisiko dar, sondern erhöht auch den Test- und damit den Wartungsaufwand. Idealerweise wird daher jedem/jeder AkteurIn ein eigenes, für sich abgekapseltes System zur Verfügung gestellt, was jedoch meist aufgrund Kosten der zusätzlichen Systeme keine Option dar stellt.
 
-Deswegen wird nun anhand der Aktivitäts Diagramme der Usecases und in der Anforderungsanalyse ermittelten Schadenstabelle des unerlaubten Datenzugriffs eine Aufspaltung in mehrere Systeme vorgenommen, falls die Schadenskosten die eines neuen Systemes überschreiten.
+Um zu ermitteln, welche Systeme eine eigene Komponente benötigen, wird nun entweder anhand einer Tabelle oder zusammen mit dem/der KundIn pro Usecase und deren Komponenten ermittelt, ob der Schaden eines unerlaubten Zugriffs der Daten den eines Systemes überschreitet. Die Schadens- und Systemkosten müssen zuerst von dem/der KundIn und dem/der ArchitektIn geschätzt werden.
 
-Im Falle des Beispielprojektes wird zB. für die stark vereinfachten Aktivitäts Diagramme in Abbildung \ref{fig:actorarch} ermittelt, dass die möglichen Schadenskosten im Falle, dass der Anwärter (Applicant) Zugriff auf die Prüfungsantworten (Answer) bekommt, die eines eigenen Systems überschreiten. Deswegen wird der Usecase aus dem Public System in eigenes System entkoppelt.
+Im Falle des Beispielprojektes wurde auf Basis des folgenden stark vereinfachten Aktivitäts Diagramms in Abbildung \ref{fig:actorarch} ermittelt, dass die möglichen Schadenskosten im Falle, dass der Anwärter (Applicant) Zugriff auf die Prüfungsantworten (Answer) bekommt, die eines eigenen Systems überschreiten. Das gleiche Problem trifft auch auf den Scheme Owner zu: die Schadenskosten im Falle einer Manipulation oder eines lesenden Zugriffes des Anwärters (Applicant) auf die Fragen überschreitet auch hier die Kosten eines eigenen Systems. Deswegen werden zwei zusätzliche Systeme erstellt und aus dem Public System ausgegliedert.
+
+Für den Fall, dass bei der Aufspaltung zu viele Systeme entstanden sind, werden nun in einem weiteren Schritt diverse Kombinationen von Teilsystemen betrachtet und versucht zusammen zu legen, solange deren Schadenskosten nicht die Systemkosten überschreiten.
+
+Beim Beispielprojekt zeigt sich, dass es keine erlaubte Kombination gibt, da die anderen AkteurInnen nicht auf diese Daten zugreifen dürfen. Es bleibt somit bei den ermittelten zwei Zusatzsystemen.
 
 \begin{figure}[H]
     \centering
@@ -79,7 +84,7 @@ Im Falle des Beispielprojektes wird zB. für die stark vereinfachten Aktivitäts
     \label{fig:actorarch}
 \end{figure}
 
-Diese Analyse wird für alle verbleibenden Systeme durchgeführt, bis alle Systeme aufgespalten sind. Für den Fall, dass bei der Aufspaltung zu viele Systeme entstanden sind, werden nun in einem weiteren Schritt diverse Teilsysteme wieder zusammen gelegt, solange deren Schadenskosten nicht die Systemkosten überschreiten. Dies wird solange durchgeführt, bis eine minimale Anzahl an Systemen verfügbar ist.
+Diese Analyse wird für alle verbleibenden Systeme durchgeführt, bis alle Systeme aufgespalten sind.
 
 Im Falle des Beispielprojektes führt dies schlussendlich zu folgender Systemaufspaltung:
 
@@ -89,7 +94,6 @@ Im Falle des Beispielprojektes führt dies schlussendlich zu folgender Systemauf
     \caption{Architektur nach der Aufspaltung }
 \end{figure}
 
-TODO: Architektur überprüfen
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
 Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm

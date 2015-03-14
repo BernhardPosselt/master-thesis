@@ -96,7 +96,7 @@ Aus den Usecases des Beispielprojektes lässt sich ermittelt das in diesem Falle
   \item Internal: Usecases, welche nicht vom Internet aus zugänglich sind
 \end{itemize}
 
-Die Zonen werden nun mit einer Vertrautheitsebene von 1 bis n versehen, um eine Sicherheitshirarchie der Zonen zu generieren. Es kann vorkommen, dass mehrere Zonen mit der selben Vertrautheitsebene versehen werden, diese dürfen sich jedoch nicht überlappen. Zum Beispiel könnte eine weitere Tocherniederlassung der Firma ein eigenes System erstellen, auf welches man auch vom Internet aus zugreifen kann. Das Internet würde dann mit der Vertrautheitsebene 1 versehen und beide Systeme mit der Ebene 2. Überlappen sich diese Systeme, muss die überlappende Zone in ein eigenes System ausgegliedert werden.
+Die Zonen werden nun mit einer Vertrautheitsebene von 1 bis n versehen, um eine Sicherheitshirarchie der Zonen zu generieren. Es kann vorkommen, dass mehrere Zonen mit der selben Vertrautheitsebene versehen werden, diese dürfen sich jedoch nicht überlappen. Zum Beispiel könnte eine weitere Niederlassung der Firma ein eigenes System erstellen, auf welches man auch vom Internet aus zugreifen kann. Das Internet würde dann mit der Vertrautheitsebene 1 versehen und beide Systeme mit der Ebene 2. Überlappen sich diese Systeme, muss die überlappende Zone in ein eigenes System ausgegliedert werden.
 
 Die ermittelten Daten werden nun den Zonen, in welchen sie essentiell für den Betrieb des Systemes sind, zugeteilt. Auch die Akteure werden in Zonen aufgeteilt, in welchen sie operieren. Scheinen Daten oder Akteure in mehreren Zonen auf, werden sie der Zone mit der höchsten Sicherheitsebene zugeteilt. Die niedrigeren Bereiche können dann auf diese Bereiche anhand von festgelegten APIs zugreifen.
 
