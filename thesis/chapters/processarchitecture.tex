@@ -29,7 +29,7 @@ Dies führt zu folgender Minimalarchitektur:
 Für die Nachbarsysteme wird keine Architektur erstellt, jedoch beinflussen sie die Schnittstellen des Systemes und sind deswegen wichtig für den weiteren Prozes. Sie werden in die Architektur einbezogen und in die niedrigste Vertrautheitsebene eingeteilt.
 
 \section{Erstellen der Datenminimalarchitektur}
-Auf Basis der Vertrautheitskategorien der Daten wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind wenn möglich als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systemes.
+Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind wenn möglich als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systemes.
 
 \begin{figure}[H]
     \centering
@@ -46,6 +46,8 @@ Wechselt der Kontrollfluss eine Swimlane, heißt dies, dass eine Verbindung zwis
   \item Gibt es eine Regel die diese Anfrage explizit erlaubt?
 \end{itemize}
 
+Sie fungieren damit als eine Art Application Firewall.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{uml/dataarch.png}
@@ -58,7 +60,7 @@ Da bei der Erstellung des Systems alle Schnittstellen und Systeme bekannt sind, 
 
 
 \section{Einbinden der AkteurInnen}
-Nachdem die Datenminimalarchitektur steht, können nun die AkteurInnen des Systems in die Aufgliederung des Systemes mit einbezogen werden. Hierfür müssen nun die Objektflüsse und die AkteurInnen des Systems für jeden Usecase betrachtet werden, welche aus den vorher bereits erstellten Aktivitätsdiagramm ersichtlich sind.
+Nachdem die Datenminimalarchitektur steht, können nun die AkteurInnen des Systems in die Aufgliederung des Systemes mit einbezogen werden. Hierfür müssen nun die Objektflüsse und die AkteurInnen des Systems für jeden Usecase betrachtet werden, welche aus den vorher bereits erstellten Aktivitäts und Kontext Diagramm ersichtlich sind.
 
 Zuerst wird das erste Untersystem, in diesem Falle das Public System, betrachtet. Alle Objektflüsse durch das System und die AkteurInnen, welche mit ihren Swimlanes angrenzen, sind in die Aktivitäten des Systems involviert. Jede Involvierung eines Akteures in ein System erfordert einen Zugang zu diesem System.
 
