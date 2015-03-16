@@ -5,7 +5,7 @@ Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet darste
 
 Die Entwicklung der meisten Software Projekte ist oft ein dynamischer und agiler Prozess. Während des Entwicklungsprozesses werden oft Änderungen eingebracht und neue Anforderungen aufgestellt  \cite[S. 6-7]{effektiv}. Auch führt die Komplexität des Systems und das Wissen des/der KundIn dazu, dass nach der Erhebung der initialen Anforderungen nicht alle Parameter vollständig bekannt sind. Dies wiederum führt mehr oder weniger dazu, dass der Anforderungsprozess während der Entwicklung der Architektur nicht als abgeschlossen gesehen werden kann und der/die KundIn verfügbar sein muss.
 
-Aufgrund der 10er Regel der Fehler \cite[S. 154]{fehler} ist es zwar wichtig, möglichst viele Parameter schon so früh wie möglich zu kennen, jedoch führt dies in manchen zu einem verhältnismäßig zu großen Aufwand. Zum Beispiel ist es wichtig und interessant die Schadenskosten zu kennen, welche nach einem unberechtigten Zugriff oder Manipulation von Daten durch die AkteurInnen auftreten können, jedoch erfordert dies eine komplette Gegenüberstellung von allen Daten und AkteurInnen in sämtlichen möglichen Szenarien: Bearbeiten, Erstellen, Löschen und Lesen. Ein Großteil dieser Kombinationen kann jedoch schon nach einer initialen, kurzen Phase der Aufspaltung in Zonen ausgeschlossen werden, weil bestimmte AkteurInnen keinen Zugriff mehr auf bestimmte haben. Deswegen wird auf diese Szenarien erst nach einer kurzen, initialen Architekturphase eingeganen.
+Aufgrund der 10er Regel der Fehler \cite[S. 154]{fehler} ist es zwar wichtig, möglichst viele Parameter schon so früh wie möglich zu kennen, jedoch führt dies in manchen zu einem verhältnismäßig zu großen Aufwand. Zum Beispiel ist es wichtig und interessant die Schadenskosten zu kennen, welche nach einem unberechtigten Zugriff oder Manipulation von Daten durch die AkteurInnen auftreten können, jedoch erfordert dies eine komplette Gegenüberstellung von allen Daten und AkteurInnen in sämtlichen möglichen Szenarien: Bearbeiten, Erstellen, Löschen und Lesen. Ein Großteil dieser Kombinationen kann jedoch schon nach einer initialen, kurzen Phase der Aufspaltung in Zonen ausgeschlossen werden, weil bestimmte AkteurInnen keinen Zugriff mehr auf bestimmte haben. Deswegen wird auf diese Szenarien erst nach einer kurzen, initialen Architekturphase eingegangen.
 
 \section{Ermittlung der Usecases}
 Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecasediagramm erstellt, welches alle AkteurInnen und Nebensysteme beinhaltet. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird und die Ausgangsbasis für die Architektur darstellt.
@@ -16,7 +16,7 @@ Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussen
     \caption{Aus den mit dem/der KundIn ermittelten Usecases wird ein Usecasediagramm erstellt}
 \end{figure}
 
-\subsection{Erweiterte Dokumenation der Usecases}
+\subsection{Erweiterte Dokumentation der Usecases}
 Parallel zur Erstellung des Usecasediagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm nicht oder nur umständlich zu modellieren sind.
 Dafür wird ein Anforderungstemplate, auch Usecasebeschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
 
@@ -24,7 +24,7 @@ Dafür wird ein Anforderungstemplate, auch Usecasebeschreibung genannt, verwende
   \item Id: eine eindeutige Bezeichnung, welche verwendet wird, um den Usecase zu referenzieren
   \item Actor: eine Auflistung aller Teilnehmer des Usecases
   \item Description: eine kurze Beschreibung des Usecases
-  \item Preconditions: eine Auflistung von Vorbedinungen für den Usecase
+  \item Preconditions: eine Auflistung von Vorbedingungen für den Usecase
   \item Postconditions: eine Auflistung von Nachbedingungen für den Usecase
   \item Normal Course of Events: eine Beschreibung des Standardablaufes
   \item Alternative Courses: Auflistung von Erweiterungen oder zusätzlichen Pfaden des Usecases
@@ -34,7 +34,7 @@ Dafür wird ein Anforderungstemplate, auch Usecasebeschreibung genannt, verwende
   \item Notes: sonstige Anmerkungen
 \end{itemize}
 
-Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um komplexere Abläufe verständlicher darzustellen \cite[S. 215]{reqman}:
+Sind die Abläufe komplexer, können Aktivitätsdiagramme verwendet werden, um komplexere Abläufe verständlicher darzustellen \cite[S. 215]{reqman}:
 
 \begin{figure}[H]
     \centering
@@ -47,7 +47,7 @@ Um die Einhaltung der Qualitätsparameter zu garantieren wird empfohlen, Archite
 
 \begin{itemize}
   \item ATAM: betrachtet Wachstums- und explorative Szenarien um die Architektur zu beurteilen \cite[S. 61]{review}
-  \item CBAM: basiert auf ATAM, beachtet jedoch vor allem den Nutzen und die Risiken und Kosten der Architketur, um die Architekturentscheidungen besser abwähgen zu können. Hauptfaktor ist der ROI. \cite[S. 67]{review}
+  \item CBAM: basiert auf ATAM, beachtet jedoch vor allem den Nutzen und die Risiken und Kosten der Architektur, um die Architekturentscheidungen besser abwägen zu können. Hauptfaktor ist der ROI. \cite[S. 67]{review}
 \end{itemize}
 
 Für diese Reviews können bereits früh ein Großteil der benötigten Parameter ermittelt bzw. zumindest grob abgeschätzt werden. Dies ist wichtig, weil nach der 10er Regel der Fehlerkosten früh erkannte Fehler und Probleme weniger Kosten nach sich ziehen als später Erkannte \cite[S. 154]{fehler}.
@@ -80,7 +80,7 @@ Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die
 Die Rahmenbedingungen des Beispielprojektes lassen sich zum Großteil aus dem ISO Standard für Zertifizierungsstellen ermitteln \cite{ISO_CERT} und geben Einsicht in die Vertraulichkeit der Daten und eröffnen weitere Usecases. Sofern möglich werden diese Parameter in das Usecasediagramm und das Klassendiagramm der zu verwendeten Daten mit einbezogen. Auf zeitliche und technologische Rahmenbedingungen wurde im Beispielprojekt nicht eingegangen.
 
 \section{Ermittlung der Daten}
-Die verwendeten Daten werden ermittelt und mit Hilfe eines Klassendiagrammes modelliert. Dies ist nicht nur wichtig und nützlich, weil die Beispielanwendung in diesem Falle eine stark datenzentrierte Anwendung ist \cite[S. 105]{effektiv}, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
+Die verwendeten Daten werden ermittelt und mit Hilfe eines Klassendiagramms modelliert. Dies ist nicht nur wichtig und nützlich, um einen Überblick über die Parameter der zu erstellenden Interfaces zu erhalten, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
 
 \begin{figure}[H]
     \centering
@@ -102,13 +102,13 @@ Aus den Usecases des Beispielprojektes lässt sich ermittelt das in diesem Falle
 
 Die Zonen werden nun mit einer Vertrautheitsebene von 1 bis n versehen, um eine Sicherheitshirarchie der Zonen zu generieren. Es kann vorkommen, dass mehrere Zonen mit der selben Vertrautheitsebene versehen werden, diese dürfen sich jedoch nicht überlappen. Zum Beispiel könnte eine weitere Niederlassung der Firma ein eigenes System erstellen, auf welches man auch vom Internet aus zugreifen kann. Das Internet würde dann mit der Vertrautheitsebene 1 versehen und beide Systeme mit der Ebene 2. Überlappen sich diese Systeme, muss die überlappende Zone in ein eigenes System ausgegliedert werden.
 
-Die ermittelten Daten werden nun den Zonen, in welchen sie essentiell für den Betrieb des Systemes sind, zugeteilt. Auch die Akteure werden in Zonen aufgeteilt, in welchen sie operieren. Scheinen Daten oder Akteure in mehreren Zonen auf, werden sie der Zone mit der höchsten Sicherheitsebene zugeteilt. Die niedrigeren Bereiche können dann auf diese Bereiche anhand von festgelegten APIs zugreifen.
+Die ermittelten Daten werden nun den Zonen, in welchen sie essentiell für den Betrieb des Systems sind, zugeteilt. Auch die Akteure werden in Zonen aufgeteilt, in welchen sie operieren. Scheinen Daten oder Akteure in mehreren Zonen auf, werden sie der Zone mit der höchsten Sicherheitsebene zugeteilt. Die niedrigeren Bereiche können dann auf diese Bereiche anhand von festgelegten APIs zugreifen.
 
 Im Falle des Beispielprojektes werden alle aufgenommen Daten in der Internal Zone verwaltet, da alle Daten als businesskritisch für das Internal System angesehen werden, welches wiederum die höchste Sicherheitsebene besitzt. Würde das Beispielprojekt zB. um ein Forum oder einen Blog erweitert, würden diese der Public Zone zugeteilt werden; AkteurInnen des Internal Systems können zwar auch auf diese Forum zugreifen oder Blogeinträge schreiben, jedoch sind diese Aktivitäten und Daten nicht kritisch für den normalen Betrieb des Internal Systems. Würde das Forum oder der Blog gehackt werden, resultiert dies zwar in einem Schaden für das Unternehmen, das Internal System könnte aber auch weiterhin normal operiert werden.
 
 Nach der generellen Aufteilung der Daten wird eine Analyse der Rahmenbedingungen durch geführt, um zu erfahren, ob bestimmte Daten aufgrund von Richtlinien besonders geschützt, und somit in eine eigene Zone mit einer höheren Vertrautheitsebene ausgelagert werden müssen. Das Beispielprojekt verlangt die vertrauliche Verarbeitung von Prüfungsergebnissen und erwähnt auch explizit das Personal der Prüfungsstelle \cite[7.3]{ISO_CERT}. Weil die Internal Zone, in welchem das Personal operiert, die Zone mit der höchsten Vertrautheitsebene darstellt, muss eine weitere Zone mit einer höheren Vertrautheitsebene erstellt werden. Diese Zone wird in diesem Falle mit der Vertrautheitsebene 3 versehen und unter der Beschreibung Confidential geführt.
 
-Um diese Zonen besser zu visualisieren zu können, wird das UML Metamodel mit Hilfe eines Profiles angepasst. Jede Zonen erhält einen gleich lautetenden Stereotypen \cite[S. 518]{glasklar}:
+Um diese Zonen besser zu visualisieren zu können, wird das UML Metamodell mit Hilfe eines Profiles angepasst. Jede Zonen erhält einen gleich lautenden Stereotypen \cite[S. 518]{glasklar}:
 
 \begin{figure}[H]
     \centering
@@ -124,7 +124,7 @@ Zusätzlich werden diese Zonen auch mit Vertrautheitsebenen verbunden. Diese Ebe
     \caption{Die Zonen werden mit Vertrautheitsebenen versehen}
 \end{figure}
 
-Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun damit begonnen werden, die AkteurInnen des Usecasediagrammes und die Daten des Klassendiagrammes mit diesen Stereotypen zu versehen.
+Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun damit begonnen werden, die AkteurInnen des Usecasediagramms und die Daten des Klassendiagramms mit diesen Stereotypen zu versehen.
 
 \begin{figure}[H]
     \centering
@@ -135,11 +135,11 @@ Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun dam
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{uml/stereotypedusecase.png}
-    \caption{Die AkteurInnen des Usecasediagrammes wird mit Stereotypen der Vertraulichkeit erweitert}
+    \caption{Die AkteurInnen des Usecasediagramms wird mit Stereotypen der Vertraulichkeit erweitert}
 \end{figure}
 
 \section{Ermittlung der Beziehungen zwischen Akteuren/Partnersystemen und Daten}
-Auf Basis des Usecasediagrammes können die Akteure und deren Partnersysteme mit Hilfe eines Kontextdiagrammes visualisiert werden. Im Gegensatz zum Usecasediagramm geht das Kontextdiagramm auf die zwischen den Systemen und AkteurInnen fließenden Daten ein und stellt so die Verbindung der Daten und Nutzer auf.
+Auf Basis des Usecasediagramms können die Akteure und deren Partnersysteme mit Hilfe eines Kontextdiagramms visualisiert werden. Im Gegensatz zum Usecasediagramm geht das Kontextdiagramm auf die zwischen den Systemen und AkteurInnen fließenden Daten ein und stellt so die Verbindung der Daten und Nutzer auf.
 
 \begin{figure}[H]
     \centering
