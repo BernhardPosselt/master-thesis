@@ -13,28 +13,28 @@ Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussen
 \begin{figure}[!htbp]
     \centering
     \includegraphics[scale=0.4]{uml/usecase.png}
-    \caption{Das mit dem Kunden ermittelte Usecasediagramm}
+    \caption{Aus den mit dem/der KundIn ermittelten Usecases wird ein Usecasediagramm erstellt}
 \end{figure}
 
 \subsection{Erweiterte Dokumenation der Usecases}
-Parallel zur Erstellung des Usecasediagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
-Dafür wird ein Anforderungstemplate, auch Usecase Beschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
+Parallel zur Erstellung des Usecasediagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm nicht oder nur umständlich zu modellieren sind.
+Dafür wird ein Anforderungstemplate, auch Usecasebeschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
 
 \begin{itemize}
-  \item Id: eine eindeutige Bezeichnung, welche dafür verwendet wird, um den Usecase zu referenzieren
+  \item Id: eine eindeutige Bezeichnung, welche verwendet wird, um den Usecase zu referenzieren
   \item Actor: eine Auflistung aller Teilnehmer des Usecases
   \item Description: eine kurze Beschreibung des Usecases
   \item Preconditions: eine Auflistung von Vorbedinungen für den Usecase
   \item Postconditions: eine Auflistung von Nachbedingungen für den Usecase
   \item Normal Course of Events: eine Beschreibung des Standardablaufes
-  \item Alternative Courses: Auflistung von Erweiterungen oder zusätzlichen Möglichkeiten
-  \item Exceptions: Beschreibung von diversen Ausnahmefälle
+  \item Alternative Courses: Auflistung von Erweiterungen oder zusätzlichen Pfaden des Usecases
+  \item Exceptions: Beschreibung von diversen Ausnahme- und Fehlerfällen
   \item Assumptions: Annahmen, unter welcher der Usecase beschrieben wird
-  \item Priority: eine Gewichtung, wie wichtig der Usecase ist
+  \item Priority: eine Gewichtung, wie wichtig der Usecase ist: Low, Medium oder High
   \item Notes: sonstige Anmerkungen
 \end{itemize}
 
-Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um komplexere Abläufe verständlicher dar zu stellen \cite[S. 215]{reqman}:
+Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um komplexere Abläufe verständlicher darzustellen \cite[S. 215]{reqman}:
 
 \begin{figure}[H]
     \centering
@@ -43,7 +43,7 @@ Sind die Abläufe komplexer, können Aktivitäts Diagramme verwendet werden, um 
 \end{figure}
 
 \subsection{Einbeziehen von Architekturreviewparametern}
-Um die Einhaltung der Qualitätsparameter zu garantieren, können Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
+Um die Einhaltung der Qualitätsparameter zu garantieren wird empfohlen, Architekturreviews durchgeführt werden \cite[S. 20]{review}. Es existiert zwar \glqq keine singuläre, allgemein akzeptierte Metrik um eine Architektur zu beurteilen\grqq \cite[S. 19]{review}, jedoch liefern sie grobe Einschätzungen über die Angemessenheit des Systems \cite[S. 20]{review}. Folgende Architekturreviews wurden dafür ausgewählt:
 
 \begin{itemize}
   \item ATAM: betrachtet Wachstums- und explorative Szenarien um die Architektur zu beurteilen \cite[S. 61]{review}
@@ -55,22 +55,24 @@ Für diese Reviews können bereits früh ein Großteil der benötigten Parameter
 Deswegen wird das Anforderungstemplate um folgende Parameter erweitert:
 
 \begin{itemize}
-  \item Earned Value per month: Wieviel Umsatz der Usecase in einer bestimmten Zeit generiert
+  \item Earned Value per Month: Wieviel Umsatz der Usecase in einer bestimmten Zeit generiert
   \item Expected Usage: Anzahl der erwarteten Nutzer des Systems pro Zeiteinheit
   \item Growth Scenarios: Anzahl der erwarteten Nutzer des Systems pro Zeiteinheit bei einer höheren Nutzeranzahl
   \item Change Scenarios: mögliche Änderungsszenarien und Erweiterungen
 \end{itemize}
 
 \subsection{Einbeziehen von überprüfbaren, nicht funktionalen Qualitätsattributen}
-Nicht funktionale Qualitätsattribute beschreiben die nicht funktionalen Anforderungen an das System. Da Qualität oft schwammig formuliert ist, ist es wichtig, diese Attribute messbar zu machen \cite[S. 9]{effektiv}.
+Nicht funktionale Qualitätsattribute beschreiben die nicht funktionalen Anforderungen an das System. Da diese Qualitäten oft ungenau formuliert sind, ist es wichtig, diese Attribute in einer messbaren Form aufzunehmen \cite[S. 9]{effektiv}.
 
-Deswegen werden für jeden Usecase und dessen architekturrelevanten, nicht funktionalen Anforderungen messbare Parameter definiert. Diese Parameter helfen schon im Vorfeld dabei die Architektur zu überprüfen.
+Deswegen werden für jeden Usecase und dessen architekturrelevanten, nicht funktionalen Anforderungen, messbare Parameter definiert. Diese Parameter sind die Ausgangsbasis für dabei die Architektur zu überprüfen.
 
 Für das Beispielprojekt wurden folgende Parameter definiert, mit welchen das Anforderungstemplate erweitert wurde:
 
 \begin{itemize}
   \item Response Time in Seconds: Wie schnell die Antwort des Systems auf eine Anfrage reagieren muss
 \end{itemize}
+
+Diese Parameter können von Projekt zu Projekt unterschiedlich sein, je nachdem welche zusätzlichen Einschränkungen vom Kunden ermittelt worden wurden.
 
 \section{Rahmenbedingungen}
 Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die Rahmenbedingungen ermittelt, unter welchem das System erstellt werden soll. Diese Anforderungen beinhalten meist den organisatorischen und zeitlichen Ablauf des Projektes und können auch gewisse Technologien vorschreiben, zB. wenn das System in ein bereits bestehendes System integriert werden soll. \cite[S. 9]{review}\cite[S. 110]{softarch}
