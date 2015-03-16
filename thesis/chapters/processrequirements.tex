@@ -1,21 +1,23 @@
 \chapter{Prozess Anforderungen}
 Da die Software Architektur auf den Anforderungen basiert und viel wichtiger \glqq den gestalterischen Spielraum des Architekten\grqq \cite[S. 103]{softarch} begrenzt, kann davon abgeleitet werden, dass sowohl die Qualität der Architektur als auch die Akzeptanz des Systems wesentlich von den bereits im Vorfeld ermittelten Parametern abhängt. Das bedeutet wiederum, dass für die Klärung der Ausgangsfrage - Wie kommt man von Anforderungen auf eine gute Architektur - auch der Anforderungsprozess eine wichtige Rolle spielt.
 
-Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet dar stellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden.
+Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet darstellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden. Zu diesen Parametern zählen nicht nur die Daten, Akteure und Usecases, sondern auch die vorgegebenen nicht funktionalen Anforderungen.
 
-Die Entwicklung der meisten Software Projekte ist oft ein dynamischer und agiler Prozess. Während des Entwicklungsprozesses werden oft Änderungen eingebracht und neue Anforderungen aufgestellt  \cite[S. 6-7]{effektiv}. Auch führt die Komplexität des Systems und das Wissen des/der KundIn dazu, dass nach der Erhebung der initialen Anforderungen nicht alle Parameter vollständig bekannt sind. Dies wiederum führt mehr oder weniger dazu, dass der Anforderungsprozess während der Entwicklung der Architektur nicht als abgeschlossen gesehen werden kann und der/die KundIn verfügbar sein muss. Dieses scheinbare Problem erlaubt es jedoch, den Aufwand der Aufnahme bestimmter Anforderungen zu minimieren, da bereits viele Kombinationen ausgeschlossen werden können.
+Die Entwicklung der meisten Software Projekte ist oft ein dynamischer und agiler Prozess. Während des Entwicklungsprozesses werden oft Änderungen eingebracht und neue Anforderungen aufgestellt  \cite[S. 6-7]{effektiv}. Auch führt die Komplexität des Systems und das Wissen des/der KundIn dazu, dass nach der Erhebung der initialen Anforderungen nicht alle Parameter vollständig bekannt sind. Dies wiederum führt mehr oder weniger dazu, dass der Anforderungsprozess während der Entwicklung der Architektur nicht als abgeschlossen gesehen werden kann und der/die KundIn verfügbar sein muss.
+
+Aufgrund der 10er Regel der Fehler \cite[S. 154]{fehler} ist es zwar wichtig, möglichst viele Parameter schon so früh wie möglich zu kennen, jedoch führt dies in manchen zu einem verhältnismäßig zu großen Aufwand. Zum Beispiel ist es wichtig und interessant die Schadenskosten zu kennen, welche nach einem unberechtigten Zugriff oder Manipulation von Daten durch die AkteurInnen auftreten können, jedoch erfordert dies eine komplette Gegenüberstellung von allen Daten und AkteurInnen in sämtlichen möglichen Szenarien: Bearbeiten, Erstellen, Löschen und Lesen. Ein Großteil dieser Kombinationen kann jedoch schon nach einer initialen, kurzen Phase der Aufspaltung in Zonen ausgeschlossen werden, weil bestimmte AkteurInnen keinen Zugriff mehr auf bestimmte haben. Deswegen wird auf diese Szenarien erst nach einer kurzen, initialen Architekturphase eingeganen.
 
 \section{Ermittlung der Usecases}
-Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecase Diagramm erstellt, welches alle Akteure und Nebensysteme beinhaltet. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird und die Ausgangsbasis für die Architektur dar stellt.
+Die Usecases werden zusammen mit dem/der Kundin ermittelt. Daraus wird schlussendlich ein Usecasediagramm erstellt, welches alle AkteurInnen und Nebensysteme beinhaltet. Dies ist wichtig für das Kontextdiagramm, welches auch im Anforderungsprozess erstellt wird und die Ausgangsbasis für die Architektur darstellt.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[scale=0.4]{uml/usecase.png}
-    \caption{Das mit dem Kunden ermittelte Usecase Diagramm}
+    \caption{Das mit dem Kunden ermittelte Usecasediagramm}
 \end{figure}
 
 \subsection{Erweiterte Dokumenation der Usecases}
-Parallel zur Erstellung des Usecase Diagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
+Parallel zur Erstellung des Usecasediagramms werden zusätzliche Parameter und Beschreibungen für jeden Usecase aufgenommen, welche im eigentlichen Diagramm keine Erwähnung finden.
 Dafür wird ein Anforderungstemplate, auch Usecase Beschreibung genannt, verwendet \cite[S. 214]{reqman}, welches aufbauend auf einer Grundversion \cite[Abbildung 8.14, S. 215]{reqman} für jeden Usecase folgende Angaben aufnimmt:
 
 \begin{itemize}
@@ -73,10 +75,10 @@ Für das Beispielprojekt wurden folgende Parameter definiert, mit welchen das An
 \section{Rahmenbedingungen}
 Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die Rahmenbedingungen ermittelt, unter welchem das System erstellt werden soll. Diese Anforderungen beinhalten meist den organisatorischen und zeitlichen Ablauf des Projektes und können auch gewisse Technologien vorschreiben, zB. wenn das System in ein bereits bestehendes System integriert werden soll. \cite[S. 9]{review}\cite[S. 110]{softarch}
 
-Die Rahmenbedingungen des Beispielprojektes lassen sich zum Großteil aus dem ISO Standard für Zertifizierungsstellen ermitteln \cite{ISO_CERT} und geben Einsicht in die Vertraulichkeit der Daten und eröffnen weitere Usecases. Sofern möglich werden diese Parameter in das Usecase Diagramm und das Klassen Diagramm der zu verwendeten Daten mit einbezogen. Auf zeitliche und technologische Rahmenbedingungen wurde im Beispielprojekt nicht eingegangen.
+Die Rahmenbedingungen des Beispielprojektes lassen sich zum Großteil aus dem ISO Standard für Zertifizierungsstellen ermitteln \cite{ISO_CERT} und geben Einsicht in die Vertraulichkeit der Daten und eröffnen weitere Usecases. Sofern möglich werden diese Parameter in das Usecasediagramm und das Klassendiagramm der zu verwendeten Daten mit einbezogen. Auf zeitliche und technologische Rahmenbedingungen wurde im Beispielprojekt nicht eingegangen.
 
 \section{Ermittlung der Daten}
-Die verwendeten Daten werden ermittelt und mit Hilfe eines Klassen Diagrammes modelliert. Dies ist nicht nur wichtig und nützlich, weil die Beispielanwendung in diesem Falle eine stark datenzentrierte Anwendung ist \cite[S. 105]{effektiv}, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
+Die verwendeten Daten werden ermittelt und mit Hilfe eines Klassendiagrammes modelliert. Dies ist nicht nur wichtig und nützlich, weil die Beispielanwendung in diesem Falle eine stark datenzentrierte Anwendung ist \cite[S. 105]{effektiv}, sondern wird später auch einen wesentlichen Beitrag zur Aufteilung des Systems in Komponenten leisten. Im Falle des Beispielprojekts wurden folgende Daten ermittelt und modelliert:
 
 \begin{figure}[H]
     \centering
@@ -120,7 +122,7 @@ Zusätzlich werden diese Zonen auch mit Vertrautheitsebenen verbunden. Diese Ebe
     \caption{Die Zonen werden mit Vertrautheitsebenen versehen}
 \end{figure}
 
-Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun damit begonnen werden, die AkteurInnen des Usecase Diagrammes und die Daten des Klassen Diagrammes mit diesen Stereotypen zu versehen.
+Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun damit begonnen werden, die AkteurInnen des Usecasediagrammes und die Daten des Klassendiagrammes mit diesen Stereotypen zu versehen.
 
 \begin{figure}[H]
     \centering
@@ -131,14 +133,14 @@ Sind die Stereotypen erstellt und mit Vertrautheitsebenen versehen, kann nun dam
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{uml/stereotypedusecase.png}
-    \caption{Die AkteurInnen des Usecase Diagrammes wird mit Stereotypen der Vertraulichkeit erweitert}
+    \caption{Die AkteurInnen des Usecasediagrammes wird mit Stereotypen der Vertraulichkeit erweitert}
 \end{figure}
 
 \section{Ermittlung der Beziehungen zwischen Akteuren/Partnersystemen und Daten}
-Auf Basis des Usecase Diagrammes können die Akteure und deren Partnersysteme mit Hilfe eines Kontext Diagrammes visualisiert werden. Im Gegensatz zum Usecase Diagramm geht das Kontext Diagramm auf die zwischen den Systemen und AkteurInnen fließenden Daten ein und stellt so die Verbindung der Daten und Nutzer auf.
+Auf Basis des Usecasediagrammes können die Akteure und deren Partnersysteme mit Hilfe eines Kontextdiagrammes visualisiert werden. Im Gegensatz zum Usecasediagramm geht das Kontextdiagramm auf die zwischen den Systemen und AkteurInnen fließenden Daten ein und stellt so die Verbindung der Daten und Nutzer auf.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/context.png}
-    \caption{Das Kontext Diagramm zeigt das System, die Akteure und die Nachbarsysteme}
+    \caption{Das Kontextdiagramm zeigt das System, die Akteure und die Nachbarsysteme}
 \end{figure}
