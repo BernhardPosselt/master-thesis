@@ -3,7 +3,7 @@ Da die Software Architektur auf den Anforderungen basiert und viel wichtiger \gl
 
 Da der Anforderungsprozess ein an sich eigenes, sehr großes Themengebiet darstellt, wird hier jedoch nur auf die Ausgangsartefakte eingegangen, welche später im Architekturprozess referenziert werden. Zu diesen Parametern zählen nicht nur die Daten, Akteure und Usecases, sondern auch die vorgegebenen nicht funktionalen Anforderungen.
 
-Die Entwicklung der meisten Software Projekte ist oft ein dynamischer und agiler Prozess. Während des Entwicklungsprozesses werden oft Änderungen eingebracht und neue Anforderungen aufgestellt  \cite[S. 6-7]{effektiv}. Auch führt die Komplexität des Systems und das Wissen des/der KundIn dazu, dass nach der Erhebung der initialen Anforderungen nicht alle Parameter vollständig bekannt sind. Dies wiederum führt mehr oder weniger dazu, dass der Anforderungsprozess während der Entwicklung der Architektur nicht als abgeschlossen gesehen werden kann und der/die KundIn verfügbar sein muss.
+Die Entwicklung der meisten Software Projekte ist oft ein dynamischer und agiler Prozess. Während des Entwicklungsprozesses werden oft Änderungen eingebracht und neue Anforderungen aufgestellt  \cite[S. 6-7, S. 37]{effektiv}. Auch führt die Komplexität des Systems und das Wissen des/der KundIn dazu, dass nach der Erhebung der initialen Anforderungen nicht alle Parameter vollständig bekannt sind. Dies wiederum führt mehr oder weniger dazu, dass der Anforderungsprozess während der Entwicklung der Architektur nicht als abgeschlossen gesehen werden kann und der/die KundIn verfügbar sein muss.
 
 Aufgrund der 10er Regel der Fehler \cite[S. 154]{fehler} ist es zwar wichtig, möglichst viele Parameter schon so früh wie möglich zu kennen, jedoch führt dies in manchen zu einem verhältnismäßig zu großen Aufwand. Zum Beispiel ist es wichtig und interessant die Schadenskosten zu kennen, welche nach einem unberechtigten Zugriff oder Manipulation von Daten durch die AkteurInnen auftreten können, jedoch erfordert dies eine komplette Gegenüberstellung von allen Daten und AkteurInnen in sämtlichen möglichen Szenarien: Bearbeiten, Erstellen, Löschen und Lesen. Ein Großteil dieser Kombinationen kann jedoch schon nach einer initialen, kurzen Phase der Aufspaltung in Zonen ausgeschlossen werden, weil bestimmte AkteurInnen keinen Zugriff mehr auf bestimmte haben. Deswegen wird auf diese Szenarien erst nach einer kurzen, initialen Architekturphase eingegangen.
 
@@ -31,15 +31,17 @@ Dafür wird ein Anforderungstemplate, auch Usecasebeschreibung genannt, verwende
   \item Exceptions: Beschreibung von diversen Ausnahme- und Fehlerfällen
   \item Assumptions: Annahmen, unter welcher der Usecase beschrieben wird
   \item Priority: eine Gewichtung, wie wichtig der Usecase ist: Low, Medium oder High
+  \item Related Usecases: eine Auflistung von verwandten Usecases
   \item Notes: sonstige Anmerkungen
 \end{itemize}
 
-Sind die Abläufe komplexer, können Aktivitätsdiagramme verwendet werden, um komplexere Abläufe verständlicher darzustellen \cite[S. 215]{reqman}:
+Sind die Abläufe komplexer, können Aktivitätsdiagramme verwendet werden, um komplexere Abläufe wie zB. in Abbildung \ref{fig:takexdet} verständlicher darzustellen \cite[S. 215]{reqman}:
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{uml/takeexamreq.png}
     \caption{Der Ablauf des Take Exam Usecases im Detail}
+    \label{fig:takexdet}
 \end{figure}
 
 \subsection{Einbeziehen von Architekturreviewparametern}
@@ -73,6 +75,9 @@ Für das Beispielprojekt wurden folgende Parameter definiert, mit welchen das An
 \end{itemize}
 
 Diese Parameter können von Projekt zu Projekt unterschiedlich sein, je nachdem welche zusätzlichen Einschränkungen vom Kunden ermittelt worden wurden.
+
+\subsection{Ermittlung der Nachbarsysteme und deren Schnittstellen}
+Für die Planung der Schnittstellen des Systems sind die Anforderungen und Schnittstellen der Nachbarsysteme von wesentlicher Bedeutung. Die Nachbarsysteme können die Architektur des Systems wesentlich beinflussen. Ein Beispiel hierfür ist zB. die Frage, ob das Payment System wie in diesem Falle nur eine Schnittstelle zur Abfrage der eingegangenen Zahlungen aufweist, oder ob es ein System nach einer eingangenen Zahlung selbst verständigen kann. Ersteres erfordert eine kontinuierliche Abfrage der Zahlungen, während Zweiteres eine eigens dafür ausgelegt Schnittstelle zur Benachrichtigung der Zahlung benötigt.
 
 \section{Rahmenbedingungen}
 Zusätzlich zu funktionalen und nicht funktionalen Anforderungen werden auch die Rahmenbedingungen ermittelt, unter welchem das System erstellt werden soll. Diese Anforderungen beinhalten meist den organisatorischen und zeitlichen Ablauf des Projektes und können auch gewisse Technologien vorschreiben, zB. wenn das System in ein bereits bestehendes System integriert werden soll. \cite[S. 9]{review}\cite[S. 110]{softarch}
