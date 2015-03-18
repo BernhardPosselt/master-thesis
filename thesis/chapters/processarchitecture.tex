@@ -147,9 +147,8 @@ Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Kompone
 Dies wird für alle Usecases durchgeführt.
 
 \subsection{Reliability}
-Single Point of Failure Analyse (Matrix Komponente x Usecase), Erklären wie man auf Matrix kommt (Aktivitätsdiagramm), Ausfallskosten (inkl. Wachstumsszenarien)
-
-Einfache Methode zur schätzung der Ausfallkosten, aufzeigen wie durch Reduzieren der Ausfallswahrscheinlichkeit Kosten sinken aber auch Investitionskosten verursachen. Wachstumsszenarien auch einbeziehen in die Rechnung
+Single Point of Failure Analyse -> zeigt kritische Komponenten auf die man besonders beachten + prüfen muss
+Ausfallskosten Analyse -> zeigt Systeme mit teuren Ausfällen auf und ermöglicht es eine Ausfallgarantie zu ermitteln, Wachstumsszenarien einbeziehen
 
 
 \subsection{Usability}
@@ -157,11 +156,18 @@ Da die Artefakte des Planungsprozesses keine Oberflächen beschreiben ist eine A
 
 \subsection{Efficiency}
 TBD
+Antwortzeitanalyse
 Efficiency kann pro usecase gemessen werden, zb für antwortzeiten indem man zb die swimlanewechsel der Aktivitätsdiagramme zählt und mit einer konstanten multipliziert (geschätzte Netzwerkgeschwindigkeit). Ansonsten ist es durch die fehlende Implementation nicht möglich die Geschwindigkeit oder den Arbeitsspeicherverbrauch zu messen.
 
 \subsection{Maintainability}
 TBD
-Auslesbar aus der Usecase Matrix, als Summe aller subsysteme,
+Related Usecase Analyse
+
+Wenn man Usecase ändert, alle Komponenten betroffen
+Wenn man Komponente ändert, alle anderen Komponenten des Usecases betroffen
+-> Usecases mit teurem Ausfallszenario dabei -> eigene Komponente?
+
+Wachstums und Änderungsszenarien mit einbeziehen
 
 \subsection{Portability}
 Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da noch keine Festlegung des Projektes auf eine Plattform und/oder Technologie existiert. Dies kann erst zu Beginn der Implementationsphase entschieden werden und wird unter anderem von den in der Anforderungsphase ermittelten Rahmenbedingungen beinflusst.
