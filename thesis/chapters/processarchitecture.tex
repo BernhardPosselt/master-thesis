@@ -104,7 +104,7 @@ Um herauszufinden, welche Komponenten für einen Usecase benötigt werden, könn
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/handlecomplaintsactivityreview.png}
-    \caption{Vereinfachtes Aktivitätsdiagramm des Handle Complaints Usecases}
+    \caption{Vereinfachtes Aktivitätsdiagramm des Handle Complaints Usecases mit der id uc\_complaints}
     \label{fig:handlecomplaintreview}
 \end{figure}
 
@@ -116,6 +116,35 @@ Werden die beiden AkteurInnen entfernt, bleiben für diesen Usecase folgende Kom
   \item Internal
 \end{itemize}
 
+Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Komponente eines Usecases mit einem x markiert wird:
+
+\hfill \break
+
+\begin{tabular}{ | r | c | }
+    \hline
+    Komponenten & uc\_complaints \\
+    \hline
+    Public & x \\
+    \hline
+    Public Invigilator & \\
+    \hline
+    Public Scheme Owner & \\
+    \hline
+    Public to Internal & x \\
+    \hline
+    Internal & x \\
+    \hline
+    Internal Confidential & \\
+    \hline
+    Internal to Confidential & \\
+    \hline
+    Confidential & \\
+    \hline
+\end{tabular}
+
+\hfill \break
+
+Dies wird für alle Usecases durchgeführt.
 
 \subsection{Reliability}
 Single Point of Failure Analyse (Matrix Komponente x Usecase), Erklären wie man auf Matrix kommt (Aktivitätsdiagramm), Ausfallskosten (inkl. Wachstumsszenarien)
