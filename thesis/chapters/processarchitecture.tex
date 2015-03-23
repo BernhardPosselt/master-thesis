@@ -122,7 +122,7 @@ Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Kompone
 
 \begin{tabular}{ | r | c | }
     \hline
-    Komponenten & uc\_complaints \\
+    Komponenten & complaints \\
     \hline
     Public & x \\
     \hline
@@ -130,13 +130,13 @@ Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Kompone
     \hline
     Public Scheme Owner & \\
     \hline
-    Public to Internal & x \\
+    Public To Internal & x \\
     \hline
     Internal & x \\
     \hline
     Internal Confidential & \\
     \hline
-    Internal to Confidential & \\
+    Internal To Confidential & \\
     \hline
     Confidential & \\
     \hline
@@ -144,14 +144,31 @@ Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Kompone
 
 \hfill \break
 
-Dies wird für alle Usecases durchgeführt.
+Dies wird für alle Usecases durchgeführt und führt im Falle des Beispielprojektes zu folgender Matrix:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{img/matrix.png}
+    \caption{Matrix der Komponenten und Usecases des Beispielprojektes}
+    \label{fig:matrix}
+\end{figure}
+
+
+
 
 \subsection{Reliability}
 Anhand der in ermittelten Usecase und Komponenten Matrix kann nun sowohl eine Überprüfung der der Ausfallskosten als auch eine Single Point of Failure Analyse durchgeführt werden.
 
-Ein Single Point of Failure beschreibt eine Komponente, die so kritisch für das System ist, dass ihr Ausfall den kompletten Ausfall des Systems nach sich zieht \cite[S. 3]{single}.
+\subsubsection{Single Point of Failure Analyse}
 
-Single Point of Failure Analyse -> zeigt kritische Komponenten auf die man besonders beachten + prüfen muss
+Ein Single Point of Failure beschreibt eine Komponente, die so kritisch für das System ist, dass ihr Ausfall den kompletten Ausfall des Systems nach sich zieht \cite[S. 3]{single}. Ein Single Point of Failure der Architektur kann daran erkannt werden, dass eine Komponente in allen Usecases vorkommt. Im Bezug auf die soeben ermittelte Matrix wird dies durch eine durchgehende Reihe von mit x markierten Zellen in der Komponentenspalte ersichtlich.
+
+Enthält eine Architektur einen Single Point of Failure, muss diese Komponente entweder redundant ausgelegt sein, oder es muss eine Aufspaltung anhand einer Fehlerkostenanalyse durchgeführt werden.
+
+Im Falle der Matrix in Abbildung \ref{fig:matrix} ist keine durchgehende Reihe an markierten Zellen erkennbar und somit existiert kein Single of Failure. Es lässt sich einzig und allein ablesen, dass die Public To Internal und Internal Komponente eine Abweichung vom Single Point of Failure um vier respektive drei besitzen. Dies lässt erahnen, dass bei der Implementation und Wartung dieser Systeme besondere Sorgfalt von Nöten ist.
+
+\subsubsection{Ausfallkosten Analyse}
+
 Ausfallskosten Analyse -> zeigt Systeme mit teuren Ausfällen auf und ermöglicht es eine Ausfallgarantie zu ermitteln, Wachstumsszenarien einbeziehen
 
 
