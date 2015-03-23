@@ -104,7 +104,7 @@ Um herauszufinden, welche Komponenten für einen Usecase benötigt werden, könn
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{uml/handlecomplaintsactivityreview.png}
-    \caption{Vereinfachtes Aktivitätsdiagramm des Handle Complaints Usecases mit der id uc\_complaints}
+    \caption{Vereinfachtes Aktivitätsdiagramm des Handle Complaints Usecases mit der id complaints}
     \label{fig:handlecomplaintreview}
 \end{figure}
 
@@ -140,6 +140,10 @@ Diese werden nun in eine Tabelle überführt, wobei für jede verwendete Kompone
     \hline
     Confidential & \\
     \hline
+    Scheme Owner System & \\
+    \hline
+    Payment System & \\
+    \hline
 \end{tabular}
 
 \hfill \break
@@ -168,8 +172,49 @@ Enthält eine Architektur einen Single Point of Failure, muss diese Komponente e
 Im Falle der Matrix in Abbildung \ref{fig:matrix} ist keine durchgehende Reihe an markierten Zellen erkennbar und somit existiert kein Single of Failure. Es lässt sich einzig und allein ablesen, dass die Public To Internal und Internal Komponente eine Abweichung vom Single Point of Failure um vier respektive drei besitzen. Dies lässt erahnen, dass bei der Implementation und Wartung dieser Systeme besondere Sorgfalt von Nöten ist.
 
 \subsubsection{Ausfallkosten Analyse}
+Zusätzlich zu einer Single Point of Failure Analyse gibt eine Ausfallkosten Analyse auf Basis des in den Anforderungen ermittelten Monatsumsatzes Auskunft darüber, welche Komponenten jeweils wieviel Umsatz generieren. Für diese Überlegung können auch die Wachstumsszenarien einbezogen werden, falls sich der Umsatz durch eine Steigerung der Benutzer steigert oder senkt.
 
-Ausfallskosten Analyse -> zeigt Systeme mit teuren Ausfällen auf und ermöglicht es eine Ausfallgarantie zu ermitteln, Wachstumsszenarien einbeziehen
+Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Feldern mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz zu ermitteln.
+
+Als Beispiel dient hier die Internal Komponente:
+
+\hfill \break
+
+\begin{tabular}{ | r | c | }
+    \hline
+    Usecases & Internal \\
+    \hline
+    pay-invoice & 3000 \euro \\
+    \hline
+    apply & 1500 \euro \\
+    \hline
+    verify-cert & 1500 \euro \\
+    \hline
+    take-exam & 0 \euro \\
+    \hline
+    publish-exams & 1500 \euro \\
+    \hline
+    schedule-exam & 1500 \euro \\
+    \hline
+    reporting & 1500 \euro \\
+    \hline
+    evaluate-exam & 0 \euro \\
+    \hline
+    update-questions & 0 \euro \\
+    \hline
+    prepare-exam & 80000 \euro \\
+    \hline
+    complaints & 1500 \euro \\
+    \hline
+    manage-applicants & 1500 \euro \\
+    \hline
+    manage-certs & 1500 \euro \\
+    \hline
+    meta-information & 1500 \euro \\
+    \hline
+    Total Sum & 96500 \euro \\
+    \hline
+\end{tabular}
 
 
 \subsection{Usability}
@@ -208,4 +253,5 @@ Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da 
 
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
+TBD
 Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
