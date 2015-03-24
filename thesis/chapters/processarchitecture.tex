@@ -174,6 +174,8 @@ Im Falle der Matrix in Abbildung \ref{fig:matrix} ist keine durchgehende Reihe a
 \subsubsection{Ausfallkosten Analyse}
 Zusätzlich zu einer Single Point of Failure Analyse gibt eine Ausfallkosten Analyse auf Basis des in den Anforderungen ermittelten Monatsumsatzes Auskunft darüber, welche Komponenten jeweils wieviel Umsatz generieren. Für diese Überlegung können auch die Wachstumsszenarien einbezogen werden, falls sich der Umsatz durch eine Steigerung der Benutzer steigert oder senkt.
 
+Das Ergebnis dieser Analyse ist die notwendige Redundanz der einzelnen Komponenten, welche bei der Implementation des Systems erreicht werden muss.
+
 Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachheit gleichmäßig auf alle Zeiteinheiten. Es kann sein, dass eine Organisation so strukturiert ist, dass ein eintägiger Ausfall keine Umsatzeinbußen nach sich zieht. In diesem Falle ist die Beispielrechung ungenau. Um diese Möglichkeit einzubeziehen, müssen detailiertere Umsatzkosten im Anforderungsprozess ermittelt werden was jedoch aus Gründen des Umfangs und der Einfachheit vermieden wird. Das Beispiel soll lediglich als ein anschauliches Beispiel zur Ermitllung des Umsatzrückganges dienen.
 
 Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Feldern mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz zu ermitteln.
@@ -220,7 +222,7 @@ Als Beispiel dient hier die Internal Komponente:
 
 \hfill \break
 
-Fällt diese Komponente für einen kompletten Monat aus, verursacht sie einen Umsatzrückgang von 95500 \euro.
+Fällt diese Komponente für einen kompletten Monat aus, verursacht sie einen Umsatzrückgang von 95500 \euro. Wenn eine Komponente eine Ausfallwahrscheinlichkeit von 99\% besitzt, dann belaufen sich die durchschnittlichen Ausfallkosten auf 965 \euro. Wird aus Redundanzgründen eine weitere Komponente hinzugefügt und damit die Ausfallwahrscheinlichkeit auf zB. 99.9\% gesteigert, belaufen sich die Schadenskosten nur noch auf 96.5 \euro. Kostet diese zusätzliche Komponente weniger als die Differenz der Kosten, sprich weniger als 868.5 \euro, rentiert sich die Anschaffung einer zweiten Komponente.
 
 \subsection{Usability}
 Da die Artefakte des Planungsprozesses keine Oberflächen beschreiben ist eine Auswertung der des nicht funktionalen Parameters Usability nicht möglich. Die Überprüfung der Usability kann somit übersprungen werden.
@@ -244,14 +246,15 @@ Ein Beispiel für die Berechnung der Antwortzeiten wird aus dem Aktivitätsdiagr
 Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese werden nun mit der Konstante 100 Milisekunden multipliziert, was eine geschätzte Durchlaufzeit von 600 Milisekunden ergibt. Dies liegt unter den erforderlichen 1000 Milisekunden der aufgenommenen nicht funktionalen Anforderung der Antwortzeit.
 
 \subsection{Maintainability}
-TBD
-Related Usecase Analyse
+Die Änder- und Wartbarkeit ist wesentlich von den Beziehungen der Komponenten und Usecases abhängig. Wird eine Komponenten geändert, so müssen zusätzlich zu dieser Änderung auch eine erneute Validierung der bereits bestehenden Funktionen durchgeführt werden, um Fehler, welche aus den Änderungen entstanden sind, zu finden. Dieses Problem wird mit dem Begriff Ripple Effect beschrieben. \cite[S. 3]{ripple}
 
-Wenn man Usecase ändert, alle Komponenten betroffen
-Wenn man Komponente ändert, alle anderen Komponenten des Usecases betroffen
--> Usecases mit teurem Ausfallszenario dabei -> eigene Komponente?
+Wird ein Usecase geändert, so müssen eine oder mehrere Komponenten des Usecases angepasst werden. Wird eine Komponenten geändert, so kann dies auch andere Usecases beinflussen, welche die gleiche Komponente verwenden. Wie sehr eine Komponente andere Usecases beinflusst, kann aus den Komponenten Spalten der Matrix abgelesen werden.
 
-Wachstums und Änderungsszenarien mit einbeziehen
+Im Bezug auf das Beispielprojekt fällt auf, dass die Internal und Public To Internal Komponente in mehr als der Hälfte aller Usecases eingesetzt werden.
+
+* Software maintenance kostet oft mehr als 50\% der gesamtsystem kosten \cite[S. 71-84]{maincost}
+* Änderungsszenarien
+* Testaufwand
 
 \subsection{Portability}
 Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da noch keine Festlegung des Projektes auf eine Plattform und/oder Technologie existiert. Dies kann erst zu Beginn der Implementationsphase entschieden werden und wird unter anderem von den in der Anforderungsphase ermittelten Rahmenbedingungen beinflusst.
