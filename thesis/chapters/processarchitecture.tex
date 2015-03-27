@@ -246,20 +246,26 @@ Ein Beispiel für die Berechnung der Antwortzeiten wird aus dem Aktivitätsdiagr
 Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese werden nun mit der Konstante 100 Milisekunden multipliziert, was eine geschätzte Durchlaufzeit von 600 Milisekunden ergibt. Dies liegt unter den erforderlichen 1000 Milisekunden der aufgenommenen nicht funktionalen Anforderung der Antwortzeit.
 
 \subsection{Maintainability}
+Maintainability dreht sich um Wart- und Änderbarkeit eines Projektes. Die Änderbarkeit der Architektur hängt wesentlich von der Kopplung und Kohäsion der Komponenten ab. Die Wartbarkeit kann unter anderem an den Wartungskosten abgelesen werden.
+
+
+\subsubsection{Wartungskosten}
+
+
+\subsubsection{Kopplung und Kohäsion}
 Die Änder- und Wartbarkeit ist wesentlich von den Beziehungen der Komponenten und Usecases abhängig. Wird eine Komponenten geändert, so müssen zusätzlich zu dieser Änderung auch eine erneute Validierung der bereits bestehenden Funktionen durchgeführt werden, um Fehler, welche aus den Änderungen entstanden sind, zu finden. Dieses Problem wird mit dem Begriff Ripple Effect beschrieben. \cite[S. 3]{ripple}
 
-Wird ein Usecase geändert, so müssen eine oder mehrere Komponenten des Usecases angepasst werden. Wird eine Komponenten geändert, so kann dies auch andere Usecases beinflussen, welche die gleiche Komponente verwenden. Wie sehr eine Komponente andere Usecases beinflusst, kann aus den Komponenten Spalten der Matrix abgelesen werden.
+Wird ein Usecase geändert, so müssen eine oder mehrere Komponenten des Usecases angepasst werden. Wird eine Komponenten geändert, so kann dies auch andere Usecases beinflussen, welche die gleiche Komponente verwenden. Wie sehr eine Komponente andere Usecases beinflusst, kann aus den Komponenten Spalten der Matrix abgelesen werden, in dem die Anzahl der mit x markierten Spalten durch die Anzahl der Gesamtusecases dividiert wird. Der daraus resultierende Wert liegt in den Grenzen von 0 (bester Wert) und 1 (schlechtester Wert) gibt die Kopplung der Komponente an. \cite[S. 164]{effektiv}
 
-Im Bezug auf das Beispielprojekt fällt auf, dass die Internal und Public To Internal Komponente in mehr als der Hälfte aller Usecases eingesetzt werden.
+Die Kohäsion beschreibt die inhaltliche Zusammengehörigkeit der Komponenten \cite[S. 164]{effektiv}. Sie kann aus den der Usecase-, Aktivitäts und Klassendiagrammen ermittelt werden. Das Klassendiagramm beschreibt die Zusammengehörigkeit der Daten, das Aktivitätsdiagramm eines Usecases und dessen Objektflüsse die gemeinsam verwendeten Daten. Die Usecases können nun anhand der verwendeten Daten in mehrere unabhängige Gruppen unterteilt werden, die orthogonal zueinander sind. Je mehr unabhängige Gruppen auf eine Komponente zugreifen, desto schlechter ist deren Kohäsion.
 
-* Software maintenance kostet oft mehr als 50\% der gesamtsystem kosten \cite[S. 71-84]{maincost}
-* Änderungsszenarien
-* Testaufwand
+Zusätzlich können nun die in den Anforderungen ermittelten Änderungsszenarien miteinbezogen werden. Hat eine Komponente einen hohen Kopplungswert und oder eine niedrigen Kohäsion, und ist sie Teil eines Usecases, welcher viele Änderungsszenarien beinhaltet, kann dies als Grund zu einer weiteren Aufspaltung der Komponente genommen werden. Auch die in der Ausfallskostenanalyse ermittelten Kosten einer Komponente können hier in die Entscheidung mit einfließen. Da die Kopplung eine Kennzahl ist, obligt die Interpretation dem/der ArchitektIn selbst; eine genaue Regel lässt sich hier nicht ableiten.
+
+Im Bezug auf das Beispielprojekt fällt auf, dass die Internal und Public To Internal Komponente in mehr als der Hälfte aller Usecases eingesetzt werden, da der Kopplungswert höher als 0.5 ist. Zusätzlich beschäftigt sich die Internal Komponente mit mehreren verschiedenen Daten, die im Wesentlichen nichts miteinander zu tun haben: Zahlungen, Zertifikate und Beschwerden sind komplett voneinander unabhängig. Eine Aufspaltung in weitere Komponenten wurde nicht durchgeführt, jedoch lässt sich aus diesen Zahlen heraus lesen, dass eine höhere Testabdeckung als für andere Komponenten erforderlich ist.
 
 \subsection{Portability}
 Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da noch keine Festlegung des Projektes auf eine Plattform und/oder Technologie existiert. Dies kann erst zu Beginn der Implementationsphase entschieden werden und wird unter anderem von den in der Anforderungsphase ermittelten Rahmenbedingungen beinflusst.
 
 
 \section{Modellieren der Komponenten Interfaces (Klassen Diagramm)}
-TBD
-Aufzeigen dass zb das interne System user anlegen können muss mit methoden im klassendiagramm
+Sind alle Analysen der Architektur abgeschlossen, kann nun anhand der Usecase-, Klassen und Aktivitätsdiagramme damit begonnen werden, die Schnittstellen der Komponenten zu definieren.
