@@ -180,7 +180,7 @@ Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachhei
 
 Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Feldern mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz zu ermitteln.
 
-Als Beispiel dient hier die Internal Komponente:
+Als Beispiel dient hier die Internal Komponente (Die Werte sind beispielhaft gewählt):
 
 \hfill \break
 
@@ -248,10 +248,6 @@ Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese we
 \subsection{Maintainability}
 Maintainability dreht sich um Wart- und Änderbarkeit eines Projektes. Die Änderbarkeit der Architektur hängt wesentlich von der Kopplung und Kohäsion der Komponenten ab. Die Wartbarkeit kann unter anderem an den Wartungskosten abgelesen werden.
 
-
-\subsubsection{Wartungskosten}
-
-
 \subsubsection{Kopplung und Kohäsion}
 Die Änder- und Wartbarkeit ist wesentlich von den Beziehungen der Komponenten und Usecases abhängig. Wird eine Komponenten geändert, so müssen zusätzlich zu dieser Änderung auch eine erneute Validierung der bereits bestehenden Funktionen durchgeführt werden, um Fehler, welche aus den Änderungen entstanden sind, zu finden. Dieses Problem wird mit dem Begriff Ripple Effect beschrieben. \cite[S. 3]{ripple}
 
@@ -268,6 +264,19 @@ Die Änderungsszenarien und die Kopplungswerte stellen schlecht bewertbare Werte
 Wird das Beispielprojekt auf Kohäsion und Kopplung analysiert, fallen vor allem die Internal und Public To Internal Komponente auf, da sie in mehr als der Hälfte aller Usecases eingesetzt werden (Kopplungswert größer als 0.5). Weil die Public To Internal Komponente ein Gateway ist, kann sie ignoriert werden. Damit verbleibt die Internal Komponente. Wird die Kohäsion der Internal Komponente betrachtet, sticht hervor, dass in dieser Komponente mehrere komplett unabhängige Daten verwendet werden: Zahlungen, Zertifikate, Anmeldungen und Beschwerden sind jeweils eigene, logische Gruppen.
 
 Aufgrund der Größe des Systems und der wenigen Änderungsszenarien wurde gegen eine weitere Aufspaltung entschieden, jedoch wurde fest gestellt, dass die Internal Komponente bei der Erstellung der Testfälle eine höhere Testabdeckungen benötigt.
+
+\subsubsection{Wartungskosten}
+Die Wartungskosten ergeben sich sowohl aus dem Personal, welches für die Wartung der Komponenten angestellt werden muss, als auch aus den Strom- und Reparaturkosten der eingesetzten Systeme. Weil die genauen Komponenten noch nicht implementiert wurden, kann an diesem Moment nur eine Schätzung der Kosten durchgeführt werden.
+
+Eine einfache Möglichkeit zur Schätzung der Kosten kann durch die Wahl einer Konstanten pro System durchgeführt werden. Im Falle des Beispielprojektes wird pro System mit folgenden monatlichen Kosten gerechnet:
+
+\begin{itemize}
+  \item Stromkosten: 10 \euro
+  \item Reparaturkosten: 20 \euro
+  \item Personalkosten: 100 \euro
+\end{itemize}
+
+Die aufsummierten Kosten ergeben Wartungskosten von 130 \euro \ pro Monat. Wird dies mit der Anzahl der Systeme multiplizert ergibt sich ein Gesamtwartungskostenaufwand von 8 * 130 \euro, sprich 1040 \euro \ pro Monat.
 
 \subsection{Portability}
 Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da noch keine Festlegung des Projektes auf eine Plattform und/oder Technologie existiert. Dies kann erst zu Beginn der Implementationsphase entschieden werden und wird unter anderem von den in der Anforderungsphase ermittelten Rahmenbedingungen beinflusst.
