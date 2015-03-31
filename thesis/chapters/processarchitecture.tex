@@ -1,5 +1,15 @@
-\chapter{Prozess Architekturplanung}
+\chapter{Erstellung der Architektur}
 Aufbauend auf den im Anforderungsprozess ermittelten Attribute, kann nun mit der Architekturplanung begonnen werden. Bereits an dieser Stelle können aufgrund der ermittelten Parameter und Erfahrungswerte eine grundsätzliche Überprüfung der Machbarkeit des Projektes durchgeführt werden. Auch eine Überprüfung, ob der beschriebene Prozess der Architekturplanung für das Projekt eignet kann durchgeführt werden: Der Prozess beschäftigt sich hauptsächlich mit der Aufspaltung und Trennung der Daten und Akteure in mehrere Systeme. Durch außergewöhnlich strenge Laufzeitanforderungen oder entsprechende Rahmenbedinungen kann diese Aufspaltung jedoch zu einer Architektur führen, welche die ursprünglich ermittelten Anforderungen nicht mehr, oder nur schlecht erfüllt.
+
+Die erwähnten Architektursichten werden, soweit möglich, durch UML Diagramme realisert:
+
+\begin{itemize}
+  \item Logical View: Klassendiagramm
+  \item Process View: Komponentendiagramm, diverse Werte in der Usecasebeschreibung sowie Aktivitäts- und Interface-Klassendiagramm
+  \item Development View: Da noch keine Implementation vorhanden ist, können noch keine Bibliotheken und Module beschrieben werden. Hierfür würde sich jedoch das Paketdiagramm anbieten
+  \item Physical View: Grobes Komponentendiagramm. Da die Wahl der physischen Komponenten durch die fehlende Implementation nicht früh überprüfbar ist, wurde auf eine Modellierung in der Planungsphase verzichtet
+  \item Scenarios: Usecasediagramm
+\end{itemize}
 
 \section{Erstellen der Minimalen Architektur}
 Das Kontextdiagramm, welches im Anforderungsprozess erstellt worden ist, zeigt das System mit allen AkteurInnen und Nachbarsystemen. Aufbauend darauf kann nun die minimale Architektur erstellt werden, welche sich aus dem System und den Nachbarsystemen ableitet.
@@ -227,7 +237,7 @@ Als Beispiel dient hier die Internal Komponente (Die Werte sind beispielhaft gew
 Fällt diese Komponente für einen kompletten Monat aus, verursacht sie einen Umsatzrückgang von 95500 \euro. Wenn eine Komponente eine Ausfallwahrscheinlichkeit von 99\% besitzt, dann belaufen sich die durchschnittlichen Ausfallkosten auf 965 \euro. Wird aus Redundanzgründen eine weitere Komponente hinzugefügt und damit die Ausfallwahrscheinlichkeit auf zB. 99.9\% gesteigert, belaufen sich die Schadenskosten nur noch auf 96.5 \euro. Kostet diese zusätzliche Komponente weniger als die Differenz der Kosten, sprich weniger als 868.5 \euro, rentiert sich die Anschaffung einer zweiten Komponente.
 
 \subsection{Usability}
-Da die Artefakte des Planungsprozesses keine Oberflächen beschreiben ist eine Auswertung der des nicht funktionalen Parameters Usability nicht möglich. Die Überprüfung der Usability kann somit übersprungen werden.
+Da die Artefakte des Planungsprozesses keine Oberflächen beschreiben ist eine Auswertung der des nicht funktionalen Parameters Usability nicht möglich. Außerdem ist sie nicht im Fokus der Architekturerstellung und die Überprüfung der Usability kann somit übersprungen werden.
 
 \subsection{Efficiency}
 Es ist schwierig, die Effizienz und Performance der Architektur in diesem Stadium zu messen, da noch keine Implementation vorhanden ist und somit weder die Performance noch der Speicherverbrauch des Systems getestet werden können. In diesem Stadium lassen sich lediglich Werte schätzen. Eine Möglichkeit um zB. die Antwortzeiten zu schätzen, ist es, die Anzahl der Swimlanewechsel eines Usecases zu addieren und das Ergebnis mit einer konstanten Zeit, welche auf Erfahrungswerten basiert, zu multiplizieren. Dieser Wert kann dann mit den im Anforderungsprozess ermittelten Antwortzeiten verglichen werden, um zu überprüfen, ob das System diese Anforderungen erfüllt.
