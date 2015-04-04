@@ -58,7 +58,35 @@ Eine Möglichkeit zur Überprüfung von bestehenden und noch nicht beachteteten 
 
 
 \section{Architekturbewertungsmethoden}
-Kurze Einführung in Architekturbewertungsmethoden
+Architekturbewertungsmethoden werden dazu verwendet, die Angemessenheit einer Architektur zu überprüfen. Die Meisten ihrer Art basieren auf der Erstellung von Szenarien, da das Kosten-Nutzen Verhältnis dieser Herangehensweise sehr gut ist \cite[S. 185]{basiswissen}.
+
+Es gibt mehrere verschiedene Bewertungsmethoden wie CBAM, ALMA und ARID, welche zum Großteil Abwandlungen von ATAM darstellen. ATAM wiederum ist eine Weiterentwicklung von SAAM. \cite[S. 60-76]{review}
+
+Da Kosteneffektivität, Änderungs- und Wachstumsszenarien die Basis für Entscheidungen des erstellten Architekturprozesses darstellen, wird näher auf ATAM (Änderungs- und Wachstumsszenarien) und CBAM (Kostenszenarien) eingegangen.
 
 \subsection{ATAM}
+ATAM, kurz für Architecture Trade-off Analysis Method, beschäftigt sich mit den nicht funktionalen Anforderungen wie Performance oder Verfügbarkeit. Sie lässt sich in folgende Phasen einteilen \cite[S. 185]{basiswissen}:
+
+\begin{itemize}
+  \item Vorbereitungsphase
+  \item Architekturzentrierte Bewertung
+  \item StakeholderInnenzentrierte Bewertung
+  \item Nachbearbeitungsphase
+\end{itemize}
+
+Einer initialen Vorbereitungsphase, in welchem das Team und der Zeitplan erstellt wird, folgt ein Treffen mit den StakeholderInnen des/der AuftraggeberIn, in der die Geschäftsziele und Architektur vorgestellt werden. In diesem Treffen werden die nicht funktionalen Anforderungen anhand eines Utilitytrees erarbeitet, priorisiert und bewertet. Sind wichtige architekturrelevante Anforderungen noch nicht bekannt, können diese nun mit den StakeholderInnen erarbeit werden. \cite[S. 184-199]{basiswissen}
+
+Auf Basis des Utilitytrees und dessen nicht funktionale Anforderungen werden dann in den darauf folgenden Bewertungsphasen folgende Szenarientypen überprüft \cite[S. 62-67]{review}\cite[S. 188]{basiswissen}:
+
+\begin{itemize}
+  \item Usecases
+  \item Wachstumsszenarien
+  \item Explorative Änderungsszenarien
+\end{itemize}
+
+Die Usecases beschreiben die Standardanwendungsfälle der NutzerInnen, welche durch das System umgesetzt werden sollen. Auch sie werden priorisiert. Danach führen die ArchtektInnen pro Usecase eine Analyse der im Utilitytree beschriebenen nicht funktionalen Anforderungen durch. Je nachdem, wie viel Zeit für die Analyse aufgewendet werden soll, werden zusätzlich zu den als hoch priorisierten Usecases und nicht funktionalen Anforderungen auch weitere, niedriger Priorisierte überprüft. \cite[S. 192]{basiswissen}
+
+Sind die Bewertungsphasen abgeschlossen können die Ergebnisse analysiert und dokumentiert werden. Dies dient nicht nur als Dokumentation der geplanten Verbesserungen für die Architekturplanung, sondern hilft auch in zukünftigen ATAM Analysen die Entscheidungen früherer Analysen nachzuvollziehen. \cite[S. 189]{basiswissen}
+
+
 \subsection{CBAM}
