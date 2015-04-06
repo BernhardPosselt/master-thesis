@@ -44,125 +44,15 @@
 
 \maketitle
 
-%
-% .. und hier beginnt die eigentliche Arbeit. Viel Erfolg beim Verfassen!
-%
-
-\chapter{Einführung}
-
-\section{Motivation}
-\subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
-Vermutung: Gute Architektur häng von guten Anforderungen ab, deswegen muss Anforderungsprozess erweitert werden
-Probleme aufzählen die bei einer schlechten Architektur entstehen.
-
-vielleicht noch genauer spezifizieren dass es keine all round solution werden soll sondern die meisten use cases abdecken soll (grafik wieviel apps SOA haben zb)
-
-\subsection{Gibt es eine Art Kochrezept für die Architekturerstellung}
-Gesucht: Ein Prozess mit dem auf die wichtigen Faktoren eingegangen werden kann.
-
-\section{Was wird gemacht}
-\subsection{Planung einer Zertifizierungsstellen Architektur}
-\subsection{Modellierung mit UML}
-\subsection{Anpassen der Anforderungestemplates}
-\subsection{Architekturplanung Prozesserstellung, eine Art Framework}
-\subsection{Dokumentation der Prozesserstellungsanläufe}
-
-\section{Was wird nicht gemacht}
-\subsection{Abdeckung des kompletten Prozesses}
-Weil zu umfangreich, genauere Beschreibung im Architektur kapitel, auch erklären dass es sich heraus gestellt hat dass man nicht alles sofort planen und bewerten kann wegen fehlenden Messmöglichkeiten
-\subsection{Kein Organisations- und Kommunikationsmanagement}
-\subsection{Implementation}
-Zu umfangreich
-\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)}
-\subsection{Abdeckung aller möglichen Archtekturreviewmethoden}
-\subsection{Komplette Vorgaben der Bewertungs-Methoden}
-Eher Hinweise auf wie man zb Ausfallkosten bewerten könnte, Methode auf eigene Anwendungsfälle abänder- und ersetzbar. Aber aufzeigen warum es gut sein kann sie dennoch schon zu behandeln
-\subsection{Kompletter Anforderungsprozess}
-Nur eine Erweiterung im Hinblick auf benötigte Parameter
-
-\section{Übersicht}
-Erklären was in welchen Kapiteln behandelt wird
-\subsection{Modellierung}
-\subsection{Anforderungen}
-\subsection{Architektur}
-\subsection{Prozesserstellung}
-\subsection{Prozessumsetzung Anforderungen}
-\subsection{Prozessumsetzung Architektur}
-\subsection{Zusammenfassung}
-
-
-\chapter{Modellierung}
-Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklären und erklären für was welcher Diagrammtyp verwendet wird
-
-\section{Warum ist Modellierung wichtig}
-\section{Was ist UML}
-
-\section{Diagrammtypen}
-\subsection{Kontextdiagramm}
-\subsection{Komponentendiagram}
-\subsection{Klassendiagramm}
-\subsection{Aktivitätsdiagramm}
-\subsection{Usecasediagramm}
-
-
-\chapter{Anforderungen}
-Behandeln der ISO 9126 Anforderungen, versuchen zu erklären was man alles beachten muss und was überhaupt ab anfang messbar ist (z.B. performance nicht messbar)
-
-*
-
-\section{Funktionale Anforderungen}
-Wichtig: Security ist eine funktionale Anforderung, ISO 25000 + IREB
-
-\section{Nicht funktionale Anforderungen}
-\subsection{Reliability}
-\subsection{Usability}
-\subsection{Efficiency}
-\subsection{Maintainability}
-\subsection{Portability}
-
-
+\input{./chapters/intro}
+\input{./chapters/modelling}
+\input{./chapters/requirements}
 \input{./chapters/architecture}
 \input{./chapters/processcreation}
 \input{./chapters/processrequirements}
 \input{./chapters/processarchitecture}
+\input{./chapters/outro}
 
-\section{Changemanagement}
-Je nachdem ob noch möglich/gewünscht aufzeigen wie würde ein Change request ausschauen, z.B. was wäre nötig um einen zusätlichen Typ User des Systems einzubinden
-
-
-\chapter{Zusammenfassung}
-
-\section{Warum ist der Prozess gut}
-\subsection{10er Regel der Fehlerkosten}
-\subsection{Bezieht Architekturrelevante Anforderungen in den Anforderungsprozess ein}
-\subsection{Minimiert Angriffsfläche für wichtige Infrastruktur}
-\subsection{Fokus Datensicherheit}
-\subsection{Lässt Entscheidungen aufschieben}
-\subsection{Kochrezept lässt sich ableiten}
-\subsection{Visuelle Repräsentationen mit denen schnell bewertet werden kann}
-
-\section{Limitierungen}
-\subsection{Benötigt noch mehr Input von anderen Projekten}
-da beispielprojekt wegen den anforderungen starken wert auf datensicherheit legt und deswegen architektur prozess beinflusst hat, benötigt auch noch implmenentierungsphase und realtest in projekten
-
-\subsection{Nicht alle nicht funktionalen Anforderungen überprüfbar}
-Sprich es ist bis zu einem gewissen Teil möglich
-\subsection{Problem wenn sicht Akteure/Daten oft ändern}
-\subsection{Zum Teil auch abhängig von Erfahrungswerten}
-\subsection{Nur Plangungsphase, ohne Implementierungsphase}
-\subsection{Extremarchitekturen}
-
-\section{Erkenntnisse}
-\subsection{Ohne messbare Parameter kein Kochrezept möglich}
-\subsection{Parameter nicht zu jeder Phase messbar}
-\subsection{Priorisierung von nicht funktionalen Parametern schwer möglich}
-\subsection{Generische Komponentenarchitektur durch viele und schnell ändernde Kombinationen schwer möglich}
-\subsection{Auf Ehrfahrungswerte kann nicht vollkommen verzichtet werden}
-\subsection{Funktionale Anforderungen beeinflussen Archtitektur mehr als gedacht}
-Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
-
-\section{Ausblick}
-Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
 
 \clearpage
 \bibliographystyle{gerabbrv}
@@ -175,10 +65,6 @@ Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber n
 
 % Das Tabellenverzeichnis
 \listoftables
-\clearpage
-
-% Das Quellcodeverzeichnis
-\listofcode
 \clearpage
 
 \phantomsection
