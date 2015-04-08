@@ -1,31 +1,129 @@
-\chapter{Anforderungen}
-Die Anforderungen des/der KundIn sind die Basis des zu entwickelnden Systems und beschreiben nicht nur dessen Funktionalität, sondern auch dessen Qualitäten. Sie werden vom Kunden meist in der Form von Usecases beschrieben \cite[S. 78]{reqanalysis} und sind für die Erstellung der Architektur notwendig \cite[S. 9]{softarch}. Ein besonderer Fokus bei der Erstellung der Architektur liegt auf der geforderten Qualität des Systems, da eben diese stark von Architekturentscheidungen beinflusst wird \cite[S. 109]{softarch}: \glqq Architektur ist für die Qualität eines Systems notwendig\grqq \cite[S. 59]{effektiv}.
+\chapter{Softwarequalität}
+Was genau verbirgt sich jedoch hinter dem Begriff Softwarequalität? Der Begriff Qualität ist sehr breit und es gibt mehrere mögliche Zugänge: für die Einen   \cite[S. 399-400]{pract}
 
-Sowohl funktionale als auch qualitative Aspekte sind für den Erfolg des Systems essentiell \cite[S. 109]{softarch}. Dies lässt an folgendem Beispiel demonstrieren: Ein/Eine KundIn beauftragt eine Firma, einen Webshop zu erstellen, auf welchem ihre/seine Produkte verkauft werden sollen. Die Funktionalität des Webshops wird wie beschrieben implementiert, aber das Endprodukt ist so langsam, dass ein Großteil der KundInnen den Bestellvorgang abbricht. Der Hauptgrund der Erstellung des Systems, nämlich Produkte verkaufen, ist somit zwar möglich, aber für den Kunden unrentabel.
+\section{Softwarequalitätsmodelle}
+ISO 9126 \cite{ISO_SQ} und dessen Nachfolger ISO 25010 \cite{ISO_SQ2} bieten ein Modell, um Softwarequalität zu beschreiben. ISO 25010, der Nachfolgestandard, erweitert die in ISO 9126 beschriebenen Hauptkategorien um Security und Compatibility und ändert auch die Kategorie Software Quality in Use ab, welche nun die Kategorie Usability erhält, welche vorher in den Hauptkriterien definiert war. Da es aber schwierig war, zitierbare Quellen zum neuen Standard zu finden - ISO 25010 hat \glqq in die Praxis wenig Einzug gehalten\grqq \ \cite[S. 60]{effektiv} - , die Neuerungen überschaubar und mehr eine Umorganisierung als Revolution darstellen, wird auf die Nutzung von ISO 25010 verzichtet und das Qualitätsmodell des Vorgängers, ISO 9216, verwendet.
 
+ISO 9126 definiert folgende Qualitätskategorien (Abbildung \ref{fig:iso9126}):
 
-Da Was ist Qualität \cite[S. 399]{pract}
+\begin{itemize}
+  \item \glqq Functionality\grqq
+  \item \glqq Reliability\grqq
+  \item \glqq Usability\grqq
+  \item \glqq Efficiency\grqq
+  \item \glqq Maintainability\grqq
+  \item \glqq Portability\grqq
+\end{itemize}
 
-ISO 9126 \cite{ISO_SQ} und dessen Nachfolger ISO 25010 \cite{ISO_SQ2} bieten ein Modell, um Softwarequalität zu beschreiben. ISO 25010 erweitert die in ISO 9126 beschriebenen Hauptkategorien um Security und Compatibility und fügt eine Zusätzliche Kategorie, nämlich Software Quality in Use hinzu, welche die eine eigene Qualitätskategorie für BenutzerInnen definieren. Da es aber schwierig war, zitierbare Quellen zum neuen Standard zu finden - ISO 25010 hat \glqq in die Praxis wenig Einzug gehalten\grqq \ \cite[S. 60]{effektiv} - , die Neuerungen überschaubar und mehr eine Umorganisierung als Revolution darstellen, wird auf die Nutzung von ISO 25010 verzichtet und das Qualitätsmodell des Vorgängers, ISO 9216, verwendet.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.54]{img/iso9126.png}
+    \caption{Die Qualitätskategorien des ISO 9126 Standards\cite[S. 7]{ISO_SQ}}
+    \label{fig:iso9126}
+\end{figure}
 
+Die beschriebenen Kategorien können laut IREB wiederum in folgende Überkategorien eingeteilt werden: funktionale Anforderungen und nicht funktionale Anforderungen. Auch erwähnt seien die Rahmenbedingungen, welche nicht im ISO 9126 Standard definiert sind und die zeitlichen und technologischen Umstände beschreiben.
 
-
-Behandeln der ISO 9126 Anforderungen, versuchen zu erklären was man alles beachten muss und was überhaupt ab anfang messbar ist (z.B. performance nicht messbar)
-Ein wichtiges Ziel der Softwarearchitektur ist die Sicherstellung der Qualität des Systems \cite[S. 19]{effektiv}:
-
-*
 
 \section{Funktionale Anforderungen}
-beschreibt die funktion die notwendig ist um das system für den kunden wertvoll zu machen\cite[S. 79]{reqanalysis}
+Funktionale Anforderungen beschreiben die Funktionalität des Systems, welche die Geschäftsprozesse des/der KundIn umsetzen und das System für ihn/sie somit wertvoll machen \cite[S. 79]{reqanalysis}. Sie werden vom/von der KundIn meist in der Form von Usecases beschrieben \cite[S. 78]{reqanalysis}
 
+IREB ordnet die Functionality Kategorie von ISO 9126 den funktionalen Anforderungen zu\cite[S. 9]{ireb}, welche sich in folgende Unterkategorien aufspaltet:
 
-Wichtig: Security ist eine funktionale Anforderung, ISO 25000 + IREB
+\begin{itemize}
+  \item \glqq Suitability\grqq
+  \item \glqq Accuracy\grqq
+  \item \glqq Interoperability\grqq
+  \item \glqq Security\grqq
+  \item \glqq Functional compliance\grqq
+\end{itemize}
+
+Suitability beschreibt das Vorhandensein von Funktionen, welche die vom/von der NutzerIn geforderten Funktionalitäten bereitstellen. Accuracy behandelt die geforderte Genauigkeit der implementierten Funktionen, Interoperability wiederum die Interaktionsmöglichkeiten des Systems mit anderen Systemen. Security beschreibt die implementierten Kontroll- und Sicherheitsmechanismen, mit welchen das System die Daten vor unerlaubtem Zugriff schützt. Der letzte Punkt, Functional Compliance, beschreibt die Standard- und Gesetzeskonformität des Softwareprodukts. \cite[S. 8]{ISO_SQ}
 
 \section{Nicht funktionale Anforderungen}
-Einschränkungen, beschreiben nicht was sondern wie\cite[S. 80]{reqanalysis}
+Nicht funktionalen Anforderungen \glqq verkörpern Erwartungen und Notwendigkeiten, die von Interessensvertretern (Auftraggeber, Benutzer, Architekt, Entwickler, etc.) neben den funktionalen Anforderungen als wichtig erachtet werden und über die reine gewünschte Funktionalität hinausgehen\grqq \cite[S. 108]{softarch}. Sie definieren nicht das Was sondern das Wie \cite[S. 80]{reqanalysis}.
+
+Der Fokus liegt meist auf der Funktionalität eines Systems: Es ist schließlich der Hauptgrund für die Erstellung des Systems und der/die KundIn hat eine genaue Vorstellung, was das System genau können muss. Die Qualität des Systems ist meist eine implizite Anforderung, welche im Anforderungsprozess besonders beachtet werden muss, aber trotzdem essentiell für den Erfolg des Systems ist. \cite[S. 109]{softarch}
+
+Dies lässt an folgendem Beispiel demonstrieren: Ein/Eine KundIn beauftragt eine Firma, einen Webshop zu erstellen, auf welchem er/sie seine/ihre Produkte verkaufen will. Die Funktionalität des Webshops wird wie beschrieben implementiert, aber das Endprodukt ist so langsam, dass ein Großteil der KundInnen den Bestellvorgang abbricht. Der Hauptfunktion des Systems, nämlich Produkte verkaufen, ist somit zwar möglich, aber für den Kunden im Vergleich zur investierten Summe unrentabel.
+
+Nicht funktionale Anforderungen sind nicht nur oft implizite Anforderungen, sondern auch schwer bezifferbar: Oft wird einfach verlangt, dass das System schnell sein soll. Eine genaue Definition, was der/die KundIn unter schnell versteht ist oft schwer zu ermitteln. Außerdem sind durch die Kontextabhängigkeit des Begriffes keine allgemeingültigen Werte ermittelbar: Eine ein Sekunden lange Antwortzeit kann für die Nutzung einer Buchhaltungssoftware schnell genug sein, werden die Daten aber für zeitkritische Anwendungen wie Aktienkäufe benötigt, ist die selbe Antwortzeit inakzeptabel. \cite[S. 59]{effektiv}.
+
+Es sind jedoch besonders die nicht funktionalen Anforderungen, welche im Fokus der Architekturerstellung liegen: Durch die in der Architekturphase entwickelte Struktur der Applikation wird die Erfüllung bestimmter Qualitätsmerkmale überhaupt erst möglich. Die Architektur beinflusst somit die nicht funktionalen Qualitäten eines Systems stark \cite[S. 109]{softarch}. Dies erlaubt folgenden Umkehrschluss: \glqq Architektur ist für die Qualität eines Systems notwendig\grqq \cite[S. 59]{effektiv}. \cite[S. 19]{effektiv}
+
+Weil die Qualität des Systems wie beschrieben maßgeblich von der Architektur abhängt, welche wiederum von den Qualitätsmerkmalen nicht funktionaler Anforderungen abhängt, ist auch die Ermittlung, Korrektheit und Präzision dieser Anforderung für die Architektur von hoher Bedeutung.
+
+Die übrigen Kategorien von ISO 9126 werden vom IREB den nicht funktionalen Anforderungen zugeschrieben\cite[S. 9]{ireb}:
+
+\begin{itemize}
+  \item \glqq Suitability\grqq
+  \item \glqq Accuracy\grqq
+  \item \glqq Interoperability\grqq
+  \item \glqq Security\grqq
+  \item \glqq Functional compliance\grqq
+\end{itemize}
+
+All diese Kategorien haben wie die Functionality Kategorie eigene Unterpunkte.
 
 \subsection{Reliability}
+Die Reliability Kategorie besteht aus folgenden Unterpunkten \cite[S. 7]{ISO_SQ}:
+
+\begin{itemize}
+  \item \glqq Maturity\grqq
+  \item \glqq Fault tolerance\grqq
+  \item \glqq Recoverability\grqq
+  \item \glqq Reliability compliance\grqq
+\end{itemize}
+
+\cite[S. 8-9]{ISO_SQ}
+
 \subsection{Usability}
+Die Usability Kategorie besteht aus folgenden Unterpunkten \cite[S. 7]{ISO_SQ}:
+
+\begin{itemize}
+  \item \glqq Understandability\grqq
+  \item \glqq Learnability\grqq
+  \item \glqq Operability\grqq
+  \item \glqq Attractiveness\grqq
+  \item \glqq Usability compliance\grqq
+\end{itemize}
+
+\cite[S. 9-10]{ISO_SQ}
+
 \subsection{Efficiency}
+Die Efficiency Kategorie besteht aus folgenden Unterpunkten \cite[S. 7]{ISO_SQ}:
+
+\begin{itemize}
+  \item \glqq Time behaviour\grqq
+  \item \glqq Resource utilisation\grqq
+  \item \glqq Efficiency compliance\grqq
+\end{itemize}
+
+\cite[S. 10]{ISO_SQ}
+
 \subsection{Maintainability}
+Die Maintainability Kategorie besteht aus folgenden Unterpunkten \cite[S. 7]{ISO_SQ}:
+
+\begin{itemize}
+  \item \glqq Analysability\grqq
+  \item \glqq Changeability\grqq
+  \item \glqq Stability\grqq
+  \item \glqq Testability\grqq
+  \item \glqq Maintainability compliance\grqq
+\end{itemize}
+
+\cite[S. 10-11]{ISO_SQ}
+
+
 \subsection{Portability}
+Die Portability Kategorie besteht aus folgenden Unterpunkten \cite[S. 7]{ISO_SQ}:
+
+\begin{itemize}
+  \item \glqq Adaptability\grqq
+  \item \glqq Installability\grqq
+  \item \glqq Co-existence\grqq
+  \item \glqq Replaceability\grqq
+  \item \glqq Portability compliance\grqq
+\end{itemize}
+
+\cite[S. 11]{ISO_SQ}
