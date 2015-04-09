@@ -1,5 +1,19 @@
 \chapter{Softwarequalität}
-Was genau verbirgt sich jedoch hinter dem Begriff Softwarequalität? Der Begriff Qualität ist sehr breit und es gibt mehrere mögliche Zugänge: für die Einen   \cite[S. 399-400]{pract}
+Für viele KundInnen ist Softwarearchitektur ein schwer einorden- und erklärbares Teilgebiet der Softwareentwicklung. Deswegen ist es schwierig, den/die KundIn für die Mithilfe an der Architekturerstellung und die daraus resultierenden Kosten zu gewinnen. Eine mögliche Lösung für dieses Problem ist es, die durch unzureichende Softwarequalität entstandenen Kosten, welche wiederum die Folge einer mangelhaften Architektur sind, den Kosten der Architekturerstellung gegenüber zu stellen. Die Einbeziehung von Softwarequalität in den Architekturprozess ist somit notwendig. \cite[S. 8-9]{softarch}
+
+Was genau verbirgt sich jedoch hinter dem Begriff Softwarequalität? Der Begriff Qualität selbst ist sehr breit und schwammig. Laut Garvin gibt es fünf verschiedene Herangehensweisen \cite[S. 25-29]{quality}:
+
+\begin{itemize}
+  \item Transzendentale Sicht
+  \item Produktbasierte Sicht
+  \item Userbasierte Sicht
+  \item Herstellungsbasierte Sicht
+  \item Wertbasierte Sicht
+\end{itemize}
+
+Die transzendentale Sicht beschreibt Qualität als sofort erkennbar, aber als nicht wirklich beschreibbar. Die produktbasierte Sicht ordnet die Qualität des Produktes dessen Bestandteilen zu. Bei der userbasierten Sicht geht es darum, die Anforderungen des/der NutzerInnen zu befriedigen: Die höchste Qualität eines Produktes wird daher erreicht, wenn der/die BenutzerIn alles vorfindet, was er/sie sich erwartet, nicht Mehr und nicht Weniger. Die herstellungsbasierte Sicht misst Qualität an der Erfüllung der Spezifikation und des Designs. Die wertbasierte Sicht schließlich definiert die Qualität durch das Preis-Leistungsverhältnis. \cite[S. 26]{quality}
+
+Diese Sichten treffen mehr oder weniger auch für Softwarequalität zu \cite[S. 399]{pract}, sind aber noch zu grob formuliert, um konkrete Schritte bei der Erstellung des Systems und dessen Architektur zu setzen.
 
 \section{Softwarequalitätsmodelle}
 ISO 9126 \cite{ISO_SQ} und dessen Nachfolger ISO 25010 \cite{ISO_SQ2} bieten ein Modell, um Softwarequalität zu beschreiben. ISO 25010, der Nachfolgestandard, erweitert die in ISO 9126 beschriebenen Hauptkategorien um Security und Compatibility und ändert auch die Kategorie Software Quality in Use ab, welche nun die Kategorie Usability erhält, welche vorher in den Hauptkriterien definiert war. Da es aber schwierig war, zitierbare Quellen zum neuen Standard zu finden - ISO 25010 hat \glqq in die Praxis wenig Einzug gehalten\grqq \ \cite[S. 60]{effektiv} - , die Neuerungen überschaubar und mehr eine Umorganisierung als Revolution darstellen, wird auf die Nutzung von ISO 25010 verzichtet und das Qualitätsmodell des Vorgängers, ISO 9216, verwendet.
