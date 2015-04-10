@@ -1,15 +1,44 @@
 \chapter{Modellierung in der Architektur}
-Kurze Einführung in die Modellierung. Warum ist sie wichtig, was wird verwendet. Die wichtigsten Grundsachen erklären und erklären für was welcher Diagrammtyp verwendet wird
+Was ist ein Modell: Stachowiak 1973: abbildung, verkürzung, pragmatismus
+
+\cite[S. 264]{softarch}
 
 \cite[S. 13]{reqanalysis}
 \cite[S. 139]{effektiv}
 
-\section{Warum ist Modellierung wichtig}
-\section{Was ist UML}
+\cite[S. 93]{glasklar}
 
-\section{Diagrammtypen}
-\subsection{Kontextdiagramm}
-\subsection{Komponentendiagram}
-\subsection{Klassendiagramm}
-\subsection{Aktivitätsdiagramm}
+
+\section{UML}
+
+
+\section{Diagrammkategorien}
+Grundsätzlich lassen sich alle Diagramme in folgende zwei Kategorien einteilen:
+
+\begin{itemize}
+  \item Verhaltensdiagramme
+  \item Strukturdiagramme
+\end{itemize}
+
+
 \subsection{Usecasediagramm}
+Das Usecasediagramm gliedert sich in die Diagrammkategorie der Verhaltensmodellierung ein beschreibt die Anwendungsfälle des Systems, dessen Akteure und die Beziehung zwischen Beiden. Die einzelnen Anwendungsfälle selbst repräsentieren Aktionen. Diese werden jedoch nicht im Usecasediagramm modelliert.\cite[S. 242-245]{glasklar}
+
+Das Usecasediagramm ist kein Artefakt der Architekturerstellung, sondern wird in der Regel in der Anforderungsanalyse des Projektes erstellt. In der Architekturphase gibt das Diagramm aber Auskunft über wichtige und architekturentscheidende Parameter, wie zB. die Systemabgrenzung, Nachbarsysteme, Benutzer, und Grundfunktionalität des Systems. \cite[S. 148]{basiswissen}
+
+\subsection{Kontextdiagramm}
+Das Kontextdiagramm kann in die Strukturmodellierung eingeordnet werden und zeigt die Akteure, Datenflüsse und Nachbarsysteme. Das Kontextdiagramm selbst ist nicht Teil der UML, kann aber mit UML dargestellt werden. Meistens wird dafür ein Usecasediagramm verwendet, aber auch ein Komponentendiagramm stellt im Prinzip die notwendigen Elemente bereit. \cite[S. 255]{glasklar}
+
+Das Kontextdiagramm wird in der Anforderungsanalyse erstellt und gibt einen genaueren Überblick über die Systemabgrenzung \cite[S. 255]{glasklar}. Da es zudem auch die Nachbarsysteme modelliert kann es als Grundstein für die Komponenten der Architektur herangezogen werden.
+
+
+\subsection{Komponentendiagram}
+Das Komponentendiagramm ist Teil der Strukturdiagramme und wird verwendet, um die Bestandteile eines Systems zu modellieren. Die Implementation der einzelnen Bestandteile, auch Komponenten genannt, wird dabei nicht dargestellt. Stattdessen werden die Schnittstellen der Komponenten und deren Beziehungen untereinander modelliert. Die Komponenten selbst können in Artefakte gekapselt werden. \cite[S. 216]{glasklar}
+
+\subsection{Klassendiagramm}
+Das Klassendiagramm fügt sich in die Strukturdiagramme ein
+
+
+\subsection{Aktivitätsdiagramm}
+
+Das Aktivitätsdiagramm wird in die Verhaltensmodellierung
