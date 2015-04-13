@@ -1,6 +1,5 @@
 \chapter{Zusammenfassung}
-auf uml basierter prozess erstellt
-
+In der Arbeit wurde anhand eines Beispielprojektes ein UML-basierter, allgemein anwendbarer Architekturprozess erstellt.
 
 
 \section{Vorteile des erstellten Architekturprozess}
@@ -13,7 +12,6 @@ Daraus ergeben sich folgende Vorteile:
 \begin{itemize}
   \item Gute Verständlichkeit
   \item Fokus auf Kosteneffizienz
-  \item Breite Anwendbarkeit
 \end{itemize}
 
 \subsection{Gute Verständlichkeit}
@@ -30,37 +28,48 @@ Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter
 
 Softwarearchitekturentscheidungen sind oft ein Trade-Off: Durch konkurrierende Qualitätsanforderungen, zB. Performance und Wartbarkeit, ist es in den seltesten Fällen möglich, eine Architektur zu erstellen, welche in allen Qualitätsanforderungen brilliert. Aus diesem Grund ist es notwendig, eine bestimmte Vorgehensweise zur Erstellung, Bewertung und Entscheidung von Architekturen zu pflegen. Der Prozess bietet in dieser Hinsicht ein kostenbasiertes Entscheidungs- und Analysemodell an, mit welcher diese Entscheidungen gegenrechenbar werden. Dadurch, dass weitere Systeme nur dann erstellt werden, wenn sie einen Kostenvorteil bergen, entsteht eine kosteneffiziente und preislich angemessene Architektur.
 
-Nicht nur tatsächliche Kosten, sondern auch Risikokosten werden im Architekturprozess mit einbezogen. Der Fokus des Prozesses liegt auf Angriffs- und Änderungsszenarien, welche als Resultat des Umfeldes des Beispielprojektes gesehen werden können.
+Nicht nur tatsächliche Kosten, sondern auch Risikokosten werden im Architekturprozess mit einbezogen. Der Fokus des Prozesses liegt auf Angriffs-, Aufalls- und Änderungsszenarien, welche als Resultat des Umfeldes des Beispielprojektes gesehen werden können.
 
-Ein weiterer Kostenvorteil ist die Möglichkeit, kostenintensive Anschaffungen und Entscheidungen zu verschieben, da sich der Prozess zuerst auf die durch Kosten rechtefertigbare Aufspaltung des Systems fokussiert und sich nicht auf bestimmte Basisarchitekturen fest legt. Dies ermöglich flexible Entscheidungen: So ist es zB. möglich, das erstellte Publicsystem durch eine N-Tier Architektur oder Cloudarchitektur umzusetzen. Das Zusammenspiel der einzelnen Systeme und die Verteilung der Daten ist jedoch schon durch Interfaces geregelt und kann folglich an eigene Teams aufgeteilt werden.
-
-
-\subsection{Breite Anwendbarkeit}
-funktioniert gut für standardsoftware, da daten und zugriff im vordergrund stehen
-
+Ein weiterer Kostenvorteil ist die Möglichkeit, Anschaffungen und Architekturentscheidungen aufzuschieben, da sich der Prozess nicht auf eine physische Architektur fest legt. Die wichtigen Grundsteine, die Schnittstellen und Kommunikationswege, sind bereits geregelt, was zusätzlich eine Paralellisierung der Architekturerstellung erlaubt.
 
 
 \section{Limitierungen, Probleme und Nachteile des erstellten Architekturprozesses}
+Der Prozess ist zwar allgemein anwendbar, ist aber aufgrund der Herangehensweise für manche Gebiete schlechter geeignet. Die Probleme des sind vor allem in folgenden Bereiche auffindbar:
 
 \begin{itemize}
   \item Ausgreift- und Erprobtheit
-  \item Vollkommenheit
+  \item Vollständigkeit
   \item Universelle Anwendbarkeit
 \end{itemize}
 
 \subsection{Ausgreift- und Erprobtheit}
-Benötigt noch mehr Input von anderen Projekten, da beispielprojekt wegen den anforderungen starken wert auf datensicherheit legt und deswegen architektur prozess beinflusst hat, benötigt auch noch implmenentierungsphase und realtest in projekten, im moment nur planungsphase umgesetzt
+Der Prozess wurde erst anhand eines einzigen Projektes erprobt und ging nicht über die Planungsphase der Architektur hinaus. Die Implementierungsphase und abschließende Überprüfung der implementierten Software wurde aus Zeit- und Umfangsgründen nicht durchgeführt. Dies führt nicht nur zu einer mangelnden Feedbackphase, in welcher Architekturprobleme während der Implementation offensichtlich werden hätten können, sondern auch zu einem zu starken Fokus auf die Domäne des Beispielprojekts.
 
-\subsection{Vollkommenheit}
-hängt mit ausgereift und erprobtheit zusammen. Gibt sehr viele nicht funktionale anforderungen und risiken, hier nur ein bruchteil behandelt, berechnungen sind zt grob und beispielhaft
+Dies wird unter Anderem darin offensichtlich, dass der Prozess einen großen Wert auf Datensicherheit legt, welcher durch die dem Projekt zugrunde liegenden Anforderungen enstehen: Die Sicherheit und der richtige Umgang mit den Kundendaten ist eine bindende Anforderung zur Erfüllung des ISO Standards für Zertifizierungsstellen, ohne welchen das System nicht betrieben werden könnte. \cite{ISO_CERT}
 
-Nicht alle nicht funktionalen Anforderungen überprüfbar und folgende entscheidungen hängen viel vom vorwissen des architekten ab, erfahrungswerte sind auch wichtig, wg kochrezept aber kein fokus in der arbeit
+Der Prozess ist somit noch unzureichend für den Realeinsatz getestet. Vor Allem der Einsatz in unterschiedlichen Applikationsdomänen muss noch stärker geprüft werden.
+
+\subsection{Vollständigkeit}
+Die Probleme der Vollständigkeit des Prozesses sind unter Anderem eine Konsequenz der geringen Erprobtheit. Da es sehr viele unterschiedliche Risiken gibt und für unterschiedliche Projektfelder unterschiedliche Qualitäten verlangt werden, sind im Prozess nur ein Teil der möglichen Bereiche bearbeitet worden.
+
+Außerdem behandelt der Prozess nur die Planungsphase und nicht die Architekturphase und beschäftigt sich somit weder mit der Strukturierung des Codes, noch gibt er Auskunft über die tatsächlichen eingesetzten, physischen Komponenten.
 
 
 \subsection{Universelle Anwendbarkeit}
-Bringt nicht viel in bereichen, bei denen der fokus nicht auf daten, akteuren und sicherheit liegt. kann viel zu einfache architekturen erstellen, die keine große hilfe darstellen. problem wenn großer fokus auf eine nicht funktionale anforderung liegt, zb unglaublich gute performance, ausgesprochen wenig speicherverbrauch. kostenansatz funktioniert zwar aber planungsarbeit kann komplett über den haufen geworfen werden
+Der Architekturprozess ist vor allem geeignet für Informationssysteme, deren Fokus auf folgenden Anforderungen liegt:
 
-Problem wenn sicht Akteure/Daten oft ändern
+\begin{itemize}
+  \item Daten unterschiedlicher Vertraulichkeit müssen verarbeitet werden
+  \item Datensicherheit ist wichtig
+  \item Nicht jede AkteurIn kann auf alle Daten zugreifen
+  \item Preis-Leistungsverhältnis ist wichtig für die Erstellung der Software
+\end{itemize}
+
+Liegt der Fokus jedoch auf anderen Bereichen, kann das Resultat der Analysen eine sehr simple Architektur sein, welche im Implementationsprozess stark angepasst werden müssen.
+
+Ein Beispiel hierfür ist das Erstellen einer Architektur für ein sehr rechenintensives Systems, zB. für die Berechnung von Primzahlen. Hier ist es wichtig, die Berechnungen gut zu paralellisieren; der Architekturplanungsprozess würde aufgrund der Anforderungen eine einzige Softwarekomponente zur Berechnung der Primzahlen ermitteln, was zwar richtig wäre, aber wenig Hinweise zur Strukturierung der tatsächlichen physischen Systeme bieten würde.
+
+Eine zweites Beispiel wäre ein Embedded System, welches eine starke Limitierung des Netzwerk- und Speicherdurchsatzes besitzt: Durch die Aufspaltung in mehrere Systeme, welche dann durch ein Netzwerk verbunden werden, würde die Zeit, welche zur Übermittlung der Daten aufgewendet würde stark unter der ermittelten Architektur leiden. Auch eine Virtualisierung der Komponenten auf einem System würde wegen der Speicherlimittierungen nicht in Frage kommen. Die ermittelte Architektur müsste aufgrund der Hardware Limittierungen stark überarbeitet werden.
 
 \section{Erkenntnisse}
 \subsection{Ohne messbare Parameter kein Kochrezept möglich}
@@ -72,8 +81,7 @@ Problem wenn sicht Akteure/Daten oft ändern
 Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
 
 \section{Ausblick}
-Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
+Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern, mehr Risiken zu betrachten, mehr analysen durchzuführen
 
-Implementation muss wahrscheinlich falls finanziell möglich mit szenarien bildung beginngen, wie atam architekturen einkreisen, prototypen und testergebnisse vergleichen
+Implementation sollte wahrscheinlich durch Prototyping gelöst werden um die Qualitätsattribute immer zu überprüfen
 
-mehr risikoanalysen?
