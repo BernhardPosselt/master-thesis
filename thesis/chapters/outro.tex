@@ -1,24 +1,66 @@
 \chapter{Zusammenfassung}
+auf uml basierter prozess erstellt
 
-\section{Warum ist der Prozess gut}
-\subsection{10er Regel der Fehlerkosten}
-\subsection{Bezieht Architekturrelevante Anforderungen in den Anforderungsprozess ein}
-\subsection{Minimiert Angriffsfläche für wichtige Infrastruktur}
-\subsection{Fokus Datensicherheit}
-\subsection{Lässt Entscheidungen aufschieben}
-\subsection{Kochrezept lässt sich ableiten}
-\subsection{Visuelle Repräsentationen mit denen schnell bewertet werden kann}
 
-\section{Limitierungen}
-\subsection{Benötigt noch mehr Input von anderen Projekten}
-da beispielprojekt wegen den anforderungen starken wert auf datensicherheit legt und deswegen architektur prozess beinflusst hat, benötigt auch noch implmenentierungsphase und realtest in projekten
 
-\subsection{Nicht alle nicht funktionalen Anforderungen überprüfbar}
-Sprich es ist bis zu einem gewissen Teil möglich
-\subsection{Problem wenn sicht Akteure/Daten oft ändern}
-\subsection{Zum Teil auch abhängig von Erfahrungswerten}
-\subsection{Nur Plangungsphase, ohne Implementierungsphase}
-\subsection{Extremarchitekturen}
+\section{Vorteile des erstellten Architekturprozess}
+Soll ein Architekturprozess für die Softwareentwicklung eingeführt werden, so muss dieser einen Vorteil gegenüber des Status Quo bieten. Welche Vorteile zeichnen den in der Arbeit beschriebene Architekturprozess jedoch aus?
+
+Die Vorteile ergeben sich im Prinzip aus den treibenden Anforderungen an den Prozess und das Projekt: Der Prozess soll nachvollziehbar sein, sodass verschiedene Personen mit den gleichen Anforderungen eine identische oder zumindest stark identische Architektur erstellen, der Fokus liegt auf der frühen Planungs- und nicht der Implementationsphase, das Projekt selbst ist ein mittelgroßes, typisches Projekt und erfordert durch dessen Anforderungen eine hohe Datensicherheit.
+
+Daraus ergeben sich folgende Vorteile:
+
+\begin{itemize}
+  \item Gute Verständlichkeit
+  \item Fokus auf Kosteneffizienz
+  \item Breite Anwendbarkeit
+\end{itemize}
+
+\subsection{Gute Verständlichkeit}
+Der Prozess ist aufgrund der Verwendung von UML in einer Modelliersprache dokumentiert, welche nicht nur eine große Bekanntheit und Verwendung findet, sondern auch oft im Anforderungsprozess verwendet wird. Der Architekturprozess kann damit auf dem Anforderungsprozess aufbauen und Modelle weiterentwicklen anstatt diese in komplett neue Modellierungen zu überführen. Dies hilft nicht nur bei der Kommunikation mit dem/der KundIn sondern auch mit dem Anforderungsteam: Wenn sich zB. Anforderungen ändern, können diese an den gleichen Modellen geändert werden. Die erstellten Modelle dienen zugleich auch als Dokumentation des Projektes und helfen bei der Wartung.
+
+Zusätzlich profitiert der Prozess von den generellen Eigenschaften einer visuellen Modellierungssprache: Sie bildet das komplexe auf eine einfachere Darstellung ab und verringert die Information auf die wirklich wichtigen Bereiche. Durch die visuelle Komponente ist das Modell schneller aufnehm- und verstehbar als purer Prosatext.
+
+Durch den Fokus auf Preis-Leistungsverhältnis ist es auch einfacher, die Probleme, Entscheidungen und Kosten dem Kunden zu kommunizieren, welcher wegen der fehlenden Vertrautheit mit dem Thema Softwarearchitektur oft die Entscheidungen und Notwendig dieses Bereiches anzweifelt \cite[S. 8-9]{softarch}. Da er mit Kostenfragen in der Regel vertraut ist, ergibt sich hier sogar eine Chance, bessere Anforderungen zu erlangen.
+
+\subsection{Fokus auf Kosteneffizienz}
+Durch die Fokussierung des Prozesses auf die frühe Architekturplanungsphase, lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
+
+Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter schon in der Anforderungsphase ermittelt werden und somit die Anzahl der Kundenkontakte reduziert werden kann.
+
+Softwarearchitekturentscheidungen sind oft ein Trade-Off: Durch konkurrierende Qualitätsanforderungen, zB. Performance und Wartbarkeit, ist es in den seltesten Fällen möglich, eine Architektur zu erstellen, welche in allen Qualitätsanforderungen brilliert. Aus diesem Grund ist es notwendig, eine bestimmte Vorgehensweise zur Erstellung, Bewertung und Entscheidung von Architekturen zu pflegen. Der Prozess bietet in dieser Hinsicht ein kostenbasiertes Entscheidungs- und Analysemodell an, mit welcher diese Entscheidungen gegenrechenbar werden. Dadurch, dass weitere Systeme nur dann erstellt werden, wenn sie einen Kostenvorteil bergen, entsteht eine kosteneffiziente und preislich angemessene Architektur.
+
+Nicht nur tatsächliche Kosten, sondern auch Risikokosten werden im Architekturprozess mit einbezogen. Der Fokus des Prozesses liegt auf Angriffs- und Änderungsszenarien, welche als Resultat des Umfeldes des Beispielprojektes gesehen werden können.
+
+Ein weiterer Kostenvorteil ist die Möglichkeit, kostenintensive Anschaffungen und Entscheidungen zu verschieben, da sich der Prozess zuerst auf die durch Kosten rechtefertigbare Aufspaltung des Systems fokussiert und sich nicht auf bestimmte Basisarchitekturen fest legt. Dies ermöglich flexible Entscheidungen: So ist es zB. möglich, das erstellte Publicsystem durch eine N-Tier Architektur oder Cloudarchitektur umzusetzen. Das Zusammenspiel der einzelnen Systeme und die Verteilung der Daten ist jedoch schon durch Interfaces geregelt und kann folglich an eigene Teams aufgeteilt werden.
+
+
+\subsection{Breite Anwendbarkeit}
+funktioniert gut für standardsoftware, da daten und zugriff im vordergrund stehen
+
+
+
+\section{Limitierungen, Probleme und Nachteile des erstellten Architekturprozesses}
+
+\begin{itemize}
+  \item Ausgreift- und Erprobtheit
+  \item Vollkommenheit
+  \item Universelle Anwendbarkeit
+\end{itemize}
+
+\subsection{Ausgreift- und Erprobtheit}
+Benötigt noch mehr Input von anderen Projekten, da beispielprojekt wegen den anforderungen starken wert auf datensicherheit legt und deswegen architektur prozess beinflusst hat, benötigt auch noch implmenentierungsphase und realtest in projekten, im moment nur planungsphase umgesetzt
+
+\subsection{Vollkommenheit}
+hängt mit ausgereift und erprobtheit zusammen. Gibt sehr viele nicht funktionale anforderungen und risiken, hier nur ein bruchteil behandelt, berechnungen sind zt grob und beispielhaft
+
+Nicht alle nicht funktionalen Anforderungen überprüfbar und folgende entscheidungen hängen viel vom vorwissen des architekten ab, erfahrungswerte sind auch wichtig, wg kochrezept aber kein fokus in der arbeit
+
+
+\subsection{Universelle Anwendbarkeit}
+Bringt nicht viel in bereichen, bei denen der fokus nicht auf daten, akteuren und sicherheit liegt. kann viel zu einfache architekturen erstellen, die keine große hilfe darstellen. problem wenn großer fokus auf eine nicht funktionale anforderung liegt, zb unglaublich gute performance, ausgesprochen wenig speicherverbrauch. kostenansatz funktioniert zwar aber planungsarbeit kann komplett über den haufen geworfen werden
+
+Problem wenn sicht Akteure/Daten oft ändern
 
 \section{Erkenntnisse}
 \subsection{Ohne messbare Parameter kein Kochrezept möglich}
@@ -31,3 +73,7 @@ Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktio
 
 \section{Ausblick}
 Prozess in der Planungsphase erprobt. Implementierungsphase auch wichtig, aber nicht beschrieben. Nächste Schritte könnten sein den Prozess mit einer Implementierungsphase zu erweitern. 1 Projekt hat viele Probleme schon aufgezeigt, aber weitere, unterschiedliche Projekte wären gut um den Prozess noch zu verbessern.
+
+Implementation muss wahrscheinlich falls finanziell möglich mit szenarien bildung beginngen, wie atam architekturen einkreisen, prototypen und testergebnisse vergleichen
+
+mehr risikoanalysen?
