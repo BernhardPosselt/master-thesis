@@ -3,9 +3,14 @@ In der Arbeit wurde anhand eines Beispielprojektes ein UML-basierter, allgemein 
 
 Die intiale Frage - Wie kommt man von Anforderungen auf eine gute Architektur - kann wegen der ungenauen Definition einer guten Architektur nicht genau beantwortet werden. Die Frage muss anders formuliert werden, nämlich wie folgt: Wie kommt man von Anforderungen auf eine angemessene Architektur. Eine angemessene Architektur ist eine Architektur, welche die Anforderungen des/der KundIn abdeckt, nicht Mehr und nicht Weniger.
 
-Will man die Frage beantworten, ob die in der Planungsphase erstellte Architektur angemessen ist, muss die erstellte Architektur anhand von messbaren Werten überprüft werden. Da in der Planungsphase noch keine Implementation des Systems vorliegt, ist es jedoch äußerst schwierig, bestimmte Werte wie Performance zu messen. Der Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten. Zusätzliche wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
+Soll nun diese Frage beantwortet werden, nämlich, ob die in der Planungsphase erstellte Architektur angemessen ist, muss die erstellte Architektur anhand von messbaren Werten überprüft und mit den gestellten Anforderungen verglichen werden. Da in der Planungsphase noch keine Implementation des Systems vorliegt, ist es jedoch für die meisten nicht funktionalen Anforderungen äußerst schwierig, sodass ein qualitätsbasierter Ansatz zu ungenaue Daten für die Basis eines Architekturprozesses liefert. Auch die Priorisierung von nicht funktionalen Anforderungen wie es von Oliver Vogel vorgeschlagen wird \cite[S. 374]{softarch} ist aufgrund ungenau ermittelbarer Parameter nicht gangbar. Ein darauf aufbauender Ansatz, welcher anhand der priorisierten Anforderungen bewertete Architekturstile \cite[S. 179]{review} auswählt ist nicht nur wegen der Priorisierung zu offen, sondern auch die Architekturstile sind noch auf einer zu abstrakten Ebene, um die wirklichen Komponenten für die Architektur zu ermitteln. Ein Versuch, die Abstraktion der Architekturstile zu verringern indem für jeden Stil fixe Komponenten ausgewählt werden, liefert auch keine eindeutige Lösung, wohl auch deswegen, weil die Komponenten auf die tatsächlichen Qualitäten überprüft werden müssten, was wegen der fehlenden Implementierung nicht möglich ist.
+
+Da die meisten Architekturprozesse und -reviews wie ATAM die nicht funktionalen Anforderungen zur Entscheidungsfindung verwenden, ist dieses Ergebnis recht überraschend. Dies kann jedoch daran liegen, dass ATAM Architekturreviews nicht nur in der Planungsphase durchgeführt werden können. Im Bezug auf CBAM lassen sich Paralellitäten erkennen, CBAM selbst aber bietet zwar ein Reviewframework aber keinen detaillierten Architekturerstellungsprozess.
+
+Der erstellte Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten, welche unter Anderem durch die Verwendung von Risikoszenarien ermittelt werden, zB. unerlaubter Zugriff auf Daten. Zusätzliche wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
 
 Eine Architektur muss jedoch nicht nur für sich selbst erstellt werden, sondern auch dem/der KundIn kommuniziert werden. Um dies zu erreichen können die kostenbasierten Entscheidungen und die UML Modelle herangezogen werden.
+
 
 \section{Vorteile des erstellten Architekturprozesses}
 Soll ein Architekturprozess für die Softwareentwicklung eingeführt werden, so muss dieser einen Vorteil gegenüber des Status Quo bieten. Welche Vorteile zeichnen den in der Arbeit beschriebene Architekturprozess jedoch aus?
@@ -75,22 +80,6 @@ Liegt der Fokus jedoch auf anderen Bereichen, kann das Resultat der Analysen ein
 Ein Beispiel hierfür ist das Erstellen einer Architektur für ein sehr rechenintensives Systems, zB. für die Berechnung von Primzahlen. Hier ist es wichtig, die Berechnungen gut zu paralellisieren; der Architekturplanungsprozess würde aufgrund der Anforderungen eine einzige Softwarekomponente zur Berechnung der Primzahlen ermitteln, was zwar richtig wäre, aber wenig Hinweise zur Strukturierung der tatsächlichen physischen Systeme bieten würde.
 
 Eine zweites Beispiel wäre ein Embedded System, welches eine starke Limitierung des Netzwerk- und Speicherdurchsatzes besitzt: Durch die Aufspaltung in mehrere Systeme, welche dann durch ein Netzwerk verbunden werden, würde die Zeit, welche zur Übermittlung der Daten aufgewendet würde stark unter der ermittelten Architektur leiden. Auch eine Virtualisierung der Komponenten auf einem System würde wegen der Speicherlimittierungen nicht in Frage kommen. Die ermittelte Architektur müsste aufgrund der Hardware Limittierungen stark überarbeitet werden.
-
-\section{Erkenntnisse}
-Bei der Erstellung des Prozesses wurden folgende Dinge ersichtlich
-
-
-erstellung hat folgende erkenntnisse gebracht
-
-Qualitätsanforderungen müssen messbar und
-
-\subsection{Ohne messbare Parameter kein Kochrezept möglich}
-\subsection{Parameter nicht zu jeder Phase messbar}
-\subsection{Priorisierung von nicht funktionalen Parametern schwer möglich}
-\subsection{Generische Komponentenarchitektur durch viele und schnell ändernde Kombinationen schwer möglich}
-\subsection{Auf Ehrfahrungswerte kann nicht vollkommen verzichtet werden}
-\subsection{Funktionale Anforderungen beeinflussen Archtitektur mehr als gedacht}
-Prozess erstellt die frühe Architektur hauptsächlich durch einbeziehen funktionaler parameter, nicht funktionale parameter wegen fehlender implementation schwer messbar.
 
 \section{Ausblick}
 Der Prozess wurde in der Planungsphase eines einzigen Beispielprojektes erprobt und schließt vor dem Beginn der Implementationsphase ab. Möglichkeiten zur Verbesserung des Prozesses lassen sich nicht nur durch die Erprobung weiterer, unterschiedlicher Projekte erlangen, sondern auch eine Erweiterung des Prozesses für die Implementationsphase ist denkbar.
