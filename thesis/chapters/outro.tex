@@ -1,17 +1,16 @@
 \chapter{Zusammenfassung}
-In der Arbeit wurde anhand eines Beispielprojektes ein UML-basierter, allgemein anwendbarer Architekturprozess erstellt. Der Architekturprozess ordent sich in die Planungsphase der Architektur ein und verwendet für die Rechtfertigung der Architekturentscheidungen einen kostenbasierten Ansatz.
+In der Arbeit wurde anhand eines Beispielprojektes ein UML-basierter, allgemein anwendbarer Architekturprozess erstellt, mit welchem sich reproduzierbare Softwarearchitekturen erstellen lassen. Der Architekturprozess ordent sich in die Planungsphase der Architektur ein und verwendet für die Rechtfertigung der Architekturentscheidungen einen kostenbasierten Ansatz.
 
-Der Prozess bietet einen genauen Ablauf und die Ergebnisse sind anhand der kostenbasierten Entscheidungsfindung reproduzierbar. Die intiale Frage - Wie kommt man von Anforderungen auf eine gute Architektur - kann wegen der ungenauen Definition einer guten Architektur nicht genau beantwortet werden. Die Frage muss anders formuliert werden, nämlich wie folgt: Wie kommt man von Anforderungen auf eine angemessene Architektur. Eine angemessene Architektur ist eine Architektur, welche die Anforderungen des/der KundIn abdeckt, nicht Mehr und nicht Weniger.
+Die intiale Frage - Wie kommt man von Anforderungen auf eine gute Architektur - kann wegen der ungenauen Definition einer guten Architektur nicht genau beantwortet werden. Die Frage muss anders formuliert werden, nämlich wie folgt: Wie kommt man von Anforderungen auf eine angemessene Architektur. Eine angemessene Architektur ist eine Architektur, welche die Anforderungen des/der KundIn abdeckt, nicht Mehr und nicht Weniger.
 
 Will man die Frage beantworten, ob die in der Planungsphase erstellte Architektur angemessen ist, muss die erstellte Architektur anhand von messbaren Werten überprüft werden. Da in der Planungsphase noch keine Implementation des Systems vorliegt, ist es jedoch äußerst schwierig, bestimmte Werte wie Performance zu messen. Der Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten. Zusätzliche wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
 
 Eine Architektur muss jedoch nicht nur für sich selbst erstellt werden, sondern auch dem/der KundIn kommuniziert werden. Um dies zu erreichen können die kostenbasierten Entscheidungen und die UML Modelle herangezogen werden.
 
-
 \section{Vorteile des erstellten Architekturprozesses}
 Soll ein Architekturprozess für die Softwareentwicklung eingeführt werden, so muss dieser einen Vorteil gegenüber des Status Quo bieten. Welche Vorteile zeichnen den in der Arbeit beschriebene Architekturprozess jedoch aus?
 
-Die Vorteile ergeben sich im Prinzip aus den treibenden Anforderungen an den Prozess und das Projekt: Der Prozess soll nachvollziehbar sein, sodass verschiedene Personen mit den gleichen Anforderungen eine identische oder zumindest stark identische Architektur erstellen, der Fokus liegt auf der frühen Planungs- und nicht der Implementationsphase, das Projekt selbst ist ein mittelgroßes, typisches Projekt und erfordert durch dessen Anforderungen eine hohe Datensicherheit.
+Die Vorteile ergeben sich im Prinzip aus den treibenden Anforderungen an den Prozess und das Projekt: Der Prozess soll nachvollzieh- und reproduzierbar sein, sodass verschiedene Personen mit den gleichen Anforderungen eine identische oder zumindest stark identische Architektur erstellen. Der Fokus liegt auf der frühen Planungs- und nicht der Implementationsphase, das Projekt selbst ist ein mittelgroßes, typisches Projekt und erfordert durch dessen Anforderungen eine hohe Datensicherheit.
 
 Daraus ergeben sich folgende Vorteile:
 
@@ -28,7 +27,7 @@ Zusätzlich profitiert der Prozess von den generellen Eigenschaften einer visuel
 Durch den Fokus auf Preis-Leistungsverhältnis ist es auch einfacher, die Probleme, Entscheidungen und Kosten dem Kunden zu kommunizieren, welcher wegen der fehlenden Vertrautheit mit dem Thema Softwarearchitektur oft die Entscheidungen und Notwendig dieses Bereiches anzweifelt \cite[S. 8-9]{softarch}. Da er mit Kostenfragen in der Regel vertraut ist, ergibt sich hier sogar eine Chance, bessere Anforderungen zu erlangen.
 
 \subsection{Fokus auf Kosteneffizienz}
-Durch die Fokussierung des Prozesses auf die frühe Architekturplanungsphase, lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
+Durch den Einsatz des Prozesses in der frühen Architekturplanungsphase lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
 
 Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter schon in der Anforderungsphase ermittelt werden und somit die Anzahl der Kundenkontakte reduziert werden kann.
 
@@ -78,6 +77,9 @@ Ein Beispiel hierfür ist das Erstellen einer Architektur für ein sehr rechenin
 Eine zweites Beispiel wäre ein Embedded System, welches eine starke Limitierung des Netzwerk- und Speicherdurchsatzes besitzt: Durch die Aufspaltung in mehrere Systeme, welche dann durch ein Netzwerk verbunden werden, würde die Zeit, welche zur Übermittlung der Daten aufgewendet würde stark unter der ermittelten Architektur leiden. Auch eine Virtualisierung der Komponenten auf einem System würde wegen der Speicherlimittierungen nicht in Frage kommen. Die ermittelte Architektur müsste aufgrund der Hardware Limittierungen stark überarbeitet werden.
 
 \section{Erkenntnisse}
+Bei der Erstellung des Prozesses wurden folgende Dinge ersichtlich
+
+
 erstellung hat folgende erkenntnisse gebracht
 
 Qualitätsanforderungen müssen messbar und
