@@ -7,7 +7,7 @@ Soll nun diese Frage beantwortet werden, nämlich, ob die in der Planungsphase e
 
 Da die meisten Architekturprozesse und -reviews wie ATAM die nicht funktionalen Anforderungen zur Entscheidungsfindung verwenden, ist dieses Ergebnis recht überraschend. Dies kann jedoch daran liegen, dass ATAM Architekturreviews nicht nur in der Planungsphase durchgeführt werden können. Im Bezug auf CBAM lassen sich Paralellitäten erkennen, CBAM selbst aber bietet zwar ein Reviewframework aber keinen detaillierten Architekturerstellungsprozess.
 
-Der erstellte Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten, welche unter Anderem durch die Verwendung von Risikoszenarien ermittelt werden, zB. unerlaubter Zugriff auf Daten. Zusätzliche wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
+Der erstellte Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten, welche unter Anderem durch die Verwendung von Risikoszenarien ermittelt werden, zB. unerlaubter Zugriff auf Daten. Zusätzliche Komponenten werden nur dann erstellt, wenn sich aufgrund der Kostenszenarien rechnen, was eine kosteminimale Architektur ermöglicht. Außerdem wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
 
 Eine Architektur muss jedoch nicht nur für sich selbst erstellt werden, sondern auch dem/der KundIn kommuniziert werden. Um dies zu erreichen können die kostenbasierten Entscheidungen und die UML Modelle herangezogen werden.
 
@@ -21,7 +21,7 @@ Daraus ergeben sich folgende Vorteile:
 
 \begin{itemize}
   \item Gute Verständlichkeit
-  \item Fokus auf Kosteneffizienz
+  \item Gutes Preis-Leistungsverhältnis
 \end{itemize}
 
 \subsection{Gute Verständlichkeit}
@@ -31,10 +31,10 @@ Zusätzlich profitiert der Prozess von den generellen Eigenschaften einer visuel
 
 Durch den Fokus auf Preis-Leistungsverhältnis ist es auch einfacher, die Probleme, Entscheidungen und Kosten dem Kunden zu kommunizieren, welcher wegen der fehlenden Vertrautheit mit dem Thema Softwarearchitektur oft die Entscheidungen und Notwendig dieses Bereiches anzweifelt \cite[S. 8-9]{softarch}. Da er mit Kostenfragen in der Regel vertraut ist, ergibt sich hier sogar eine Chance, bessere Anforderungen zu erlangen.
 
-\subsection{Fokus auf Kosteneffizienz}
-Durch den Einsatz des Prozesses in der frühen Architekturplanungsphase lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
+\subsection{Gutes Preis-Leistungsverhältnis}
+Durch den Einsatz des Prozesses in der frühen Architekturplanungsphase lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die frühe Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen, lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
 
-Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter schon in der Anforderungsphase ermittelt werden und somit die Anzahl der Kundenkontakte reduziert werden kann.
+Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter schon in der Anforderungsphase ermittelt werden und somit die Anzahl der Kundenkontakte reduziert werden können.
 
 Softwarearchitekturentscheidungen sind oft ein Trade-Off: Durch konkurrierende Qualitätsanforderungen, zB. Performance und Wartbarkeit, ist es in den seltesten Fällen möglich, eine Architektur zu erstellen, welche in allen Qualitätsanforderungen brilliert. Aus diesem Grund ist es notwendig, eine bestimmte Vorgehensweise zur Erstellung, Bewertung und Entscheidung von Architekturen zu pflegen. Der Prozess bietet in dieser Hinsicht ein kostenbasiertes Entscheidungs- und Analysemodell an, mit welcher diese Entscheidungen gegenrechenbar werden. Dadurch, dass weitere Systeme nur dann erstellt werden, wenn sie einen Kostenvorteil bergen, entsteht eine kosteneffiziente und preislich angemessene Architektur.
 
