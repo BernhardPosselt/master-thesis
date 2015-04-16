@@ -1,6 +1,8 @@
 \chapter{Einführung}
 
 \section{Motivation}
+
+
 \subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
 Vermutung: Gute Architektur häng von guten Anforderungen ab, deswegen muss Anforderungsprozess erweitert werden
 Probleme aufzählen die bei einer schlechten Architektur entstehen.
@@ -33,11 +35,35 @@ Eher Hinweise auf wie man zb Ausfallkosten bewerten könnte, Methode auf eigene 
 Nur eine Erweiterung im Hinblick auf benötigte Parameter
 
 \section{Übersicht}
-Erklären was in welchen Kapiteln behandelt wird
-\subsection{Modellierung}
-\subsection{Anforderungen}
-\subsection{Architektur}
-\subsection{Prozesserstellung}
-\subsection{Prozessumsetzung Anforderungen}
-\subsection{Prozessumsetzung Architektur}
+Die Arbeit teilt sich in folgende Kapitel auf:
+
+\begin{itemize}
+  \item Softwarequalität
+  \item Softwarearchitektur
+  \item Modellierung in der Architektur
+  \item Prozesserstellungsversuche
+  \item Ermittlung der Architekturanforderungen
+  \item Erstellung der Architektur
+  \item Zusammenfassung
+\end{itemize}
+
+
+\subsection{Softwarequalität}
+Die Sicherstellung der Softwarequalität ist eines der wichtigsten Ziele bei der Erstellung der Softwarearchitektur, unter Anderem weil die Architektur die Struktur der zu erstellenden Software mitbestimmt und somit gewisse Qualitätsmerkmale begünstigt oder limitiert.
+
+Um dieses Ziel zu verstehen, muss zuerst definiert werden, was Softwarequalität respektive Qualität überhaupt bedeutet. Eine Antwort darauf liefert der in ISO 9126 beschriebene Standard und dessen Nachfolger ISO 25010, auf welchen aber aus geringen Verbreitungsgründen aber nur kurz hingewiesen wird.
+
+ISO 9126 definiert Softwarequalität in der Erfüllung der Anforderungen. Diese lassen sich in funktionale und nicht funktionale Anforderungen aufspalten, wobei bei der Architekturerstellung der primäre Fokus auf den nicht funktionalen Anforderungen liegt.
+
+\subsection{Softwarearchitektur}
+Architektur versucht durch Abstraktion die Grundpfeiler der Software fest zu legen. Dies wird standardmäßig durch die Verwendung von Architektursichten erreicht. Es gibt mehrere verschiedene Modelle, welche unterschiedliche Sichten definieren. Um zu erläutern, wie diese Sichten genau verwendet werden können, kann unter Anderem das Modell von Kruchten und das Zachman Framework verwendet werden.
+
+Wie gestaltet sich jedoch der genaue Ablauf der Architekturerstellung? Der Architekturprozess kann in mehrere Abschnitte aufgeteilt werden: Nach einem kurzen Anfangsprozess nach der Anforderungsanalyse kann mit der Planung, Erstellung, Überprüfung der Architektur begonnen werden. Dabei muss auch die Kommunikation beachtet werden.
+
+Für die Überprüfung der Architektur werden Architekturreviewframeworks verwendet. Das Bekannteste unter ihnen ist ATAM, welches durch mehrere Szenarientypen die Qualitätsmerkmale der gewählten Architektur zu überprüfen versucht. Eine weitere Reviewmethode ist CBAM, welche auf ATAM aufbaut aber vor Allem das Preis-Leistungsverhältnis als Entscheidungsgrundlage verwendet.
+
+\subsection{Modellierung in der Architektur}
+\subsection{Prozesserstellungsversuche}
+\subsection{Ermittlung der Architekturanforderungen}
+\subsection{Erstellung der Architektur}
 \subsection{Zusammenfassung}
