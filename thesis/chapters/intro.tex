@@ -1,38 +1,40 @@
 \chapter{Einführung}
+Ein sehr junges feld, mehre modelle entstanden todo
 
 \section{Motivation}
+Nicht nur die Qualität des Sourcecodes ist für die Gesamtqualität eines Softwaresystems notwendig sondern auch die Softwarearchitektur. Die Architektur beschreibt die Grundzüge und Pfeiler, auf welchem das System erstellt werden soll.
 
+Eine der Grundfragen, welche die Wahl dieses Themas wesentlich beinflusst hat, ist die Frage: Wie kommt man von Anforderungen auf eine gute Architektur. Dafür muss zuerst geklärt werden, was eine gute Architektur ausmacht.
 
-\subsection{Wie kommt man von Anforderungen auf eine gute Architektur}
-Vermutung: Gute Architektur häng von guten Anforderungen ab, deswegen muss Anforderungsprozess erweitert werden
-Probleme aufzählen die bei einer schlechten Architektur entstehen.
+bezieht sich auf softwarequalität/erfüllung der kundenanforderungen, man muss zuerst einen blick darauf werfen was gute softwarearchitektur ausmacht -> bewertungsmethoden! wirft man einen blick auf atam, welche oft verwendet wird sieht man, bewertung anhand utility tree, vor allem nicht funktionale anforderungen, viele andere reviews bauen darauf auf, -> vermutung: nicht funktionale anforderungen liefern hauptinput bei entscheidungen -> anforderungen kommen aus anforderungsprozess -> vermutung: anforderungsprozess ist wichtig und eng verbunden mit architekturprozess
 
-Vermutung: architektur hauptverantwortlich für nicht funktionale Anforderungen, also muss system unter berücksichtigung der nicht funktionalen anforderung erstellt werden
+zweite motivation: es soll ein nachvollziehbarer prozess entstehen, warum prozess? prozess zitieren todo. wichtig für qualitätssicherung der arbeit, pdca. der prozess selbst soll nicht zu abstrakt sein, gut anwendbar und weil kommunikation der architektur auch zu aufgabe des architekten gehört auch gut kommunizierbar sein. Architektur hat viel mit trade offs zu tun deswegen heißt anwendbar dass nicht alles abgedeckt werden kann weil sonst zu viel. prozess selbst soll effektiv sein um kosten zu sparen weil architektur schwer rechtfertigbar ist vom kunden, deswegen ist die vermutung laut 10er regel dass prozess für planungsphase am effektivsten ist für kosten
 
-vielleicht noch genauer spezifizieren dass es keine all round solution werden soll sondern die meisten use cases abdecken soll (grafik wieviel apps SOA haben zb)
+\section{Methodik}
+Um die Fragestellungen zu beantworten soll wird ein Beispielprojekt
 
-\subsection{Gibt es eine Art Kochrezept für die Architekturerstellung}
-Gesucht: Ein Prozess mit dem auf die wichtigen Faktoren eingegangen werden kann.
+beispielprojekt ist nicht zu groß/zu klein, typische mittelständiger betrieb, system einer zertifizierungsstelle, beinhaltet zertifizierungsprüfungen, anmeldungen zu prüfungen, organisation, prüfungsauswertung und zahlunverkehr, datenschutz und sicherheit im vordergrund, was aber für informationssysteme für unternehmen wegen regelungen und qualitätssicherung eh sinn macht -> zertifizierungen können verwendet werden, um eigene qualität zu kommunizieren und höheren preis und umsatz
 
-\section{Was wird gemacht}
-\subsection{Planung einer Zertifizierungsstellen Architektur}
-\subsection{Modellierung mit UML}
-\subsection{Anpassen der Anforderungestemplates}
-\subsection{Architekturplanung Prozesserstellung, eine Art Framework}
-\subsection{Dokumentation der Prozesserstellungsanläufe}
+anforderungsprozess wird versucht zusätzlich mit architekturrelevanten parametern anzureichern, da architekturreviews die qualitätssicherung sind werden auch parameter für das aufgenommen, auf denen wird aufgebaut, analysen für risikobereiche auch als basis für entscheidungen beim architekturdesign
 
-\section{Was wird nicht gemacht}
-\subsection{Abdeckung des kompletten Prozesses}
-Weil zu umfangreich, genauere Beschreibung im Architektur kapitel, auch erklären dass es sich heraus gestellt hat dass man nicht alles sofort planen und bewerten kann wegen fehlenden Messmöglichkeiten
-\subsection{Kein Organisations- und Kommunikationsmanagement}
-\subsection{Implementation}
-Zu umfangreich
-\subsection{Abdeckung aller möglichen Architekturfälle (Embedded, High Performance)}
-\subsection{Abdeckung aller möglichen Archtekturreviewmethoden}
-\subsection{Komplette Vorgaben der Bewertungs-Methoden}
-Eher Hinweise auf wie man zb Ausfallkosten bewerten könnte, Methode auf eigene Anwendungsfälle abänder- und ersetzbar. Aber aufzeigen warum es gut sein kann sie dennoch schon zu behandeln
-\subsection{Kompletter Anforderungsprozess}
-Nur eine Erweiterung im Hinblick auf benötigte Parameter
+modellierung wird mit uml durchgeführt, hauptfokus liegt auf komponentendiagramm, sprich phsysiche verteilung, schnittstellen, kein code da keine implementation sondern nur planungsphase, prozess selbst soll nachvollziehbare entscheidungen ermöglichen, bei architekturreviews kommt das immer auf den architekten selbst an, varianz der entscheidung soll verringert werden um gleichbleibende qualität zu gewährleisten
+
+für implementationsphase sollen parameter und bewertungen, bereit stehen, die weiteres vorgehen erleichtern, weil anforderungsprozess ist basis für architekturplanung, planung ist basis für implementation -> deswegen muss planung auch hinweise für implemetnation geben falls möglich
+
+\section{Abgrenzung}
+Eine Abdeckung des kompletten Architekturprozesses ist aufgrund der Tiefe und des Umfangs nicht möglich. Würde dies versucht werden, müsste dies auf einem  höherer Abstraktionsgrad geschehen, um den Umfang nicht zu sprengen. Der Prozess selbst beschränkt sich auf die Planungsphase der Architekturerstellung. Der Anforderungs- und Implementationsprozess werden als umschließende Abschnitte zwar mit einbezogen, jedoch liegt der Fokus nur auf den Eingangs- respektive Ausgangsparametern.
+
+Eine gute Verständlichkeit und Kommunizierbarkeit des Prozesses gehören zwar zur den erklärten Zielen, jedoch werden für diese Bereiche keine eigenen Prozesse und Vorgaben erstellt, da sich dieser Bereich stark mit Kommunikationswissenschaft und Psychologie überlappt, welche nicht im Fokus der Arbeit stehen. Auch der Anforderungsprozess überschneidet sich wesentlich mit diesen Bereichen: Er verwendet zB. bestimmte Frage- und Dokumentationstechniken, mit welchen versucht werden soll Anforderungen komplett und verständlich zu erfassen. Da der Anforderungsprozess aber die Eingabeparameter und Ziele für den Architekturprozess liefert, ist dieser für den Architekturprozess wichtig. Die Arbeit beschränkt sich deswegen auf die Beschreibung architekturrelevanter Ausgangsparameter.
+
+Das Beispielprojekt selbst soll nur in der Architekturplanungsphase durchgeführt werden. Die Anzahl und Qualität der Anforderungen liefert genügend Parameter für die Erprobung des Prozesses, die Implementation des Systems selbst ist jedoch aufgrund der Anforderungen zu zeit- und aufwandsintensiv: Nicht nur die zu implementierenden Funktion sind hier zahlreich, sondern auch die Maßnahmen, welche für die benötigten Qualitäten - zB. Datenschutz - durchgeführt werden müssten, sind zu zahlreich.
+
+Durch die fehlende Implementation wird daher auch auf die genaue Planung der Codestruktur verzichtet. Das bedeutet nicht nur, dass auf Patterns verzichtet wird, sondern auch, dass Architektursichten, welche sich mit der Planung des Codes beschäftigen nicht beachtet werden; dazu zählt zB. Kruchtens Development View. Grundsätzlich wäre die Planung der Module zwar möglich, aber wegen der fehlenden Implementation nicht auf ihre Korrekt- und Angemessenheit überprüfbar.
+
+Da Architektur stark von den Anforderungen an das Systems abhängig ist, kann durch zu dominante Anforderungen ein komplett anderes Vorgehen benötigt werden. Dies trifft nicht nur auf Gebiete wie Embedded zu, wo durch die fehlende Rechenkraft und geringen Speicherplatz so effektiv wie möglich gearbeitet werden muss, sondern auch auf Systeme, welche durch schiere Größe, die Datenmenge und Rechenleistung eine eigene Aufteilung und Kommunikationswege benötigen. Auch Randbedingungen haben einen großen Einfluss auf die Architektur: Soll zB. ein System in einer sehr kurzen Zeit erstellt werden oder ist eine bestimmte Technologie wie CORBA vorgeschrieben, kann dies auch die Wahl der Komponenten beinflussen. All diese Ausnahmefälle sind hinderlich für die Erstellung eines simplen und verständlichen Prozesses. Es deshalb nicht die Absicht, einen in allen Fällen anwendbaren Prozess zu erstellen.
+
+Die in der Arbeit verwendeten Architekturreviewmethoden werden auf ATAM und CBAM begrenzt. ATAM ist die ausgereifteste Reviewmethode \cite[S. 184]{basiswissen}, auf welcher viele andere Reviewmethoden wie ALMA und CBAM aufbauen, CBAM ist wegen des Preis-Leistungsansatzes interessant für den Prozess.
+
+Die nach der initialen Architekturerstellung durchgeführten Analysen beanspruchen keine hundertprozentige Abdeckung aller Möglichkeiten. Auch die durchgeführten Berechnungen sind nicht bis ins kleinste Detail genau und können je nach Projekt in ihrer Genauigkeit variieren. Sie sollen vor allem auf die Analysemöglichkeiten hinweisen, welche schon vor eines klassischen Architekturreview durchführbar sind.
 
 \section{Übersicht}
 Die Arbeit teilt sich in folgende Kapitel auf:
