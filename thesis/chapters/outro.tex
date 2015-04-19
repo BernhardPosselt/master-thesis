@@ -3,17 +3,23 @@ In der Arbeit wurde anhand eines Beispielprojektes ein UML-basierter, allgemein 
 
 Die initiale Frage - Wie kommt man von Anforderungen auf eine gute Architektur - kann wegen der ungenauen Definition einer guten Architektur nicht genau beantwortet werden. Die Frage muss anders formuliert werden, nämlich wie folgt: Wie kommt man von Anforderungen auf eine angemessene Architektur. Eine angemessene Architektur ist eine Architektur, welche die Anforderungen des/der KundIn abdeckt, nicht Mehr und nicht Weniger.
 
-Soll nun diese Frage beantwortet werden, nämlich, ob die in der Planungsphase erstellte Architektur angemessen ist, muss die erstellte Architektur anhand von messbaren Werten überprüft und mit den gestellten Anforderungen verglichen werden. Da in der Planungsphase noch keine Implementation des Systems vorliegt, ist es jedoch für die meisten nicht funktionalen Anforderungen äußerst schwierig, sodass ein qualitätsbasierter Ansatz zu ungenaue Daten für die Basis eines Architekturprozesses liefert. Auch die Priorisierung von nicht funktionalen Anforderungen wie es von Oliver Vogel vorgeschlagen wird \cite[S. 374]{softarch} ist aufgrund ungenau ermittelbarer Parameter nicht gangbar. Ein darauf aufbauender Ansatz, welcher anhand der priorisierten Anforderungen bewertete Architekturstile \cite[S. 179]{review} auswählt ist nicht nur wegen der Priorisierung zu offen, sondern auch die Architekturstile sind noch auf einer zu abstrakten Ebene, um die wirklichen Komponenten für die Architektur zu ermitteln. Ein Versuch, die Abstraktion der Architekturstile zu verringern indem für jeden Stil fixe Komponenten ausgewählt werden, liefert auch keine eindeutige Lösung, wohl auch deswegen, weil die Komponenten auf die tatsächlichen Qualitäten überprüft werden müssten, was wegen der fehlenden Implementierung nicht möglich ist.
+Soll nun diese Frage beantwortet werden, nämlich, ob die in der Planungsphase erstellte Architektur angemessen ist, muss die erstellte Architektur anhand von messbaren Werten überprüft und mit den gestellten Anforderungen verglichen werden. Da in der Planungsphase noch keine Implementation des Systems vorliegt, ist dies jedoch für die meisten nicht funktionalen Anforderungen äußerst schwierig.
 
-Da die meisten Architekturprozesse und -reviews wie ATAM die nicht funktionalen Anforderungen zur Entscheidungsfindung verwenden, ist dieses Ergebnis recht überraschend. Dies kann jedoch daran liegen, dass ATAM Architekturreviews nicht nur in der Planungsphase durchgeführt werden können. Im Bezug auf CBAM lassen sich Parallelen erkennen, CBAM selbst aber bietet zwar ein Reviewframework aber keinen detaillierten Architekturerstellungsprozess.
+Eine andere Herangehensweise für dieses Problem wäre, statt Messungen Schätzung bzw. Priorisierung zu fokussieren. Oliver Vogel schlägt hier folgende Formel vor: \glqq Priorität = (Nutzen + Risiko + Wirkung) / 3\grqq \cite[S. 374]{softarch}. Sind die nicht funktionalen Anforderungen priorisiert, kann nun aus einer Liste von bewerteten Komponenten/Architekturstile ausgewählt werden \cite[S. 179]{review} und die Architektur Stück für Stück zusammengebaut werden.
 
-Der erstellte Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten, welche unter Anderem durch die Verwendung von Risikoszenarien ermittelt werden, zB. unerlaubter Zugriff auf Daten. Zusätzliche Komponenten werden nur dann erstellt, wenn sich aufgrund der Kostenszenarien rechnen, was eine kostenminimale Architektur ermöglicht. Außerdem wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
+Diese Art der Architekturerstellung scheint auf den ersten Blick eine gute Idee zu sein, entpuppt sich jedoch als sehr ungenau: Oft sind mehrere Anforderungen gleich wichtig; eine eindeutige Entscheidung ist somit in diesen Fällen schwierig. Außerdem sind auch die Variablen der Formel oft unklar: Was ist zB. das Risiko bzw. die Wirkung einer hohen Performance für den Usecase Anmelden? Eins, zwei oder drei? Ein weiteres Problem dieser Herangehensweise ist die Bewertung der Komponenten bzw. Architekturstile: Die Architekturstile allein sind oft zu abstrakt, genaue Komponentenarchitekturen lassen sich damit schwer ableiten. Ein Versuch, alle möglichen Komponentenkombinationen abzudecken scheitert am Umfang und der Vollständigkeit.
 
-Eine Architektur muss jedoch nicht nur für sich selbst erstellt werden, sondern auch dem/der KundIn kommuniziert werden. Um dies zu erreichen können die kostenbasierten Entscheidungen und die UML Modelle herangezogen werden.
+Da die meisten Architekturprozesse und -reviews wie ATAM die nicht funktionalen Anforderungen zur Entscheidungsfindung verwenden, ist dieses Ergebnis recht überraschend. Eine mögliche Erklärung hierfür könnte sein, dass ATAM Architekturreviews nicht nur in der Planungsphase durchgeführt werden können. Im Bezug auf CBAM lassen sich Parallelen erkennen, CBAM selbst aber bietet zwar ein Reviewframework aber keinen detaillierten Architekturerstellungsprozess.
+
+Der erstellte Prozess begnügt sich daher mit schon messbaren, bekannten bzw. vergleichbaren Werten wie zB. den Kosten, welche unter Anderem durch die Verwendung von Risikoszenarien ermittelt werden, zB. unerlaubter Zugriff auf Daten. Zusätzliche Komponenten werden nur dann erstellt, wenn sich diese aufgrund der Kostenszenarien rechtfertigen lassen; dies führt zu einer kostenminimalen Architektur.
+
+Außerdem wird versucht, durch Analysen der nicht funktionalen Anforderungen der Architektur mögliche Risiken, Probleme und Parameter für die Entscheidungsfindung in der Implementationsphase zu generieren. Um die Fehlerkosten der Entscheidungen, welche auf den Analysen basieren, zu reduzieren werden architekturrelevante Parameter schon so früh wie möglich ermittelt, nämlich in der Anforderungsphase.
+
+Eine Architektur muss jedoch nicht nur für die Personen erstellt werden, welche sie tatsächlich umsetzen, sondern auch dem/der KundIn kommuniziert werden. Um dies zu erreichen können die kostenbasierten Entscheidungen und die UML Modelle herangezogen werden.
 
 
 \section{Vorteile des erstellten Architekturprozesses}
-Soll ein Architekturprozess für die Softwareentwicklung eingeführt werden, so muss dieser einen Vorteil gegenüber des Status Quo bieten. Welche Vorteile zeichnen den in der Arbeit beschriebene Architekturprozess jedoch aus?
+Soll ein Architekturprozess für die Softwareentwicklung eingeführt werden, so muss dieser einen Vorteil bieten. Welche Vorteile zeichnen den in der Arbeit beschriebene Architekturprozess jedoch aus?
 
 Die Vorteile ergeben sich im Prinzip aus den treibenden Anforderungen an den Prozess und das Projekt: Der Prozess soll nachvollzieh- und reproduzierbar sein, sodass verschiedene Personen mit den gleichen Anforderungen eine identische oder zumindest stark identische Architektur erstellen. Der Fokus liegt auf der frühen Planungs- und nicht der Implementationsphase, das Projekt selbst ist ein mittelgroßes, typisches Projekt und erfordert durch dessen Anforderungen eine hohe Datensicherheit.
 
@@ -25,14 +31,14 @@ Daraus ergeben sich folgende Vorteile:
 \end{itemize}
 
 \subsection{Gute Verständlichkeit}
-Der Prozess ist aufgrund der Verwendung von UML in einer Modellierungssprache dokumentiert, welche nicht nur eine große Bekanntheit und Verwendung findet, sondern auch oft im Anforderungsprozess verwendet wird. Der Architekturprozess kann damit auf dem Anforderungsprozess aufbauen und Modelle weiterentwicklen anstatt diese in komplett neue Modellierungen zu überführen. Dies hilft nicht nur bei der Kommunikation mit dem/der KundIn sondern auch mit dem Anforderungsteam: Wenn sich zB. Anforderungen ändern, können diese an den gleichen Modellen geändert werden. Die erstellten Modelle dienen zugleich auch als Dokumentation des Projektes und helfen bei der Wartung.
+Der Prozess ist aufgrund der Verwendung von UML in einer Modellierungssprache dokumentiert, welche nicht nur über eine große Bekanntheit verfügt und viel Verwendung findet, sondern auch oft im Anforderungsprozess verwendet wird. Der Architekturprozess kann damit auf dem Anforderungsprozess aufbauen und Modelle weiterentwicklen anstatt diese in komplett neue Modellierungen zu überführen. Dies hilft nicht nur bei der Kommunikation mit dem/der KundIn sondern auch mit dem Anforderungsteam: Wenn sich zB. Anforderungen ändern, können diese an den gleichen Modellen geändert werden. Die erstellten Modelle dienen zugleich auch als Dokumentation des Projektes und helfen bei der Wartung.
 
 Zusätzlich profitiert der Prozess von den generellen Eigenschaften einer visuellen Modellierungssprache: Sie bildet das komplexe auf eine einfachere Darstellung ab und verringert die Information auf die wirklich wichtigen Bereiche. Durch die visuelle Komponente ist das Modell schneller aufnehmbar und verständlicher als purer Prosatext.
 
 Durch den Fokus auf Preis-Leistungsverhältnis ist es auch einfacher, die Probleme, Entscheidungen und Kosten dem Kunden zu kommunizieren, welcher wegen der fehlenden Vertrautheit mit dem Thema Softwarearchitektur oft die Entscheidungen und Notwendig dieses Bereiches anzweifelt \cite[S. 8-9]{softarch}. Da er mit Kostenfragen in der Regel vertraut ist, ergibt sich hier sogar eine Chance, bessere Anforderungen zu erlangen.
 
 \subsection{Gutes Preis-Leistungsverhältnis}
-Durch den Einsatz des Prozesses in der frühen Architekturplanungsphase lassen sich hier die meisten Fehlerkosten einsparen: Nach der 10er Regel der Fehlerkosten steigen die Fehlerkosten mit dem Projektfortschritt exponentiell an. Durch die frühe Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen, lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
+Durch den Einsatz des Prozesses in der frühen Architekturplanungsphase lassen sich hier die meisten Fehlerkosten einsparen: Nach der Zehner-Regel der Fehlerkosten steigen die Fehlerkosten früher Fehler mit dem Projektfortschritt exponentiell an. Durch die frühe Einbeziehung von Parametern, auf welche  Architekturreviewszenarien aufbauen, lassen sich auch hier im Vorfeld Kosten reduzieren: Dies betrifft nicht nur die Ermittlung der Parameter selbst, sondern auch die Möglichkeit, triviale Probleme, welche erst bei einem Architekturreview offensichtlich werden können, durch diese Anforderungen schon im Vorfeld identifizieren und beheben zu können.
 
 Eine weitere kostensparende Eigenschaft ist, dass architekturrelevante Parameter schon in der Anforderungsphase ermittelt werden und somit die Anzahl der Kundenkontakte reduziert werden können.
 
@@ -40,7 +46,7 @@ Softwarearchitekturentscheidungen sind oft ein Trade-Off: Durch konkurrierende Q
 
 Nicht nur tatsächliche Kosten, sondern auch Risikokosten werden im Architekturprozess mit einbezogen. Der Fokus des Prozesses liegt auf Angriffs-, Aufalls- und Änderungsszenarien, welche als Resultat des Umfeldes des Beispielprojektes gesehen werden können.
 
-Ein weiterer Kostenvorteil ist die Möglichkeit, Anschaffungen und Architekturentscheidungen aufzuschieben, da sich der Prozess nicht auf eine physische Architektur fest legt. Die wichtigen Grundsteine, die Schnittstellen und Kommunikationswege, sind bereits geregelt, was zusätzlich eine Parallelisierung der Architekturerstellung erlaubt.
+Ein weiterer Kostenvorteil ist die Möglichkeit, Anschaffungen und Architekturentscheidungen aufzuschieben, da sich der Prozess nicht auf eine physische Architektur fest legt. Die wichtigen Grundsteine, die Schnittstellen und Kommunikationswege, sind bereits geregelt.
 
 
 \section{Limitierungen, Probleme und Nachteile des erstellten Architekturprozesses}
@@ -49,11 +55,11 @@ Der Prozess ist zwar allgemein anwendbar, ist aber aufgrund der Herangehensweise
 \begin{itemize}
   \item Ausgreift- und Erprobtheit
   \item Vollständigkeit
-  \item Universelle Anwendbarkeit
+  \item Universelle Eignung
 \end{itemize}
 
 \subsection{Ausgreift- und Erprobtheit}
-Der Prozess wurde erst anhand eines einzigen Projektes erprobt und ging nicht über die Planungsphase der Architektur hinaus. Die Implementierungsphase und abschließende Überprüfung der implementierten Software wurde aus Zeit- und Umfangsgründen nicht durchgeführt. Dies führt nicht nur zu einer mangelnden Feedbackphase, in welcher Architekturprobleme während der Implementation offensichtlich werden hätten können, sondern auch zu einem zu starken Fokus auf die Domäne des Beispielprojekts.
+Der Prozess wurde erst anhand eines einzigen Projektes erprobt und ging nicht über die Planungsphase der Architektur hinaus. Die Implementierungsphase und abschließende Überprüfung der implementierten Software wurde aus Zeit- und Umfangsgründen nicht durchgeführt. Dies führt nicht nur zu einer mangelnden Feedbackphase, in welcher Architekturprobleme offensichtlich hätten werden können, sondern auch zu einem zu starken Fokus auf die Domäne des Beispielprojekts.
 
 Dies wird unter Anderem darin offensichtlich, dass der Prozess einen großen Wert auf Datensicherheit legt, welcher durch die dem Projekt zugrunde liegenden Anforderungen entstehen: Die Sicherheit und der richtige Umgang mit den Kundendaten ist eine bindende Anforderung zur Erfüllung des ISO Standards für Zertifizierungsstellen, ohne welchen das System nicht betrieben werden könnte. \cite{ISO_CERT}
 
@@ -65,7 +71,7 @@ Die Probleme der Vollständigkeit des Prozesses sind unter Anderem eine Konseque
 Außerdem behandelt der Prozess nur die Planungsphase und nicht die Architekturphase und beschäftigt sich somit weder mit der Strukturierung des Codes, noch gibt er Auskunft über die tatsächlichen eingesetzten, physischen Komponenten.
 
 
-\subsection{Universelle Anwendbarkeit}
+\subsection{Universelle Eignung}
 Der Architekturprozess ist vor allem geeignet für Informationssysteme, deren Fokus auf folgenden Anforderungen liegt:
 
 \begin{itemize}
@@ -75,17 +81,17 @@ Der Architekturprozess ist vor allem geeignet für Informationssysteme, deren Fo
   \item Preis-Leistungsverhältnis ist wichtig für die Erstellung der Software
 \end{itemize}
 
-Liegt der Fokus jedoch auf anderen Bereichen, kann das Resultat der Analysen eine sehr simple Architektur sein, welche im Implementationsprozess stark angepasst werden müssen.
+Liegt der Fokus jedoch auf anderen Bereichen, kann das Resultat der Analysen eine sehr simple Architektur sein, welche im Implementationsprozess stark angepasst werden müsste.
 
 Ein Beispiel hierfür ist das Erstellen einer Architektur für ein sehr rechenintensives Systems, zB. für die Berechnung von Primzahlen. Hier ist es wichtig, die Berechnungen gut zu parallelisieren; der Architekturplanungsprozess würde aufgrund der Anforderungen eine einzige Softwarekomponente zur Berechnung der Primzahlen ermitteln, was zwar richtig wäre, aber wenig Hinweise zur Strukturierung der tatsächlichen physischen Systeme bieten würde.
 
-Eine zweites Beispiel wäre ein Embedded System, welches eine starke Limitierung des Netzwerk- und Speicherdurchsatzes besitzt: Durch die Aufspaltung in mehrere Systeme, welche dann durch ein Netzwerk verbunden werden, würde die Zeit, welche zur Übermittlung der Daten aufgewendet würde stark unter der ermittelten Architektur leiden. Auch eine Virtualisierung der Komponenten auf einem System würde wegen der Speicherlimitierungen nicht in Frage kommen. Die ermittelte Architektur müsste aufgrund der Hardwarelimitierungen stark überarbeitet werden.
+Eine zweites Beispiel wäre ein Embedded System, welches eine starke Limitierung des Netzwerk- und Speicherdurchsatzes besitzt: Durch die Aufspaltung in mehrere Systeme, welche dann durch ein Netzwerk verbunden werden, würde die Zeit, welche zur Übermittlung der Daten aufgewendet würde, stark unter der ermittelten Architektur leiden. Auch eine Virtualisierung der Komponenten auf einem System würde wegen der Speicherlimitierungen nicht in Frage kommen. Die ermittelte Architektur müsste aufgrund der Hardwarelimitierungen stark überarbeitet werden.
 
 \section{Ausblick}
 Der Prozess wurde in der Planungsphase eines einzigen Beispielprojektes erprobt und schließt vor dem Beginn der Implementationsphase ab. Möglichkeiten zur Verbesserung des Prozesses lassen sich nicht nur durch die Erprobung weiterer, unterschiedlicher Projekte erlangen, sondern auch eine Erweiterung des Prozesses für die Implementationsphase ist denkbar.
 
 Eine Möglichkeit für den Ablauf der Implementationsphase wäre folgender: Zuerst werden automatisierte Testfälle für die Qualitätsanforderungen erstellt. Die Komponentenarchitektur kann dann 1:1 auf die physische Architektur umgelegt werden, für jede Komponente wird ein physisches System eingesetzt. Die Funktionalität der Komponenten wird dann durch Prototypen umgesetzt. Anhand der Ergebnisse der Tests, wird regelmäßig überprüft, ob die geforderten Werte erreicht werden. Falls sie nicht erreicht werden, kann eine andere Architektur für die jeweilige Komponente anhand eines Prototypen überprüft werden.
 
-Die Auswahl der Architektur, welche für die jeweilige Komponenten eingesetzt wird, obliegt den Entscheidungen der ArchitektInnnen, sprich basiert auf deren Erfahrungswerten. Auch der Einsatz von Architekturreviewmethoden wie ATAM kann hier für die Entscheidungsfindung hilfreich sein. Ob die Architektur angemessen ist, kann überdies durch die bereits erstellten, automatisierten Tests überprüft werden.
+Die Auswahl der Architektur, welche für die jeweilige Komponenten eingesetzt wird, obliegt den Entscheidungen der ArchitektInnen, sprich basiert auf deren Erfahrungswerten. Auch der Einsatz von Architekturreviewmethoden wie ATAM kann hier für die Entscheidungsfindung hilfreich sein. Ob die Architektur angemessen ist, kann überdies durch die bereits erstellten, automatisierten Tests überprüft werden.
 
 
