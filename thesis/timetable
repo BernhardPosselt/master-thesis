@@ -1,32 +1,6 @@
-# Dates
-* march x Meeting 1
-* march x Meeting 2
-* march 25 books tu verlängern
-* april 12-18 first version
-* april 12-18 modules
-* april 10-16 upload final version
-* april 10-16 master exam anmeldung
-* Ca 3 seiten pro tag
-
-# Planned schedule
-# KW 12 Architektur fertig
-# KW 13 Einleitung Schluss fertig
-# KW 14 Modellierung, Anforderungen, Architektur fertig
-# KW 15 Korrektur, Abgabe, Keywords, Abstract + Kurzfassung
-
-
-# friday
-
-## finish requirements
-### analyse write rights
-### analyse actor x damages
-
-## architecture
-### finish actors
-### show data storage location
-
-# saturday
-Korrektur
-
-
-
+do: qualität + abbildungen
+fr: architektur
+sa: modellierung
+so: prozesserstellungsversuche
+mo: ermittlung der anforderungen
+di: erstellung der architektur
