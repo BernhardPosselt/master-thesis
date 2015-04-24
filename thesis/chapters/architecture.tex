@@ -1,22 +1,32 @@
 \chapter{Softwarearchitektur}
-Softwarearchitektur beschäftigt sich mit dem Erstellen des Fundamentes eines Softwareprojektes \cite[S. 9]{softarch}. Der Fokus liegt daher nicht auf Implementationsdetails sondern auf Schnittstellen, welche das System und die Zusammenarbeit der Teilkomponenten beschreiben \cite[S. 8]{basiswissen}. Ziel der Softwarearchitektur ist es, durch Abstraktion der Details einen Überblick über die zu implementierenden Komponenten zu gewinnnen, welcher es ermöglicht, frühe Entscheidungen über die Probleme und Angemessenheit des Systems zu erlangen und somit Risiken, Fehler- und Änderungskosten zu vermeiden oder zu verringern \cite[S. 10]{softarch}.
+Softwarearchitektur beschäftigt sich im Wesentlichen mit dem Erstellen des Fundamentes eines Softwaresystems. Der Fokus liegt nicht auf Implementationsdetails sondern auf Strukturen, logischen und physischen Komponenten, Beziehungen und Schnittstellen. \cite[S. 9-10]{softarch}
+
+Durch diese Abstraktionen wird versucht, die Komplexität des Systems \glqq überschaubar und handhabbar\grqq \cite[S. 10]{softarch} zu machen, um so früh wie möglich Risiken und Probleme zu identifizieren und die Qualität der zu erstellenden Software zu sichern. \cite[S. 10]{softarch}
+
+Diese einzelnen Abstraktionen können in Architektursichten gruppiert werden.
 
 \section{Architektursichten}
-Der Detailgrad der Schnittstellen hängt wesentlich von der Größe des Projektes ab \cite[S. 7-12]{basiswissen}. Um die Komplexität und Abstraktion zu beherrschen, können Architektursichten verwendet werden, welche einen Überblick über Teilbereiche des Systems ermöglichen \cite{ISO_ARCH}. Ein Beispiel dafür ist Kruchtens 4+1 Sichtenmodell \cite{kruch}, welches folgende Sichten beschreibt:
+Architektursichten beschreiben verschiedene Sichten auf das zu erstellende System und entstanden in den frühen 90ern. Im Jahre 2000 wurde schließlich eine Empfehlung zur Erstellung von Softwarearchitektur vom Institute of Electronics Engineers (IEEE 1471) heraus gegeben, in welchem Architektursichten erwähnt, aber weder Sichtenmodelle noch Modellierungssprachen festgelegt werden \cite{ISO_ARCH_OLD}\cite[S. 138]{basiswissen}. Die Empfehlung wurde im Jahre 2011 von der ISO unter der Nummer 42010 standardisiert\cite{ISO_ARCH}.
+
+ISO 42010 definiert eine Architektursicht folgendermaßen: Eine Architektursicht ist eine Sicht der Architektur eines Systems aus der Perspektive von ein oder mehreren Stakeholdern. Diese Stakeholder haben unterschiedliche Aufgaben und Interessen und benötigen somit auf ihre Bedürfnisse zugeschnittene Information. Die einzelnen Sichten wiederum beinhaltet mehrere Architekturmodelle. \cite{ISO_ARCH}
+
+Ein Beispiel für einen Stakeholder ist zB. ein/eine SystementwicklerIn. Sie/Er benötigt für das Aufsetzen und Konfigurieren der Hardwarekomponenten eine Sicht auf die physische Verteilung des Systems. Diese Sicht kann zB. mit Hilfe des UML Komponentendiagramms beschrieben werden. Das Komponentendiagramm nimmt hier die Rolle des Architekturmodells an.
+
+\section{Architektursichtenmodelle}
+ISO 42010 definiert, wie erwähnt, weder Architektursichten- noch Architekturmodelle, stellt jedoch einen Rahmen für diese bereit. \cite[S. 138]{basiswissen}
+
+Ein Beispiel für ein Modell ist zB. Kruchtens 4+1 Sichtenmodell, welches folgende Sichten beinhaltet \cite{kruch}:
 
 \begin{itemize}
-  \item Logical View: Logische Sicht auf das System, welches die Klassen und deren Beziehungen untereinander darstellt
-  \item Process View: Beschäftigt sich mit nicht funktionalen Anforderungen wie Performance und Fehlertolleranz und deren Implementierung
-  \item Development View: Beschreibt die Aufteilung des Systems in Module und Bibliotheken
-  \item Physical View: Regelt und beschreibt die Verteilung der Komponenten auf physische Systeme
-  \item Scenarios: Usecases, welche die Nutzung des Systems beschreiben
+  \item Logical View: Logische Sicht auf das System, welche sich mit der Funktionalität des Systems beschäftigt
+  \item Development View: Beschreibt die Aufteilung des Systems in Module und Bibliotheken aus der Sicht des Programmierers
+  \item Process View: Beschäftigt sich mit dem Laufzeitverhalten des Systems, wie zB. Parallelität und Kommunikation. Hier werden vor allem nicht funktionale Anforderungen schlagend
+  \item Physical View: Regelt und beschreibt die Verteilung der Komponenten auf physische Systeme,
+  \item Scenarios: Beschreibt die Usecases eines Systems, um die Architekturentscheidungen zu validieren
 \end{itemize}
 
-Kruchten verwendet eigene Diagramme für jede Sicht, die an UML angelehnt aber zum Teil verschieden sind, etablierte sich UML doch erst zwei Jahre später nach der Veröffentlichung seines Modelles \cite{glasklar}[S. 5].
 
-Es gibt noch viele andere Sichtenmodelle wie das Zachman Framework \cite[S. 282]{zachman}, welches eine Aufteilung in Kontext-, Geschäfts-, System-, Technologie-, Integrations- und Laufzeitsicht vornimmt. Die Gemeinsamkeit aller Sichtenmodelle ist jedoch der Versuch, durch unterschiedliche Sichtweisen einen besseren Überblick über das Zielsystem zu erlangen.
-
-TODO: mehr inhalt
+Es gibt noch viele weitere Sichtenmodelle wie zB. das Zachman Framework \cite[S. 282]{zachman}, welches eine Aufteilung in Kontext-, Geschäfts-, System-, Technologie-, Integrations- und Laufzeitsicht vornimmt. Die Gemeinsamkeit aller Sichtenmodelle ist jedoch der Versuch, durch unterschiedliche Sichtweisen einen besseren Überblick über das Zielsystem zu erlangen und diese Übersicht für die jeweiligen .
 
 \section{Architekturprozess Lifecycle}
 Zeitlich ordnet sich die Architekturphase zwischen dem Ermitteln der Anforderungen und der tatsächlichen Implementation ein. Da die Erstellung von Software heutzutage mehr ein agiler und inkrementeller Prozess ist, wird auch die Erstellung und die Mitwirkung der Softwarearchitektur in diese sich wiederholenden Prozesse mit einbezogen. \cite[S. 7]{basiswissen}
