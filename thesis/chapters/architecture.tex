@@ -53,12 +53,28 @@ Der Architekturzyklus lässt sich mit dem in Abbildung \ref{fig:cycle} beschrieb
   \item \glqq Kommunizieren der Architektur\grqq
 \end{itemize}
 
-TODO: alle punkte erklären
+Die Systemvision beschreibt die Grundidee des zu erstellenden Systems. Sie geht meist vom/von der KundIn aus und wird am Anfang des Projektes erstellt. Eine Systemvision beinhaltet die Antwort auf folgende drei Punkte \cite[S. 202-206]{vision}:
+
+\begin{itemize}
+  \item Was soll das Projekt erreichen?
+  \item Warum ist es wertvoll?
+  \item Was sind die Kriterien, welche den Erfolg des Projekt beeinflussen?
+\end{itemize}
+
+Bereits hier sollte ein/eine SoftwarearchitektIn anwesend sein, um die Anforderungen zu prüfen, die Machbarkeit zu ermitteln und auf widersprüchliche Anforderungen hinzuweisen. \cite[S. 352-353]{softarch}
+
+Ist die Systemvision erstellt und die Anforderungen ermittelt, müssen diese in eine Form gebracht werden, welche widerspruchsfrei und klar ist. Unpräzise Anforderungen müssen präzisiert werden. Oft findet auch eine Priorisierung der Anforderungen statt. \cite[S. 353]{softarch}
+
+Danach kann mit der Planung der Architektur begonnen werden. Die Anforderungen liefern die Basis für die architektonischen Entscheidungen. In dieser Phase findet meist auch ein Architekturreview statt, um Alternativarchitekturen abzuwägen. \cite[S. 353]{softarch}
+
+Steht die Planung der Architektur wird schließlich mit der Implementation begonnen. Hier muss darauf geachtet werden, dass die architektonischen Entscheidungen korrekt umgesetzt werden, da diese erfahrunsgemäß oft vernachlässigt werden. \cite[S. 354]{softarch}
+
+Während der Architekturphase müssen die Entscheidungen des Architekturprozesses kontinuierlich den Stakeholdern kommuniziert werden, damit diese die Architektur umsetzen und bei auftretenden Problemen Feedback geben können. \cite[S. 354]{softarch}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{img/archcycle.png}
-    \caption{Der Architekturprozess modelliert als Aktivitätsdiagramm \cite[Umschlag]{softarch}}
+    \includegraphics[scale=0.6]{img/archcycle.png}
+    \caption{Der Architekturprozess modelliert als Aktivitätsdiagramm \cite[Umschlag, S. 352]{softarch}}
     \label{fig:cycle}
 \end{figure}
 
