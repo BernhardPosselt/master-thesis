@@ -115,7 +115,7 @@ ATAM, kurz für Architecture Trade-off Analysis Method, beschäftigt sich mit de
 
 Einer initialen Vorbereitungsphase, in welchem das Team und der Zeitplan erstellt wird, folgt ein Treffen mit den StakeholderInnen des/der AuftraggeberIn, in der die Geschäftsziele und Architektur vorgestellt werden. In diesem Treffen werden die nicht funktionalen Anforderungen anhand eines Utility Trees (Abbildung \ref{fig:utility}) erarbeitet, priorisiert und bewertet. Sind wichtige architekturrelevante Anforderungen noch nicht bekannt, können diese nun mit den StakeholderInnen erarbeit werden. \cite[S. 184-199]{basiswissen}
 
-Der Utility Tree ist ein Baumstruktur, deren Blätter die nicht funktionalen Anforderungen sind. Diese nicht funktionalen Anforderungen werden danach in weitere, konkrete Unterbereiche aufgespalten, zB. Performance würde in Antwortzeit und Speicherbedarf aufgespalten werden. Diese Unterbereiche können schließlich bewertet und priorisiert werden.
+Der Utility Tree ist ein Baumstruktur, deren Blätter die nicht funktionalen Anforderungen sind. Diese nicht funktionalen Anforderungen werden danach in weitere, konkrete Unterbereiche aufgespalten, zB. Performance würde in Antwortzeiten und Speicherbedarf aufgespalten werden. Diese Unterbereiche können schließlich bewertet und priorisiert werden. Die Bewertung und Priorisierung erfolgt anhand der Wichtigkeit und der Risiken.
 
 \begin{figure}[H]
     \centering
@@ -132,7 +132,7 @@ Auf Basis des Utility Trees und dessen nicht funktionale Anforderungen werden da
   \item Explorative Szenarien
 \end{itemize}
 
-Die Usecases beschreiben die Standardanwendungsfälle der NutzerInnen, welche durch das System umgesetzt werden sollen. Wachstumsszenarien beschreiben Szenarien, welche sich vor allem mit der Skalierbarkeit der Applikation beschäftigen, zB. statt 10 UserInnen greifen auf einmal 100 UserInnen auf das System zu. Explorative Szenarien drehen sich um mögliche Nutzungsszenarien, welche im Vorfeld entweder nicht bedacht wurden, oder nicht der Hauptfokus des Systems sind. \cite[S. 63]{review}
+Die Usecases beschreiben die Standardanwendungsfälle der NutzerInnen, welche durch das System umgesetzt werden sollen. Wachstumsszenarien beschreiben Szenarien, welche sich vor allem mit der Skalierbarkeit der Applikation beschäftigen, zB. statt 10 UserInnen greifen auf einmal 100 UserInnen auf das System zu. Explorative Szenarien drehen sich um mögliche Nutzungsszenarien, welche im Vorfeld entweder nicht bedacht wurden, oder nicht im Hauptfokus des Systems stehen. \cite[S. 63]{review}
 
 Alle Szenarien werden priorisiert. Danach führen die ArchtektInnen pro Usecase eine Analyse der im Utilitytree beschriebenen nicht funktionalen Anforderungen durch. Je nachdem, wie viel Zeit für die Analyse aufgewendet werden soll, werden zusätzlich zu den als hoch priorisierten Usecases und nicht funktionalen Anforderungen auch weitere, niedriger Priorisierte überprüft. \cite[S. 192]{basiswissen}
 
@@ -140,7 +140,7 @@ Sind die Bewertungsphasen abgeschlossen können die Ergebnisse analysiert, dokum
 
 \subsection{CBAM}
 
-Eine Architektur ist meist nicht nur durch die ihr abverlangten Qualitätsanforderungen begrenzt, sondern auch durch die ihr zur Verfügung stehenden Mittel. Es mag zB. besser sein, eine hohe Kohäsion einer Komponente zu verlangen, um die Wartungskosten zu verringern, jedoch kann dies in manchen Fällen zu zu hohen Anschaffungskosten führen, da zB. statt einem Server zehn Server angeschafft werden müssen. Um die Kosten verschiedener Architekturen besser bewerten zu können, wurde CBAM entwickelt . CBAM, kurz für Cost Benefit Analysis Method, baut auf ATAM auf und ergänzt es um eine Kosten-Nutzen Analyse. Hauptkriterium dieser Analyse ist der ROI. \cite[S. 67-68]{review}
+Eine Architektur ist meist nicht nur durch die ihr abverlangten Qualitätsanforderungen begrenzt, sondern auch durch die ihr zur Verfügung stehenden Mittel. Es mag zB. besser sein, eine hohe Kohäsion einer Komponente zu verlangen, um die Wartungskosten zu verringern, jedoch kann dies in manchen Fällen zu zu hohen Anschaffungskosten führen, da zB. statt einem Server zehn Server angeschafft werden müssten. Um die Kosten verschiedener Architekturen besser bewerten zu können, wurde CBAM entwickelt . CBAM, kurz für Cost Benefit Analysis Method, baut auf ATAM auf und ergänzt es um eine Kosten-Nutzen Analyse. Hauptkriterium dieser Analyse ist der ROI. \cite[S. 67-68]{review}
 
 CBAM gliedert sich in folgende Phasen: \cite[S. 68]{review}
 
@@ -156,4 +156,4 @@ In der Triagephase werden die möglichen Architekturen anhand ihrer Kosten und V
 
 In der darauf folgenden Detailphase wird dann die ausgewählte Architektur und deren Qualitätsanforderungen genauer analysiert, um in der Attributsquantitfizierungsphase eine Aussage über die Auswirkungen auf die Qualitätsanforderungen treffen zu können. In der Kostenquantitfizierungsphase wird dann der ROI der verbleibenden Architekturen berechnet. \cite[S. 68-69]{review}
 
-Abschließend wird dann auf Basis des ROI versucht, die Architektur mit dem größten ROI zu finden, welche das Budget für das System erlaubt. Im Gegensatz zu ATAM wird kein Utility Tree verwendet, sondern eine \glqq Utility-Response-Kurve\grqq, welche Auskunft über die Wirtschaftlichkeit der Qualitätsanforderungen liefert.  \cite[S. 69]{review}
+Abschließend wird nun auf Basis des ROI versucht, die Architektur mit dem größten ROI zu finden, welche das Budget für das System erlaubt. Im Gegensatz zu ATAM wird kein Utility Tree verwendet, sondern eine \glqq Utility-Response-Kurve\grqq, welche Auskunft über die Wirtschaftlichkeit der Qualitätsanforderungen liefert.  \cite[S. 69]{review}
