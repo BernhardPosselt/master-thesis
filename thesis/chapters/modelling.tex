@@ -1,5 +1,5 @@
 \chapter{Modellierung in der Architektur}
-Der Architekturprozess \glqq erstreckt sich von der Analyse des Problembereichs eines Systems bis hin zu seiner Realisierung\grqq \cite[S. 10]{softarch} und arbeitet durch die verschiedenen Architektursichten stark mit verschiedenen Mitteln der Abstraktion. Deswegen bietet sich die Verwendung von Modellen für den Architekturprozess an.
+Der Architekturprozess \glqq erstreckt sich von der Analyse des Problembereichs eines Systems bis hin zu seiner Realisierung\grqq \cite[S. 10]{softarch} und arbeitet durch die verschiedenen Architektursichten stark mit verschiedenen Mitteln der Abstraktion. Wien in ISO 42010 beschrieben besitzt jede Architektursicht zudem ein oder mehrere Architekturmodelle \cite{ISO_ARCH}. Werden Architektursichten im Architekturprozess verwendet, bietet sich deswegen auch die Verwendung von Modellierungssprachen an, mit welchen die Architekturmodelle erstellt werden können.
 
 \section{Modeldefinition}
 Ein Model hat laut Stachowiak folgende Eigenschaften \cite[S. 131-133]{modell}:
@@ -10,12 +10,12 @@ Ein Model hat laut Stachowiak folgende Eigenschaften \cite[S. 131-133]{modell}:
   \item Pragmatismus
 \end{itemize}
 
-Das Abbildungsmerkmal besagt, dass Modelle entweder natürliche oder künstliche Dinge abbilden. Das Verkürzungsmerkmal eines Modelles dreht sich um die Reduktion der Eigenschaften des Originals: Nur die für das Modell relevanten Eigenschaften werden durch das Modell repräsentiert. Das Pragmatismusmerkmal schließlich beschreibt, dass Modelle eine Funktion erfüllen: Sie sind für einen definierten Zweck und Person, sei sie natürlich oder künstlich, erstellt. \cite[S. 131-133]{modell}
+Das Abbildungsmerkmal besagt, dass Modelle entweder natürliche oder künstliche Dinge abbilden. Das Verkürzungsmerkmal eines Modelles dreht sich um die Reduktion der Eigenschaften des Originals: Nur die für den Einsatzbereich relevanten Eigenschaften werden durch das Modell repräsentiert. Das Pragmatismusmerkmal schließlich besagt, dass Modelle eine Funktion erfüllen: Sie sind sowohl für einen definierten Einsatzzweck, als auch für eine Person, sei sie natürlich oder künstlich, erstellt. \cite[S. 131-133]{modell}
 
-Werden Modelle verwendet, müssen diese kommuniziert und dokumentiert werden \cite[S. 12]{reqanalysis}. Vor allem in der Arbeit im Team bietet sich deswegen eine standardisierte Modellierungssprache an, welche den Einsatzberreich so gut wie möglich abdeckt. Dies hilft, Interpretationsfehler zu vermeiden. Aus dem gleichen Grund ist es auch vorteilhaft, eine weit verbreitete Modellsprache zu wählen \cite[S. 139]{effektiv}. Eine Modellierungssprache sollte zudem visuelle Elemente verwenden, da das menschliche Auge eine höhere Informationsbandbreite als Prosa besitzt \cite[S. 12]{reqanalysis}.
+Werden Modelle verwendet, müssen diese kommuniziert und dokumentiert werden \cite[S. 12]{reqanalysis}. Vor Allem in der Arbeit im Team bietet sich deswegen eine standardisierte Modellierungssprache an, welche den Einsatzberreich so gut wie möglich abdeckt. Dies dient vor Allem dazu, Interpretationsfehler zu vermeiden. Aus dem gleichen Grund ist es auch vorteilhaft, eine weit verbreitete Modellierungssprache zu wählen \cite[S. 139]{effektiv}. Eine Modellierungssprache sollte zudem visuelle Elemente verwenden, da das menschliche Auge Bilder schneller als Text aufnehmen kann \cite[S. 12]{reqanalysis}.
 
 \section{UML}
-UML, kurz für Unified Modelling Language, ist eine in den 90ern entstandene Modellierungssprache, welches sich vor allem für Modellierung objektorientierter Systeme eignet \cite[S. 145]{basiswissen}. Sie war eine Antwort auf den damaligen Wildwuchs an verschiedenen, zueinander inkompatiblen Modellierungssprachen wie OOD, OOA\&D etc. \cite[S. 5]{glasklar}. Mittlerweile ist sie weit verbreitet und wird weltweit verstanden \cite[S. 138]{effektiv}. Die aktuelle Version der UML ist 2.4.1 \cite{omg}.
+UML, kurz für Unified Modelling Language, ist eine in den 90ern entstandene Modellierungssprache, welche sich vor Allem für die Modellierung objektorientierter Systeme eignet \cite[S. 145]{basiswissen}. Sie war eine Antwort auf den damaligen Wildwuchs an verschiedenen, zueinander inkompatiblen Modellierungssprachen wie OOD, OOA\&D, etc. \cite[S. 5]{glasklar}. Mittlerweile ist sie weit verbreitet und wird weltweit verstanden \cite[S. 138]{effektiv}. Die aktuelle Version der UML ist 2.4.1 \cite{omg}.
 
 
 Die in der UML spezifizierten Diagramme lassen sich in folgende zwei Kategorien einteilen \cite[S. 105, 239]{glasklar}\cite[S. 146]{basiswissen}:
@@ -25,7 +25,7 @@ Die in der UML spezifizierten Diagramme lassen sich in folgende zwei Kategorien 
   \item Strukturdiagramme
 \end{itemize}
 
-UML Diagramme lassen sich im Architekturprozess vor Allem zur Beschreibung der verschiedenen Architektursichten einsetzen und bieten alle für die Abstraktion des Systems im Architekturprozesses benötigten Werkzeuge\cite[S. 139]{effektiv}. Durch ihre verkürzende Wirkung und höhere Informationsdichte sind UML Diagramme auch oft Artefakte des Anforderungsprozesses \cite[S. 215]{reqman}. Somit schlägt UML auch die Brücke vom Anforderungs- zum Architekturprozess. Nicht alle Diagramme sind jedoch für die Erstellung der Architektur nötig. \cite[S. 144]{basiswissen}
+UML Diagramme lassen sich im Architekturprozess vor Allem zur Beschreibung der verschiedenen Architektursichten einsetzen und bieten alle für die Abstraktion des Systems im Architekturprozesses benötigten Werkzeuge\cite[S. 139]{effektiv}. Durch ihre verkürzende Wirkung und höhere Informationsdichte sind UML Diagramme auch oft Artefakte des Anforderungsprozesses \cite[S. 215]{reqman}. UML schlägt somit die Brücke vom Anforderungs- zum Architekturprozess. Nicht alle verfügbaren UML Diagramme sind jedoch für die Erstellung und Modellierung der Architektur nötig. \cite[S. 144]{basiswissen}
 
 Die in der Arbeit verwendeten Verhaltensdiagramme beschränken sich auf das Usecase-, Kontext-, Komponenten- und Aktivitätsdiagramm. Das einzig verwendete Strukturdiagramm ist das Klassendiagramm.
 
