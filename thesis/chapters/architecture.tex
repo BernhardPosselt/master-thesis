@@ -6,11 +6,11 @@ Durch diese Abstraktionen wird versucht, die Komplexität des Systems \glqq übe
 Diese einzelnen Abstraktionen können in Architektursichten gruppiert werden.
 
 \section{Architektursichten}
-Architektursichten beschreiben verschiedene Sichten auf das zu erstellende System und entstanden in den späten 80ern bzw. frühen 90ern. Im Jahre 2000 wurde schließlich eine Empfehlung zur Erstellung von Softwarearchitektur vom Institute of Electronics Engineers (IEEE 1471) heraus gegeben, in welchem Architektursichten erwähnt, aber weder Sichtenmodelle noch Modellierungssprachen festgelegt werden \cite{ISO_ARCH_OLD}\cite[S. 138]{basiswissen}. Die Empfehlung wurde im Jahre 2011 von der ISO unter der Nummer 42010 standardisiert\cite{ISO_ARCH}.
+Architektursichten beschreiben verschiedene Sichten auf das zu erstellende System und entstanden in den späten 80ern bzw. frühen 90ern. Im Jahre 2000 wurde schließlich eine Empfehlung zur Erstellung von Softwarearchitektur vom Institute of Electronics Engineers (IEEE 1471) heraus gegeben, in welchem Architektursichten erwähnt, aber weder Sichtenmodelle noch Modellierungssprachen festgelegt wurden \cite{ISO_ARCH_OLD}\cite[S. 138]{basiswissen}. Die Empfehlung wurde im Jahre 2011 von der ISO unter der Nummer 42010 standardisiert\cite{ISO_ARCH}.
 
-ISO 42010 definiert eine Architektursicht folgendermaßen: Eine Architektursicht ist eine Sicht der Architektur eines Systems aus der Perspektive von ein oder mehreren Stakeholdern. Diese Stakeholder haben unterschiedliche Aufgaben und Interessen und benötigen somit auf ihre Bedürfnisse zugeschnittene Information. Die einzelnen Sichten wiederum beinhaltet mehrere Architekturmodelle. \cite{ISO_ARCH}
+ISO 42010 definiert eine Architektursicht folgendermaßen: Eine Architektursicht ist eine Sicht der Architektur eines Systems aus der Perspektive von ein oder mehreren StakeholderInnen. Diese StakeholderInnen haben unterschiedliche Aufgaben und Interessen und benötigen somit auf ihre Bedürfnisse zugeschnittene Information. Die einzelnen Sichten wiederum beinhaltet mehrere Architekturmodelle. \cite{ISO_ARCH}
 
-Ein Beispiel für einen Stakeholder ist zB. ein/eine SystementwicklerIn. Sie/Er benötigt für das Aufsetzen und Konfigurieren der Hardwarekomponenten eine Sicht auf die physische Verteilung des Systems. Diese Sicht kann zB. mit Hilfe des UML Komponentendiagramms beschrieben werden. Das Komponentendiagramm nimmt hier die Rolle des Architekturmodells an.
+Ein Beispiel für einen/eine StakeholderIn ist zB. ein/eine SystementwicklerIn. Er/Sie benötigt für das Aufsetzen und Konfigurieren der Hardwarekomponenten eine Sicht auf die physische Verteilung des Systems. Diese Sicht kann zB. mit Hilfe des UML Komponentendiagramms beschrieben werden. Das Komponentendiagramm nimmt in diesem Falle die Rolle des Architekturmodells an.
 
 \section{Architektursichtenmodelle}
 ISO 42010 definiert, wie erwähnt, weder Architektursichten- noch Architekturmodelle, stellt jedoch einen Rahmen für diese bereit
@@ -24,11 +24,11 @@ Folgende Architektursichtenmodelle werden häufig verwendet \cite[S. 94]{softarc
   \item Kruchtens 4+1 Sichtenmodell
 \end{itemize}
 
-Das Zachmann Framework, benannt nach dessen Autor John Zachmann, geht auf den Versuch zurück, Strukturen von Unternehmen zu beschreiben. Das Modell wurde später für Softwarearchitekturen abgewandelt. Das Framework eignet sich vor allem für Enterprisesysteme, da die Organisation des Unternehmens gut beschrieben werden kann. Für andere Einsatzfälle wird jedoch aufgrund der Komplexität empfohlen, das Modell einzuschränken. \cite[S. 94-95]{softarch}
+Das Zachmann Framework, benannt nach dessen Autor John Zachmann, geht auf den Versuch zurück, Strukturen von Unternehmen zu beschreiben. Das Modell wurde später für Softwarearchitektur abgewandelt. Das Framework eignet sich daher vor allem für Enterprisesysteme, da die Organisation des Unternehmens gut beschrieben werden kann. Für andere Einsatzfälle wird jedoch aufgrund der Komplexität und des Umfangs empfohlen, das Modell auf die exakt benötigten Bereiche einzuschränken. \cite[S. 94-95]{softarch}
 
-RM-ODP, kurz für Reference Model for Open Distributed Processing, ist ein von der ISO standardisiertes Architektursichtenmodell, welches sich vor allem für verteilte, objektbasierte Systeme eignet. Es versucht vor allem Architekturen unabhängig \glqq von Verteilungs- und Verteilungsaspekten\grqq zu machen. \cite{ISO_RMODP}\cite[S. 97-98]{softarch}
+RM-ODP, kurz für Reference Model for Open Distributed Processing, ist ein von der ISO standardisiertes Architektursichtenmodell, welches sich vor allem für verteilte, objektbasierte Systeme eignet. Es versucht vor allem Architekturen unabhängig \glqq von Verteilungs- und Implementierungsaspekten\grqq zu machen. \cite{ISO_RMODP}\cite[S. 97-98]{softarch}
 
-Das 4+1 Schichtenmodell, welches von Philipp Kruchten entwickelt wurde, fokussiert vor allem die Stakeholder ProjektmanagerInnen, EntwicklerInnen und BenutzerInnen. Das Modell beinhaltet folgende Sichten \cite{kruch}\cite[S. 501-503]{appluml}:
+Das 4+1 Schichtenmodell, welches von Philipp Kruchten entwickelt wurde, fokussiert vor allem die ProjektmanagerInnen, EntwicklerInnen und BenutzerInnen. Das Modell beinhaltet folgende Sichten \cite{kruch}\cite[S. 501-503]{appluml}:
 
 \begin{itemize}
   \item Logical View: Logische Sicht auf das System, welche sich mit der Funktionalität des Systems beschäftigt. Kann durch UML Paket-, Klassen- und Interaktionsübersichtsdiagramme beschrieben werden.
@@ -38,12 +38,12 @@ Das 4+1 Schichtenmodell, welches von Philipp Kruchten entwickelt wurde, fokussie
   \item Scenarios: Beschreibt die Usecases eines Systems, um die Architekturentscheidungen zu validieren. Hierfür können UML Usecasediagramme verwendet werden.
 \end{itemize}
 
-In der Arbeit wird vor allem auf Kruchtens 4+1 Sichtenmodell eingegangen. Aufgrund der Einschränkung auf die Planungsphase der Architektur entfallen jedoch diverse Sichten. Dies sind vor Allem jene, welche stark auf die Implementierung fixiert sind, zB. die Process View.
+In der Arbeit wird vor allem auf Kruchtens 4+1 Sichtenmodell eingegangen. Aufgrund der Einschränkung auf die Planungsphase der Architektur entfallen jedoch diverse Sichten. Dies sind vor Allem jene, welche sich hauptsächlich mit der Beschreibung der Implementation beschäftigen, zB. die Process View.
 
 \section{Architekturprozess Lifecycle}
 Zeitlich ordnet sich die Architekturphase zwischen dem Ermitteln der Anforderungen und der tatsächlichen Implementation ein. Da die Erstellung von Software heutzutage mehr ein agiler und inkrementeller Prozess ist, wird auch die Erstellung und die Mitwirkung der Softwarearchitektur in diese sich wiederholenden Prozesse mit einbezogen. \cite[S. 7]{basiswissen}
 
-Der Architekturzyklus lässt sich mit dem in Abbildung \ref{fig:cycle} beschriebenen Aktivitätsdiagramm darstellen und unterteilt sich in folgende Unterbereiche \cite[Umschlag]{softarch}:
+Der Architekturzyklus selbst lässt sich mit dem in Abbildung \ref{fig:cycle} beschriebenen Aktivitätsdiagramm darstellen und unterteilt sich in folgende Unterbereiche \cite[Umschlag]{softarch}:
 
 \begin{itemize}
   \item \glqq Erstellen der Systemvision\grqq
@@ -67,9 +67,9 @@ Ist die Systemvision erstellt und die Anforderungen ermittelt, müssen diese in 
 
 Danach kann mit der Planung der Architektur begonnen werden. Die Anforderungen liefern die Basis für die architektonischen Entscheidungen. In dieser Phase findet meist auch ein Architekturreview statt, um Alternativarchitekturen abzuwägen. \cite[S. 353]{softarch}
 
-Steht die Planung der Architektur wird schließlich mit der Implementation begonnen. Hier muss darauf geachtet werden, dass die architektonischen Entscheidungen korrekt umgesetzt werden, da diese erfahrunsgemäß oft vernachlässigt werden. \cite[S. 354]{softarch}
+Nach der Architekturplanung wird schließlich mit der Implementation begonnen. Hier muss darauf geachtet werden, dass die architektonischen Entscheidungen korrekt umgesetzt werden, da diese erfahrunsgemäß oft vernachlässigt werden. \cite[S. 354]{softarch}
 
-Während der Architekturphase müssen die Entscheidungen des Architekturprozesses kontinuierlich den Stakeholdern kommuniziert werden, damit diese die Architektur umsetzen und bei auftretenden Problemen Feedback geben können. \cite[S. 354]{softarch}
+Während der Architekturphase müssen die Entscheidungen des Architekturprozesses kontinuierlich den StakeholderInnen kommuniziert werden, damit diese die Architektur umsetzen und bei auftretenden Problemen Feedback geben können. \cite[S. 354]{softarch}
 
 \begin{figure}[H]
     \centering
@@ -78,30 +78,30 @@ Während der Architekturphase müssen die Entscheidungen des Architekturprozesse
     \label{fig:cycle}
 \end{figure}
 
-Der Fokus der Arbeit liegt wegen der fehlenden Implementierung hauptsächlich auf den ersten drei Teilen, der Erstellung der Systemvision, Verstehen der Anforderungen und dem Entwerfen der Architektur.
+Der Fokus der Arbeit liegt wegen der fehlenden Implementierung hauptsächlich auf den ersten drei Teilen, der Erstellung der Systemvision, Verstehen der Anforderungen und dem Entwerfen der Architektur. Die Systemvision wurde verwendet, um den Architekturprozess zu erstellen. Bei der Anwendung des Architekturprozesses wird dieser jedoch als Artefakt des Anforderungsprozesses vorausgesetzt.
 
 \section{Was macht eine gute Softwarearchitektur aus}
-Die Frage, was eine gute Softwarearchitektur ausmacht, wird oft sehr breit und ungenau beantwortet: Eine gute Architektur erfülle die \glqq Verhaltens-, Qualitäts- und Lebenszyklusanforderungen\grqq \ \cite[S. 12]{basiswissen} eine Systems, ermögliche es Risiken frühzeitig zu erkennen und die inhärente Komplexität eines Systems und dessen Quellcodes zu beherrschen \cite[S. 7-8]{softarch}.
+Die Frage, was eine gute Softwarearchitektur ausmacht, wird oft sehr breit und ungenau beantwortet: Eine gute Architektur erfülle die \glqq Verhaltens-, Qualitäts- und Lebenszyklusanforderungen\grqq \ \cite[S. 12]{basiswissen} eines Systems, ermögliche es Risiken frühzeitig zu erkennen und die inhärente Komplexität eines Systems und dessen Quellcodes zu beherrschen \cite[S. 7-8]{softarch}.
 
-Alle diese Kriterien lassen sich jedoch schwierig oder gar nicht messen. Manche Werte sind zwar messbar, aber lassen keine eindeutigen Entscheidungen ableiten: zB. können Kopplung und Kohäsion eines Systemes gemssen werden, jedoch kann nicht eindeutig festgelegt werden, ab welchem Wert die Kopplung zu hoch oder die Kohäsion zu niedrig ist.
+Alle diese Kriterien lassen sich jedoch schwierig oder gar nicht messen. Manche Werte sind zwar messbar, aber lassen keine eindeutigen Entscheidungen ableiten: zB. können Kopplung und Kohäsion eines Systems gemessen werden, jedoch kann nicht eindeutig festgelegt werden, ab welchem Wert die Kopplung zu hoch oder die Kohäsion zu niedrig ist.
 
 Dieter Masek kommt zu folgendem Schluss: \glqq Die Frage ob eine gegebene Architektur gut oder schlecht ist, lässt sich nicht direkt beantworten. Gut oder schlecht sind absolute Bewertungen, die für Architekturen sowieso nicht möglich sind. Eine Architektur lässt sich nur in einem festgelegten Kontext beurteilen d.h.: Wie gut löst eine Architektur ein vorgegebenes Problem? Selbst diese eingeschränkte Frage lässt sich nicht mit gut oder schlecht beantworten! \grqq \ \cite[S. 19]{review}
 
-Trotz all dieser Probleme lassen sich dennoch Werte messen und überprüfen \cite[S. 19]{review}, welche in Verbindung mit unzureichenden Architektureintscheidungen gebracht werden können. Dies erlaubt folgenden Schluss: Die Ausgangsfrage, was eine gute Softwarearchitektur ausmacht, führt zu keiner Erkenntnis und ist damit mehr oder minder nutzlos: Es kommt nicht darauf an, ob eine Architektur gut ist, sondern ob eine Architektur die an sie gestellten Anforderungen erfüllt.
+Trotz all dieser Probleme lassen sich dennoch Werte messen und überprüfen \cite[S. 19]{review}, welche in Verbindung mit unzureichenden Architekturentscheidungen gebracht werden können. Dies erlaubt folgenden Schluss: Die Ausgangsfrage, was eine gute Softwarearchitektur ausmacht, führt zu keiner Erkenntnis und ist damit mehr oder minder nutzlos: Es kommt nicht darauf an, ob eine Architektur gut ist, sondern ob eine Architektur die an sie gestellten Anforderungen erfüllt.
 
-Viele dieser Anforderungen stehen im Gegensatz zueinander: zB. erfordert eine hohe Performance eine niedrigere Abstraktionsebene, was jedoch die Wartung des Codes erschwert. Die Findung einer angemessene Softwarearchitektur beschäftigt sich somit mehr mit der Abwägung von Vor- und Nachteilen, welche aus den jeweiligen Entwurfsmustern und Technologien ableitbar sind.
+Viele dieser Anforderungen stehen im Gegensatz zueinander: zB. erfordert eine hohe Performance eine niedrigere Abstraktionsebene, was jedoch die Wartung des Codes erschwert. Die Erstellung einer angemessene Softwarearchitektur beschäftigt sich somit mehr mit der Abwägung von Vor- und Nachteilen, welche aus den jeweiligen Entwurfsmustern und Technologien ableitbar sind.
 
-Um diese Entscheidungen abwägen zu können, ist wichtig, die expliziten Anforderungen an das System zu kennen \cite[S. 19]{review}. Eine möglichst vollständige Anforderungsanalyse ist somit die Ausgangsbasis für eine angemessene Softwarearchitektur. Dies kann jedoch vor allem am Anfang der Anforderungsanalyse schwierig sein, da die KundInnen noch keine genaue Vorstellung vom zu entwickelnden System haben \cite[S. 80]{reqman}.
+Um diese Entscheidungen abwägen zu können, ist wichtig, die expliziten Anforderungen an das System zu kennen \cite[S. 19]{review}. Eine möglichst vollständige Anforderungsanalyse ist somit die Ausgangsbasis für eine angemessene Softwarearchitektur. Dies kann jedoch vor Allem am Anfang der Anforderungsanalyse schwierig sein, da die KundInnen noch keine genaue Vorstellung vom zu entwickelnden System haben \cite[S. 80]{reqman}.
 
-Eine Möglichkeit zur Überprüfung von bestehenden und noch nicht beachteteten Anforderungen der Architektur stellt die Durchführung eines szenariobasierten Architekturreviews wie ATAM oder CBAM dar.
+Eine Möglichkeit zur Überprüfung von bestehenden und noch nicht beachteten Anforderungen der Architektur stellt die Durchführung eines szenariobasierten Architekturreviews wie ATAM oder CBAM dar.
 
 
 \section{Architekturbewertungsmethoden}
-Architekturbewertungsmethoden werden dazu verwendet, die Angemessenheit einer Architektur zu überprüfen. Die Meisten ihrer Art basieren auf der Erstellung von Szenarien, da das Kosten-Nutzen Verhältnis dieser Herangehensweise sehr gut ist \cite[S. 185]{basiswissen}.
+Architekturbewertungsmethoden werden dazu verwendet, die Angemessenheit einer Architektur zu überprüfen. Die Meisten ihrer Art versuchen dies mit Hilfe von Szenarien zu lösen, vor allem weil das Kosten-Nutzen Verhältnis dieser Herangehensweise sehr gut ist \cite[S. 185]{basiswissen} und Szenarien oft schon im Anforderungsprozess erstellt wurden\cite[S. 62]{effektiv}.
 
-Es gibt mehrere verschiedene Bewertungsmethoden wie CBAM, ALMA und ARID, welche zum Großteil Abwandlungen von ATAM darstellen. ATAM wiederum ist eine Weiterentwicklung von SAAM. \cite[S. 60-76]{review}
+Es gibt mehrere verschiedene Bewertungsmethoden wie CBAM, ALMA, ARID, uvm. welche zum Großteil Abwandlungen von ATAM darstellen. ATAM wiederum ist eine Weiterentwicklung von SAAM. \cite[S. 60-76]{review}
 
-Da Kosteneffektivität, Änderungs- und Wachstumsszenarien die Basis für Entscheidungen des erstellten Architekturprozesses darstellen, wird näher auf ATAM (Änderungs- und Wachstumsszenarien) und CBAM (Kostenszenarien) eingegangen.
+Da Kosteneffektivität, Änderungs- und Wachstumsszenarien die Basis für Entscheidungen des erstellten Architekturprozesses darstellen, wird vor Allem näher auf ATAM (Änderungs- und Wachstumsszenarien) und CBAM (Kostenszenarien) eingegangen.
 
 \subsection{ATAM}
 ATAM, kurz für Architecture Trade-off Analysis Method, beschäftigt sich mit den nicht funktionalen Anforderungen wie Performance oder Verfügbarkeit. Sie lässt sich in folgende Phasen einteilen \cite[S. 185]{basiswissen}:
@@ -115,7 +115,7 @@ ATAM, kurz für Architecture Trade-off Analysis Method, beschäftigt sich mit de
 
 Einer initialen Vorbereitungsphase, in welchem das Team und der Zeitplan erstellt wird, folgt ein Treffen mit den StakeholderInnen des/der AuftraggeberIn, in der die Geschäftsziele und Architektur vorgestellt werden. In diesem Treffen werden die nicht funktionalen Anforderungen anhand eines Utility Trees (Abbildung \ref{fig:utility}) erarbeitet, priorisiert und bewertet. Sind wichtige architekturrelevante Anforderungen noch nicht bekannt, können diese nun mit den StakeholderInnen erarbeit werden. \cite[S. 184-199]{basiswissen}
 
-Der Utility Tree ist ein Baumstruktur, deren Blätter die nicht funktionalen Anforderungen sind. Diese nicht funktionalen Anforderungen werden danach in weitere, konkrete Unterbereiche aufgespalten, zB. Performance würde in Antwortzeit und Speicherbedarf aufgespaltet werden. Diese Unterbereiche können schließlich bewertet und priorisiert werden.
+Der Utility Tree ist ein Baumstruktur, deren Blätter die nicht funktionalen Anforderungen sind. Diese nicht funktionalen Anforderungen werden danach in weitere, konkrete Unterbereiche aufgespalten, zB. Performance würde in Antwortzeit und Speicherbedarf aufgespalten werden. Diese Unterbereiche können schließlich bewertet und priorisiert werden.
 
 \begin{figure}[H]
     \centering
@@ -152,7 +152,7 @@ CBAM gliedert sich in folgende Phasen: \cite[S. 68]{review}
   \item \glqq Rankingphase\grqq
 \end{itemize}
 
-In der Triagephase werden die möglichen Architekturen anhand ihrer Kosten und Vorteile grob bewertet. Die Bewertungen liefern dann die Grundlage für die Auswahl der möglichen Architektur(en). Bevorzugt wird die Architektur, welche die größt möglichsten Wertschöpfung erlaubt, sprich welche den ROI maximiert. \cite[S. 68]{review}
+In der Triagephase werden die möglichen Architekturen anhand ihrer Kosten und Vorteile grob bewertet. Die Bewertungen liefern dann die Grundlage für die Auswahl der möglichen Architektur(en). Bevorzugt wird die Architektur, welche die höchste Wertschöpfung erlaubt, sprich welche den ROI maximiert. \cite[S. 68]{review}
 
 In der darauf folgenden Detailphase wird dann die ausgewählte Architektur und deren Qualitätsanforderungen genauer analysiert, um in der Attributsquantitfizierungsphase eine Aussage über die Auswirkungen auf die Qualitätsanforderungen treffen zu können. In der Kostenquantitfizierungsphase wird dann der ROI der verbleibenden Architekturen berechnet. \cite[S. 68-69]{review}
 
