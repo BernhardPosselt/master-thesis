@@ -61,16 +61,14 @@ Um das Problem des sehr hohen Modellierungsaufwandes des ersten Prozesses zu umg
 
 Diese Architektur sollte nun auf die Erfüllung der nicht funktionalen Anforderungen überprüft und gegebenenfalls angepasst werden. Zur Überprüfung der Anforderungen wurden die priorisierten, nicht funktionalen Anforderungen eines Usecases herangezogen. Der Prozess ähnelte damit stark einem szenariobasierten Review wie er in ATAM durchgeführt wird.
 
-Auch dieser Prozess litt jedoch unter dem Problem, dass die nicht funktionalen Anforderungen schwer bewertet werden konnten. Über dies hinaus war es schwer ein Regelwerk/Rezept aus der Architekturerstellung abzuleiten, da durch die Einbeziehung unterschiedlicher AuftraggeberInnen jeweils verschiedene Architekturen entstehen können. Die Einbeziehung von Kohäsion als Aufteilungsgrundlage der Komponenten verursachte außerdem ein gefühlt zu großes System, welches in der Umsetzung sehr teuer geworden wäre. Die Kostenersparnis des Systems, welche in der Systemvision definiert wurde, schien damit schlecht erfüllt zu werden.
+Auch dieser Prozess litt jedoch unter dem Problem, dass die nicht funktionalen Anforderungen schwer bewertet werden konnten. Außerdem war es schwer ein Regelwerk/Rezept aus der Architekturerstellung abzuleiten, da durch die Einbeziehung unterschiedlicher AuftraggeberInnen jeweils verschiedene Architekturen entstehen können. Die Einbeziehung von Kohäsion als Aufteilungsgrundlage der Komponenten verursachte zudem ein gefühlt zu großes System, welches in der Umsetzung sehr teuer geworden wäre. Die Kostenersparnis des Systems, welche in der Systemvision definiert wurde, schien damit unzureichend erfüllt zu werden.
 
-\subsection{Von den Daten zur Architektur}
-Die Auswahl und Bewertung der Komponentenarchitekturen und der starke Fokus auf die nicht funktionalen Anforderungen in den vorherigen beiden Prozessen stellte ein wesentliches Hindernis zur Erstellung eines eindeutigen Regelwerkes dar. Eine vollständige Auflistung aller möglichen Komponentenarchitekturen erschien entweder als unmöglich oder unvollständig; eine Bewertung der nicht funktionalen Attribute schien ohne entsprechende Implementation nur sehr grob überprüfbar zu sein.
+\subsection{Von den Daten zu den Komponenten}
+Die Auswahl und Bewertung der Komponentenarchitekturen und der starke Fokus auf die nicht funktionalen Anforderungen in den beiden vorherigen Prozessen stellte ein wesentliches Hindernis zur Erstellung eines eindeutigen Regelwerkes dar: Eine vollständige Auflistung aller möglichen Komponentenarchitekturen erschien entweder unmöglich oder unvollständig zu sein; eine Bewertung der nicht funktionalen Attribute schien ohne entsprechende Implementation nur sehr grob überprüfbar zu sein. Der Versuch, ein System mit hoher Kohäsion zu erstellen, endete zudem in sehr teuren Architekturen.
 
-Da sich dieser Prozess jedoch ausschließlich auf die Planungs- und nicht die Implementationsphase bezieht, wurden die nicht funktionalen Anforderungen und Komponentenarchitekturen als Hauptkriterium und Ausgangspunkt für die Architekturerstellung verworfen.
+Dies war überraschend, da die populärste Architekturbewertungsmethode, ATAM, stark auf nicht funktionale Anforderungen aufbaute. Als Grund für diese Inkompatibilität wurde der Zeitpunkt der Architekturerstellung vermutet: Durch die fehlende Implementationsphase waren die nicht funktionalen Anforderungen sehr schwer zu bewerten und somit mehr oder weniger nicht überprüfbar. Deshalb wurden sie als Hauptkriterium und Ausgangspunkt für die Architekturerstellung verworfen.
 
-Stattdessen wurde der Fokus auf die Aufspaltung der Daten gelegt, welche bereits schon in den Systemvisionen der vorherigen Prozesse erkennbar war.
-
-Die Daten wurden anhand Ihrer Vertraulichkeit in unterschiedliche Zonen aufgeteilt. Diese Zonen wurden dann durch Systeme mit einander verbunden, die den Zugriff auf die Daten regelten.
+Stattdessen wurde der Fokus auf die Aufspaltung der Daten gelegt. Die Daten wurden anhand Ihrer Vertraulichkeit in unterschiedliche Netze aufgeteilt. Diese Netze wurden dann durch Komponenten miteinander verbunden, die den Zugriff auf die Daten regelten.
 
 \begin{figure}[!htbp]
     \centering
@@ -80,7 +78,7 @@ Die Daten wurden anhand Ihrer Vertraulichkeit in unterschiedliche Zonen aufgetei
 
 Dieser Prozess erlaubte es, eine nachvollziehbare Architektur zu erstellen, jedoch war das Ergebnis zu grob. Außerdem schien eine separate Komponente zur  Übertragung der Prüfungsdaten zu fehlen, welche in der ursprünglichen Systemvision definiert und als notwendig empfunden worden war, um die Rahmenbedingungen der Vertrautheit zu erfüllen \cite[7.3]{ISO_CERT}.
 
-\subsection{Von den Daten und den AkteurInnen zur Architektur}
+\subsection{Von den Daten und den AkteurInnen zu den Komponenten}
 Aufbauend auf dem vorherigen Prozess, welcher die Architektur anhand der Daten erstellte, wurden nun auch AkteurInnen eingebunden und deren Beziehungen zu den Daten ermittelt. Anhand dieser Beziehungen wurden Regeln erstellt, aus denen wiederum die Architektur erstellt wurde.
 
 \begin{figure}[!htbp]
@@ -90,5 +88,3 @@ Aufbauend auf dem vorherigen Prozess, welcher die Architektur anhand der Daten e
 \end{figure}
 
 Dieser Prozess schien nicht nur die Rahmenbedingungen und Sicherheitsbedingungen abzudecken, er war auch durch die erstellten Regeln nachvollziehbar und genau genug, um bereits einen guten Überblick auf die Architektur zu erlangen. Anhand der daraus resultierenden Architektur war es nun auch möglich, nicht funktionale Attribute wie zB. Antwortzeiten besser einschätzen zu können.
-
-Die Regeln und der Prozess im Detail befinden sich im übernächsten Kapitel. Das nächste Kapitel beschäftigt sich mit den dafür erforderlichen Anforderungensartefakten.
