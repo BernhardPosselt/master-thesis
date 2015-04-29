@@ -108,5 +108,9 @@ Anhand der priorisierten nicht funktionale Anforderungen wurde nun versucht, ein
 Erst die Aufspaltung in Daten und Zugriffe durch AkteurInnen verhalf zu einer reproduzierbaren Architektur, welche groß genug für Bewertungen war und nicht zu teuer war.
 
 \subsection{Ermittlung der Architekturanforderungen}
+Der Architekturprozess basiert auf Artefakten aus dem Anforderungsprozess. Je früher Anforderungen bekannt sind, desto früher können diese in den Architekturprozess einbezogen werden, um Fehlerfolgekosten zu sparen. Dazu zählen besonders architekturrelevante Anforderungen. Außerdem können bereits früh Szenarien für die Verwendung in Architketurreviews ermittelt werden. Diese Szenarien können auch in einer frühen Architekturanalyse verwendet werden.
+
 \subsection{Erstellung der Architektur}
-\subsection{Zusammenfassung}
+Auf Basis der in der Anforderungsphase ermittelten Anforderungen und Szenarien kann nun begonnen werden, die Komponenten der Architektur zu erstellen. Jedes Netz wird durch Gateways getrennt, welche nur erlaubte Anfragen durch lassen. Zusätzlich wird eine Angriffskosten der involvierten AkteurInnen durchgeführt, um zu ermitteln, ob eine weitere Aufteilung von Nöten ist.
+
+Sind alle Komponenten erstellt, kann mit einer Analyse der nicht funktionalen Anforderungen begonnen werden. Diese Analysen liefern grobe Ergebnisse, dienen aber schon als Hinweis für die Implementierungsphase und zeigen mögliche Probleme und Verbesserungsbereiche auf.
