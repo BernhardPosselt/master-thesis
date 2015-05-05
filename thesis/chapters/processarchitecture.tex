@@ -1,14 +1,14 @@
 \chapter{Erstellung der Architektur}
-Aufbauend auf den im Anforderungsprozess ermittelten Attribute, kann nun mit der Architekturplanung begonnen werden. Bereits an dieser Stelle können aufgrund der ermittelten Parameter und Erfahrungswerte eine grundsätzliche Überprüfung der Machbarkeit des Projektes durchgeführt werden. Auch eine Überprüfung, ob der beschriebene Prozess der Architekturplanung für das Projekt eignet kann durchgeführt werden: Der Prozess beschäftigt sich hauptsächlich mit der Aufspaltung und Trennung der Daten und AkteurInnen in mehrere Systeme. Durch außergewöhnlich strenge Laufzeitanforderungen oder entsprechende Rahmenbedinungen kann diese Aufspaltung jedoch zu einer Architektur führen, welche die ursprünglich ermittelten Anforderungen nicht mehr, oder nur schlecht erfüllt.
+Aufbauend auf den im Anforderungsprozess ermittelten Attribute kann nun mit der Architekturplanung begonnen werden. Bereits an dieser Stelle kann aufgrund der ermittelten Parameter und Erfahrungswerte eine grundsätzliche Überprüfung der Machbarkeit des Projektes durchgeführt werden. Eine weitere Überprüfung, nämlich ob der beschriebene Prozess sich für die Architekturplanung des Projektes eignet, kann ebenso durchgeführt werden: Der Prozess beschäftigt sich hauptsächlich mit der Aufspaltung und Trennung der Daten und AkteurInnen in mehrere Systeme. Durch außergewöhnlich strenge Laufzeitanforderungen oder entsprechende Rahmenbedinungen kann diese Aufspaltung jedoch zu einer Architektur führen, welche die ursprünglich ermittelten Anforderungen nicht mehr, oder nur schlecht erfüllt.
 
 Die erwähnten Architektursichten werden, soweit möglich, durch UML Diagramme realisert:
 
 \begin{itemize}
   \item Logical View: Klassendiagramm
-  \item Process View: Komponentendiagramm, diverse Werte in der Usecasebeschreibung sowie Aktivitäts- und Interface-Klassendiagramm
-  \item Development View: Da noch keine Implementation vorhanden ist, können noch keine Bibliotheken und Module beschrieben werden. Hierfür würde sich jedoch das Paketdiagramm anbieten
-  \item Physical View: Grobes Komponentendiagramm. Da die Wahl der exakten physischen Komponenten durch die fehlende Implementation nicht früh überprüfbar ist, wurde auf eine Modellierung in der Planungsphase verzichtet
-  \item Scenarios: Usecasediagramm
+  \item Process View: Komponentendiagramm, diverse Werte in der Usecasebeschreibung sowie Aktivitäts- und Interface-Klassendiagramm.
+  \item Development View: Da noch keine Implementation vorhanden ist, können noch keine Bibliotheken und Module beschrieben werden. Hierfür würde sich jedoch das Paketdiagramm anbieten.
+  \item Physical View: Grobes Komponentendiagramm. Da die Wahl der exakten physischen Komponenten durch die fehlende Implementation nicht früh überprüfbar ist, wurde auf eine Modellierung in der Planungsphase verzichtet.
+  \item Scenarios: Usecasediagramm.
 \end{itemize}
 
 \section{Erstellen der minimalen Architektur}
@@ -36,10 +36,10 @@ Dies führt zu folgender Minimalarchitektur:
     \caption{Minimale Architektur}
 \end{figure}
 
-Für die Nachbarsysteme selbst wird keine Architektur erstellt, jedoch beeinflussen sie die Schnittstellen des Systems und sind deswegen wichtig für den weiteren Prozess. Sie werden in die Architektur einbezogen.
+Für die Nachbarsysteme selbst wird keine Architektur erstellt, jedoch beeinflussen sie die Schnittstellen des Systems und sind deswegen wichtig für den weiteren Prozess. Sie werden daher in die Architekturplanung einbezogen.
 
 \section{Erstellen der Datenminimalarchitektur}
-Auf Basis der im Anforderungsprozess ermittelten Zonen wird das System der vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind, falls möglich, als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systems.
+Auf Basis der im Anforderungsprozess ermittelten Netzwerke wird die vorher erstellte Minimalarchitektur in ebenso viele Teilsysteme unterteilt. Die Aktivitätsdiagramme werden an die neue Architektur angepasst: Für jedes Untersystem wird in den Diagrammen eine eigene Swimlane erstellt. Die involvierten AkteurInnen sind, falls möglich, als eigene Swimlane modelliert, spielen in dieser Phase aber noch keine wichtige Rolle zur Gliederung des Systems.
 
 \begin{figure}[H]
     \centering
@@ -60,7 +60,7 @@ Der Gateway fungiert damit als eine Art Application Firewall.
 
 Der Gateway ist jedoch nicht der einzige Punkt an welchem der Zugriff auf Schnittstellen autorisiert wird. Er ist viel mehr ein zusätzlicher Layer, der den Zugriff auf die Schnittstellen absichert. Überwindet ein/eine AngreiferIn durch einen Fehler im Gateway diese Kontrolle, hat er/sie zwar Zugriff zum Internal System, kann aber trotzdem nocht nicht auf die Daten zugreifen, da diese eine zusätzliche Authentifizierung benötigen. \cite{sec}[S. 350]
 
-Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitätsdiagrammen ablesbar sind, an das System in ihrer Zone angeschlossen. Ist das Ausgangssystem ein System, welches nicht vom/von der AuftraggeberIn kontrolliert wird, und greift das Ausgangssystem von einer Zone mit einer niedrigeren Vertrautheitsebene auf ein Zielsystem mit einer höheren Vertrautheitsebene zu, muss dies jedoch über ein zusätzliches System erfolgen. Dies ermöglicht es, den Gateway komplett von unkontrollierten Systemen abzukapseln und dessen Angriffsfläche zu verringern. Dies ist besonders wichtig, weil der Gateway bei Angriffen einen Single Point of Failure darstellt.
+Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitätsdiagrammen ablesbar sind, an das System in ihrem Netzwerk angeschlossen. Ist das Ausgangssystem ein System, welches nicht vom/von der AuftraggeberIn kontrolliert wird, und greift das Ausgangssystem von einem Netzwerk mit einer niedrigeren Vertrautheitsebene auf ein Zielsystem mit einer höheren Vertrautheitsebene zu, muss dies jedoch über ein zusätzliches System erfolgen. Dies ermöglicht es, den Gateway komplett von unkontrollierten Systemen abzukapseln und dessen Angriffsfläche zu verringern. Dies ist besonders wichtig, weil der Gateway bei Angriffen einen Single Point of Failure darstellt.
 
 Das Beispielprojekt bezieht Zahlungsdaten direkt von einem Payment System und die Prüfungsfragen werden direkt an das Scheme Owner System gesandt. Beides Ausgangssysteme dieser Anfragen stammen aus einem System mit einer höheren Vertrautheitsebene als dem Zielsystem und benötigen deswegen kein eigenes Zwischensystem, sprich können direkt über den Gateway zum Ziel geführt werden. Dem entgegen gesetzt ist die Übermittlung der Prüfungsfragen des Scheme Owner Systems: Das Ausgangssystem greift hier von einem nicht kontrollierten System und einer niedrigeren Vertrautheitsebene auf eine Zielsystem in einer höheren Vertrautheitsebene zu, was eine zusätzliche Komponente nötig macht.
 
