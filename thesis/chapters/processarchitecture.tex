@@ -1,7 +1,7 @@
 \chapter{Erstellung der Architektur}
-Aufbauend auf den im Anforderungsprozess ermittelten Attribute kann nun mit der Architekturplanung begonnen werden. Bereits an dieser Stelle kann aufgrund der ermittelten Parameter und Erfahrungswerte eine grundsätzliche Überprüfung der Machbarkeit des Projektes durchgeführt werden. Eine weitere Überprüfung, nämlich ob der beschriebene Prozess sich für die Architekturplanung des Projektes eignet, kann ebenso durchgeführt werden: Der Prozess beschäftigt sich hauptsächlich mit der Aufspaltung und Trennung der Daten und AkteurInnen in mehrere Systeme. Durch außergewöhnlich strenge Laufzeitanforderungen oder entsprechende Rahmenbedinungen kann diese Aufspaltung jedoch zu einer Architektur führen, welche die ursprünglich ermittelten Anforderungen nicht mehr, oder nur schlecht erfüllt.
+Aufbauend auf den im Anforderungsprozess ermittelten Attribute kann nun mit der Architekturplanung begonnen werden. Bereits an dieser Stelle kann aufgrund der ermittelten Parameter und Erfahrungswerte eine grundsätzliche Überprüfung der Machbarkeit des Projektes durchgeführt werden. Eine weitere Überprüfung, nämlich ob der beschriebene Prozess sich für die Architekturplanung des Projektes eignet, kann ebenso durchgeführt werden: Der Prozess beschäftigt sich hauptsächlich mit der Aufspaltung und Trennung der Daten und AkteurInnen in mehrere Systeme. Durch außergewöhnlich strenge Laufzeitanforderungen oder entsprechende Rahmenbedingungen kann diese Aufspaltung jedoch zu einer Architektur führen, welche die ursprünglich ermittelten Anforderungen nicht mehr, oder nur schlecht erfüllt.
 
-Die erwähnten Architektursichten werden, soweit möglich, durch UML Diagramme realisert:
+Die erwähnten Architektursichten werden, soweit möglich, durch UML Diagramme realisiert:
 
 \begin{itemize}
   \item Logical View: Klassendiagramm
@@ -58,7 +58,7 @@ Wechselt der Kontrollfluss eine Swimlane eines Systems, heißt dies, dass eine V
 
 Der Gateway fungiert damit als eine Art Application Firewall.
 
-Der Gateway ist jedoch nicht der einzige Punkt an welchem der Zugriff auf Schnittstellen autorisiert wird. Er ist viel mehr ein zusätzlicher Layer, der den Zugriff auf die Schnittstellen absichert. Überwindet ein/eine AngreiferIn durch einen Fehler im Gateway diese Kontrolle, hat er/sie zwar Zugriff zum Internal System, kann aber trotzdem nocht nicht auf die Daten zugreifen, da diese eine zusätzliche Authentifizierung benötigen. \cite{sec}[S. 350]
+Der Gateway ist jedoch nicht der einzige Punkt an welchem der Zugriff auf Schnittstellen autorisiert wird. Er ist viel mehr ein zusätzlicher Layer, der den Zugriff auf die Schnittstellen absichert. Überwindet ein/eine AngreiferIn durch einen Fehler im Gateway diese Kontrolle, hat er/sie zwar Zugriff zum Internal System, kann aber trotzdem noch nicht auf die Daten zugreifen, da diese eine zusätzliche Authentifizierung benötigen. \cite{sec}[S. 350]
 
 Die anfangs beschriebenen Nachbarsysteme werden nach ihren Anforderungen, welche aus den Aktivitätsdiagrammen ablesbar sind, an das System in ihrem Netzwerk angeschlossen. Ist das Ausgangssystem ein System, welches nicht vom/von der AuftraggeberIn kontrolliert wird, und greift das Ausgangssystem von einem Netzwerk mit einer niedrigeren Vertrautheitsebene auf ein Zielsystem mit einer höheren Vertrautheitsebene zu, muss dies jedoch über ein zusätzliches System erfolgen. Dies ermöglicht es, den Gateway komplett von unkontrollierten Systemen abzukapseln und dessen Angriffsfläche zu verringern. Dies ist besonders wichtig, weil der Gateway bei Angriffen einen Single Point of Failure darstellt.
 
@@ -72,7 +72,7 @@ Das Beispielprojekt bezieht Zahlungsdaten direkt von einem Payment System und di
 
 Eine weitere wichtige Regel ist, dass keine Gateways unterschiedlicher Vertrautheitsebenen übersprungen werden dürfen. Zeigt ein Aktivitätsdiagramm zB. einen Zugriff von Ebene 1 auf Ebene 3 muss dieser Zugriff sowohl durch den Gateway der Ebene 2, als auch durch den Gateway der Ebene 3 geleitet werden. Dies verhindert, dass besonders schützenswerte Systeme direkt an Systeme mit einer weitaus niedrigeren Vertrautheitsebene angeschlossen werden und so dessen Gateway zum Single Point of Failure wird. Dies gilt in beide Richtungen.
 
-Da bei der Erstellung des Systems nun alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallsicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
+Da bei der Erstellung des Systems nun alle Schnittstellen und Systeme bekannt sind, können diese Regeln fest im Gateway verankert werden. Weil diese Gateways unabhängig voneinander agieren, können sie durch das Hinzufügen eines Load Balancers beliebig vervielfacht werden, was sowohl die Ausfallicherheit als auch die Skalierbarkeit erhöht. Das ist wichtig, weil sie als einzige Verbindung zwischen den Systemen zu einer Art Flaschenhals werden.
 
 \section{Einbinden der AkteurInnen}
 Nachdem die Datenminimalarchitektur steht, können nun die AkteurInnen des Systems in die Aufgliederung des Systems mit einbezogen werden. Hierfür müssen nun die Objektflüsse und die AkteurInnen des Systems für jeden Usecase betrachtet werden, welche aus den vorher bereits erstellten Aktivitäts- und Kontextdiagramm ersichtlich sind.
@@ -109,7 +109,7 @@ Im Falle des Beispielprojektes führt dies schlussendlich zu folgender Systemauf
 \end{figure}
 
 \section{Analyse der nicht funktionalen Attribute}
-Ist die erste Version der Architektur erstellt, kann nun mit der grundsätzlichen Überprüfung der im Anforderungsprozess ermittelten Parameter begonnen werden, welche bereits wichtige Informationen und Rückschlüsse auf den jetzigen Status der Architektur geben. Basierend auf den Usecases, den ermittelten Komponenten der Architektur und den Aktivitätsdiagrammen wird eine Tabelle erstellt, welche Auskünft darüber gibt, welche Komponenten für jeden Usecase benötigt werden. Diese Tabelle dient als Basis für weitere Analysen.
+Ist die erste Version der Architektur erstellt, kann nun mit der grundsätzlichen Überprüfung der im Anforderungsprozess ermittelten Parameter begonnen werden, welche bereits wichtige Informationen und Rückschlüsse auf den jetzigen Status der Architektur geben. Basierend auf den Usecases, den ermittelten Komponenten der Architektur und den Aktivitätsdiagrammen wird eine Tabelle erstellt, welche Auskunft darüber gibt, welche Komponenten für jeden Usecase benötigt werden. Diese Tabelle dient als Basis für weitere Analysen.
 
 Um herauszufinden, welche Komponenten für einen Usecase benötigt werden, können die Swimlanes der Aktivitätsdiagramme herangezogen werden. Da für AkteurInnen keine Komponente gelistet werden, werden deren Swimlanes ignoriert. Ein Beispiel hierfür ist das Aktivitätsdiagramm des Handle Complaint Usecases in Abbildung \ref{fig:handlecomplaintreview}.
 
@@ -173,7 +173,7 @@ Dies wird für alle Usecases durchgeführt und führt im Falle des Beispielproje
 
 
 \subsection{Reliability}
-Anhand der in ermittelten Usecase und Komponenten Matrix kann nun sowohl eine Überprüfung der der Ausfallskosten als auch eine Single Point of Failure Analyse durchgeführt werden.
+Anhand der in ermittelten Usecase und Komponenten Matrix kann nun sowohl eine Überprüfung der der Ausfallkosten als auch eine Single Point of Failure Analyse durchgeführt werden.
 
 \subsubsection{Single Point of Failure Analyse}
 
@@ -188,7 +188,7 @@ Zusätzlich zu einer Single Point of Failure Analyse gibt eine Ausfallkosten Ana
 
 Das Ergebnis dieser Analyse ist die notwendige Redundanz der einzelnen Komponenten, welche bei der Implementation des Systems erreicht werden muss.
 
-Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachheit gleichmäßig auf alle Zeiteinheiten. Es kann sein, dass eine Organisation so strukturiert ist, dass ein eintägiger Ausfall keine Umsatzeinbußen nach sich zieht. In diesem Falle ist die Beispielrechung ungenau. Um diese Möglichkeit einzubeziehen, müssen detailiertere Umsatzkosten im Anforderungsprozess ermittelt werden was jedoch aus Gründen des Umfangs und der Einfachheit vermieden wird. Das Beispiel soll lediglich als ein anschauliches Beispiel zur Ermitllung des Umsatzrückganges dienen.
+Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachheit gleichmäßig auf alle Zeiteinheiten. Es kann sein, dass eine Organisation so strukturiert ist, dass ein eintägiger Ausfall keine Umsatzeinbußen nach sich zieht. In diesem Falle ist die Beispielrechung ungenau. Um diese Möglichkeit einzubeziehen, müssen detailiertere Umsatzkosten im Anforderungsprozess ermittelt werden was jedoch aus Gründen des Umfangs und der Einfachheit vermieden wird. Das Beispiel soll lediglich als ein anschauliches Beispiel zur Ermittlung des Umsatzrückganges dienen.
 
 Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Feldern mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz zu ermitteln.
 
@@ -255,7 +255,7 @@ Ein Beispiel für die Berechnung der Antwortzeiten wird aus dem Aktivitätsdiagr
     \label{fig:applycomplicated}
 \end{figure}
 
-Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese werden nun mit der Konstante 100 Milisekunden multipliziert, was eine geschätzte Durchlaufzeit von 600 Milisekunden ergibt. Dies liegt unter den erforderlichen 1000 Milisekunden der aufgenommenen nicht funktionalen Anforderung der Antwortzeit.
+Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese werden nun mit der Konstante 100 Millisekunden multipliziert, was eine geschätzte Durchlaufzeit von 600 Millisekunden ergibt. Dies liegt unter den erforderlichen 1000 Millisekunden der aufgenommenen nicht funktionalen Anforderung der Antwortzeit.
 
 \subsection{Maintainability}
 Maintainability dreht sich um Wart- und Änderbarkeit eines Projektes. Die Änderbarkeit der Architektur hängt wesentlich von der Kopplung und Kohäsion der Komponenten ab. Die Wartbarkeit kann unter anderem an den Wartungskosten abgelesen werden.
@@ -269,7 +269,7 @@ Die Kohäsion beschreibt die inhaltliche Zusammengehörigkeit der Komponenten \c
 
 Zusätzlich können nun die in den Anforderungen ermittelten Änderungsszenarien mit einbezogen werden. Hat eine Komponente einen hohen Kopplungswert und/oder eine niedrigen Kohäsion, und ist sie Teil eines Usecases, welcher viele Änderungsszenarien beinhaltet, kann dies als Grund zu einer weiteren Aufspaltung der Komponente genommen werden. Gateways sind von Aufspaltungen ausgenommen, da sie als Firewall agieren und so simpel wie möglich konfiguriert werden müssen, um Konfigurationsfehler zu vermeiden.
 
-Wird eine Aufspaltung durchgeführt, so werden sie anhand der in Kohäsionsanalyse ermittelten Gruppen aufgeteilt. Die Priorität der Gruppen wiederum ergibt sich aus den ermittelten Änderungsszenarien, danach werden die in der Ausfallskostenanalyse ermittelten Kosten einer Komponente herangezogen. Diese Ordnung ergibt sich aus der Erkenntnis, dass die Wartung der Software oft mehr als 50\% der Gesamtsystemkosten des Systems ausmacht \cite[S. 71-84]{maincost}.
+Wird eine Aufspaltung durchgeführt, so werden sie anhand der in Kohäsionsanalyse ermittelten Gruppen aufgeteilt. Die Priorität der Gruppen wiederum ergibt sich aus den ermittelten Änderungsszenarien, danach werden die in der Ausfallkostenanalyse ermittelten Kosten einer Komponente herangezogen. Diese Ordnung ergibt sich aus der Erkenntnis, dass die Wartung der Software oft mehr als 50\% der Gesamtsystemkosten des Systems ausmacht \cite[S. 71-84]{maincost}.
 
 Die Änderungsszenarien und die Kopplungswerte stellen schlecht bewertbare Werte dar. Zudem kann eine feste Aufteilung anhand der unabhängigen Gruppen der Kohäsion zu einem System führen, in welchem jeder kleine und unabhängige Usecase ein eigenes System bekommt, was wiederum zu einer zu starken Fragmentierung führen kann. Deshalb kann hier keine starre Regel festgelegt werden, wann ein System aufgespalten werden muss und wann nicht. Diese Entscheidung muss vom/von dem/der ArchitektIn selbst getroffen werden.
 
@@ -288,7 +288,7 @@ Eine einfache Möglichkeit zur Schätzung der Kosten kann durch die Wahl einer K
   \item Personalkosten: 100 \euro
 \end{itemize}
 
-Die aufsummierten Kosten ergeben Wartungskosten von 130 \euro \ pro Monat. Wird dies mit der Anzahl der Systeme multiplizert ergibt sich ein Gesamtwartungskostenaufwand von 8 * 130 \euro, sprich 1040 \euro \ pro Monat.
+Die aufsummierten Kosten ergeben Wartungskosten von 130 \euro \ pro Monat. Wird dies mit der Anzahl der Systeme multipliziert ergibt sich ein Gesamtwartungskostenaufwand von 8 * 130 \euro, sprich 1040 \euro \ pro Monat.
 
 \subsection{Portability}
 Die Portabilität der Platform kann im Moment noch nicht überprüft werden, da noch keine Festlegung des Projektes auf eine Plattform und/oder Technologie existiert. Dies kann erst zu Beginn der Implementationsphase entschieden werden und wird unter anderem von den in der Anforderungsphase ermittelten Rahmenbedingungen beeinflusst.
@@ -309,7 +309,7 @@ Ein Beispiel dafür ist die Beschwerdenschnittstelle des Beispielprojektes, welc
 
 Die verschiedenen Schnittstellen können nun in das Architekturkomponentendiagramm integriert werden. Dies wird für alle Komponenten durchgeführt und schließt die Architekturplanungsphase ab.
 
-Nun kann mit der Implementierungsphase begonnen werden, welche sicht nicht nur mit der Technologie, sondern auch der Programmstruktur beschäftigt. Die Implementierungsphase aus Gründen des Umfangs nicht mehr Teil dieses Prozesses.
+Nun kann mit der Implementierungsphase begonnen werden, welche sich nicht nur mit der Technologie, sondern auch der Programmstruktur beschäftigt. Die Implementierungsphase aus Gründen des Umfangs nicht mehr Teil dieses Prozesses.
 
 \begin{figure}[H]
     \centering
