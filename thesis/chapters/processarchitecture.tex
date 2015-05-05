@@ -181,16 +181,16 @@ Ein Single Point of Failure beschreibt eine Komponente, die so kritisch für das
 
 Enthält eine Architektur einen Single Point of Failure, muss diese Komponente entweder redundant ausgelegt sein, oder es muss eine Aufspaltung anhand einer Fehlerkostenanalyse durchgeführt werden.
 
-Im Falle der Matrix in Abbildung \ref{fig:matrix} ist keine durchgehende Reihe an markierten Zellen erkennbar und somit existiert kein Single of Failure. Es lässt sich einzig und allein ablesen, dass die Public To Internal und Internal Komponente eine Abweichung vom Single Point of Failure um vier respektive drei besitzen. Dies lässt erahnen, dass bei der Implementation und Wartung dieser Systeme besondere Sorgfalt von Nöten ist.
+Im Falle der Matrix in Abbildung \ref{fig:matrix} ist keine durchgehende Reihe an markierten Zellen erkennbar und somit existiert kein Single of Failure. Es lässt sich einzig und allein ablesen, dass die Public To Internal und Internal Komponente eine Abweichung vom Status eines Single Point of Failures um vier respektive drei Punkte besitzen. Dies lässt erahnen, dass bei der Implementation und Wartung dieser Systeme besondere Sorgfalt von Nöten ist.
 
 \subsubsection{Ausfallkosten Analyse}
-Zusätzlich zu einer Single Point of Failure Analyse gibt eine Ausfallkosten Analyse auf Basis des in den Anforderungen ermittelten Monatsumsatzes Auskunft darüber, welche Komponenten jeweils wie viel Umsatz generieren. Für diese Überlegung können auch die Wachstumsszenarien einbezogen werden, falls sich der Umsatz durch eine Steigerung der BenutzerInnen steigert oder senkt.
+Zusätzlich zu einer Single Point of Failure Analyse wird eine Ausfallkostenanalyse durchgeführt. Diese basiert auf den in den Anforderungen ermittelten Monatsumsätze jedes Usecases. Für diese Überlegung können auch die Wachstumsszenarien einbezogen werden, falls sich der Umsatz durch eine Steigerung der BenutzerInnen steigert oder senkt.
 
 Das Ergebnis dieser Analyse ist die notwendige Redundanz der einzelnen Komponenten, welche bei der Implementation des Systems erreicht werden muss.
 
-Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachheit gleichmäßig auf alle Zeiteinheiten. Es kann sein, dass eine Organisation so strukturiert ist, dass ein eintägiger Ausfall keine Umsatzeinbußen nach sich zieht. In diesem Falle ist die Beispielrechung ungenau. Um diese Möglichkeit einzubeziehen, müssen detailiertere Umsatzkosten im Anforderungsprozess ermittelt werden was jedoch aus Gründen des Umfangs und der Einfachheit vermieden wird. Das Beispiel soll lediglich als ein anschauliches Beispiel zur Ermittlung des Umsatzrückganges dienen.
+Die nachfolgenden Berechnungen verteilen den Schaden aus Gründen der Einfachheit gleichmäßig auf alle Zeiteinheiten. Es kann sein, dass eine Organisation so strukturiert ist, dass ein eintägiger Ausfall keine Umsatzeinbußen nach sich zieht. In diesem Falle ist die Beispielrechung ungenau. Um diese Möglichkeit einzubeziehen, müssen detailiertere Umsatzkosten im Anforderungsprozess ermittelt werden was jedoch aus Gründen des Umfangs und der Einfachheit vermieden wurde. Das Beispiel soll lediglich als ein anschauliches Beispiel zur Ermittlung der erforderlichen Ausfallsicherheit dienen.
 
-Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Feldern mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz zu ermitteln.
+Um den monatlichen Umsatz der Komponenten zu ermitteln, wird das x in den markierten Zellen mit dem Monatsumsatz des Usecases ersetzt. Leere Felder werden mit 0 aufgefüllt. Schlussendlich werden alle Werte einer Komponente addiert, um den Gesamtumsatz der Komponente zu ermitteln.
 
 Als Beispiel dient hier die Internal Komponente (Die Werte sind beispielhaft gewählt):
 
@@ -240,11 +240,11 @@ Fällt diese Komponente für einen kompletten Monat aus, verursacht sie einen Um
 Da die Artefakte des Planungsprozesses keine Oberflächen beschreiben ist eine Auswertung der des nicht funktionalen Parameters Usability nicht möglich. Außerdem ist sie nicht im Fokus der Architekturerstellung und die Überprüfung der Usability kann somit übersprungen werden.
 
 \subsection{Efficiency}
-Es ist schwierig, die Effizienz und Performance der Architektur in diesem Stadium zu messen, da noch keine Implementation vorhanden ist und somit weder die Performance noch der Speicherverbrauch des Systems getestet werden können. In diesem Stadium lassen sich lediglich Werte schätzen. Eine Möglichkeit um zB. die Antwortzeiten zu schätzen, ist es, die Anzahl der Swimlanewechsel eines Usecases zu addieren und das Ergebnis mit einer konstanten Zeit, welche auf Erfahrungswerten basiert, zu multiplizieren. Dieser Wert kann dann mit den im Anforderungsprozess ermittelten Antwortzeiten verglichen werden, um zu überprüfen, ob das System diese Anforderungen erfüllt.
+Es ist äußerst schwierig, die Effizienz und Performance der Architektur in diesem frühen Stadium zu messen, da noch keine Implementation vorhanden ist und somit weder die Performance noch der Speicherverbrauch des Systems getestet werden kann. In diesem Stadium lassen sich lediglich Werte schätzen. Eine Möglichkeit um zB. die Antwortzeiten zu schätzen, ist es, die Anzahl der Swimlanewechsel eines Usecases zu addieren und das Ergebnis mit einer konstanten Zeiteinheit, welche auf Erfahrungswerten basiert, zu multiplizieren. Dieser Wert kann dann mit den im Anforderungsprozess ermittelten Antwortzeiten verglichen werden, um zu überprüfen, ob das System diese Anforderungen erfüllt.
 
 Ausgegangen wird hier von den bestehenden Aktivitätsdiagrammen. Je nachdem, für welchen Abschnitt die in den Anforderungen ermittelten Werte gelten, kann nicht der komplette Ablauf des Aktivitätsdiagrammes für die Berechnung der Zeit verwendet werden.
 
-Überschreitet der berechnete Wert den in den Anforderungen ermittelten Wert, muss dessen Kategorie hinzugezogen werden. Ist der Wert nur eine Empfehlung, so wird der Usecase in der Implementationsphase mit einem besonderen Augenmerk auf Geschwindigkeit umgesetzt. Ist der Wert jedoch verbindlich, so muss mit dem/der KundIn Rücksprache gehalten werden \cite[S. 70]{effektiv}: Entweder ist die Anforderung unter diesen Parametern nicht umsetzbar, oder es muss ein Kompromiss zu lasten von anderen Anforderungen eingegangen werden.
+Überschreitet der berechnete Wert den in den Anforderungen ermittelten Wert, muss überprüft werden, ob die Einhaltung des Wertes nur eine Empfehlung oder eine Verpflichtung ist. Ist der Wert nur eine Empfehlung, so wird der Usecase in der Implementationsphase mit einem besonderen Augenmerk auf Geschwindigkeit umgesetzt. Ist der Wert jedoch verbindlich, so muss mit dem/der KundIn Rücksprache gehalten werden \cite[S. 70]{effektiv}: Entweder ist die Anforderung unter diesen Parametern nicht umsetzbar, oder es muss ein Kompromiss zu lasten von anderen Anforderungen eingegangen werden.
 
 Ein Beispiel für die Berechnung der Antwortzeiten wird aus dem Aktivitätsdiagramm des Beispielprojektes für die Anmeldung eines Kandidaten erläutert (Abbildung \ref{fig:applycomplicated}):
 
@@ -258,7 +258,7 @@ Ein Beispiel für die Berechnung der Antwortzeiten wird aus dem Aktivitätsdiagr
 Hier werden, ausgegangen vom Startpunkt sechs Swimlanewechsel gezählt. Diese werden nun mit der Konstante 100 Millisekunden multipliziert, was eine geschätzte Durchlaufzeit von 600 Millisekunden ergibt. Dies liegt unter den erforderlichen 1000 Millisekunden der aufgenommenen nicht funktionalen Anforderung der Antwortzeit.
 
 \subsection{Maintainability}
-Maintainability dreht sich um Wart- und Änderbarkeit eines Projektes. Die Änderbarkeit der Architektur hängt wesentlich von der Kopplung und Kohäsion der Komponenten ab. Die Wartbarkeit kann unter anderem an den Wartungskosten abgelesen werden.
+Maintainability dreht sich um die Wart- und Änderbarkeit eines Projektes. Die Änderbarkeit der Architektur hängt wesentlich von der Kopplung und Kohäsion der Komponenten ab. Die Wartbarkeit kann unter anderem an den Wartungskosten ermittelt werden.
 
 \subsubsection{Kopplung und Kohäsion}
 Die Änder- und Wartbarkeit ist wesentlich von den Beziehungen der Komponenten und Usecases abhängig. Wird eine Komponenten geändert, so müssen zusätzlich zu dieser Änderung auch eine erneute Validierung der bereits bestehenden Funktionen durchgeführt werden, um Fehler, welche aus den Änderungen entstanden sind, zu finden. Dieses Problem wird mit dem Begriff Ripple Effect beschrieben. \cite[S. 3]{ripple}
