@@ -212,7 +212,7 @@ urlcolor=TWblue, urlbordercolor=white}
 \ifstr{\degreecourse}{MMR}{\renewcommand*{\cover}{img/MMR}%
 \renewcommand*{\degreecourse}{Mechatronik/Robotik}}{}
 \ifstr{\degreecourse}{MSE}{\renewcommand*{\cover}{img/MSE}%
-\renewcommand*{\degreecourse}{Multimedia und Softwareentwicklung}}{}
+\renewcommand*{\degreecourse}{Softwareentwicklung}}{}
 \ifstr{\degreecourse}{MST}{\renewcommand*{\cover}{img/MST}%
 \renewcommand*{\degreecourse}{Sports Equipment Technology}}{}
 \ifstr{\degreecourse}{MTE}{\renewcommand*{\cover}{img/MTE_en}%
