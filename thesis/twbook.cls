@@ -374,7 +374,7 @@ Medicine}}{}
 
 \hspace*{-30pt}\Large
   \ifx\@secondsupervisor\@empty
-\ifstr{\sprache}{german}{BegutachterIn:}{Supervisor:~}
+\ifstr{\sprache}{german}{Begutachterin:}{Supervisor:~}
    \begin{minipage}[t]{0.6\linewidth}
    \@supervisor
    \end{minipage}\vspace{0.8\baselineskip}
