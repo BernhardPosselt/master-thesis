@@ -14,5 +14,4 @@ NonfunctionalIT-Requirements.rtf
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-thesis.pdf
 node_modules
